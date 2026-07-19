@@ -22,3 +22,12 @@ No borrar decisiones anteriores. Si una decision cambia, agregar una nueva entra
   por el wrapper.
 - Motivo: evitar firmas que prometan constantes o conversiones inexistentes y
   permitir regeneración y auditoría cuando cambie cualquiera de las dos APIs.
+
+## D-003 - Publicación sin claves persistentes
+
+- Estado: vigente.
+- Fecha: 2026-07-18.
+- Decisión: publicar tags `v*` mediante `.github/workflows/release.yml` y
+  `rubygems/release-gem@v1`, usando OIDC y el entorno GitHub `release`.
+- Motivo: evitar API keys de RubyGems en el repositorio o en secretos de larga
+  duración y permitir el alta inicial mediante pending trusted publisher.

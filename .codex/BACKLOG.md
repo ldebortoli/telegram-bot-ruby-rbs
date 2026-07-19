@@ -1,11 +1,14 @@
 ﻿# TODO
 
-- La publicación se sigue en IN PROGRESS.
+- [2026-07-18] [BLOCKED: RubyGems.org no tiene una sesión autenticada en el
+  navegador disponible y no existe una credencial local; un propietario debe
+  iniciar sesión y crear el pending trusted publisher para
+  `ldebortoli/telegram-bot-ruby-rbs`, workflow `release.yml`, entorno
+  `release`] Publicar y verificar `telegram-bot-ruby-rbs` 0.1.0.
 
 # IN PROGRESS
 
-- [2026-07-18] Publicar `telegram-bot-ruby-rbs` 0.1.0 en RubyGems mediante
-  Trusted Publishing y verificar la versión publicada.
+- No hay tareas activas mientras se espera la autenticación RubyGems.
 
 # DONE
 
@@ -17,3 +20,5 @@
   pasa `rbs validate` como dependencia instalada.
 - [2026-07-18] Crear el repositorio público
   `ldebortoli/telegram-bot-ruby-rbs` y configurar `origin`.
+- [2026-07-18] Publicar `main` y validar el CI de GitHub en Ruby 3.3 y 3.4; el
+  head `c3e884a` pasa generación, pruebas, validación y construcción.

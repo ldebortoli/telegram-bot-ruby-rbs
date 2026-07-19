@@ -6,7 +6,8 @@ Publicar firmas RBS completas y regenerables para `telegram-bot-ruby` 2.7.0.
 
 ## Tarea actual
 
-Publicar la versión inicial en GitHub y RubyGems.
+Completar la publicación 0.1.0 en RubyGems cuando un propietario autentique la
+cuenta y configure Trusted Publishing.
 
 ## Estado actual
 
@@ -17,17 +18,21 @@ Publicar la versión inicial en GitHub y RubyGems.
   validación de fuentes y validación del paquete instalado exitosas.
 - El paquete 0.1.0 contiene 275 firmas RBS y no incluye scripts ni datos de
   generación.
+- El código validado quedó en `c3e884a`; el CI de GitHub pasa en Ruby 3.3 y 3.4.
+- La publicación RubyGems está bloqueada: no hay credencial local y la sesión
+  del navegador no estaba autenticada. La pestaña de inicio de sesión quedó
+  abierta como handoff; no se creó el tag para evitar un release fallido.
 
 ## Proximos pasos
 
-1. Confirmar y subir el commit inicial a `main`.
-2. Configurar el pending trusted publisher de RubyGems para
-   `.github/workflows/release.yml`, entorno `release`.
-3. Crear y subir el tag `v0.1.0`; verificar workflow y versión pública.
+1. Iniciar sesión en RubyGems.org.
+2. Crear el pending trusted publisher para owner `ldebortoli`, repositorio
+   `telegram-bot-ruby-rbs`, workflow `release.yml` y entorno `release`.
+3. Crear y subir el tag `v0.1.0`; verificar el workflow Release y la versión
+   pública antes de marcar la tarea como DONE.
 
 ## Riesgos
 
 - Telegram Bot API 10.2 contiene novedades posteriores al wrapper 2.7.0; no
   declarar como implementadas constantes que el wrapper todavía no ofrece.
-- No hay archivo local de credenciales RubyGems; la publicación puede quedar
-  bloqueada aunque el repositorio y el paquete estén completos.
+- El único bloqueo actual es la autenticación/configuración de RubyGems.
