@@ -1,15 +1,7 @@
 # frozen_string_literal: true
 
+require "bundler/gem_tasks"
 require "rake/testtask"
-require "fileutils"
-
-spec = Gem::Specification.load("telegram-bot-ruby-rbs.gemspec")
-
-desc "Build the distributable gem"
-task :build do
-  FileUtils.mkdir_p("pkg")
-  sh "gem build telegram-bot-ruby-rbs.gemspec --output pkg/#{spec.full_name}.gem"
-end
 
 desc "Regenerate signatures from the installed wrapper and API snapshot"
 task :generate do

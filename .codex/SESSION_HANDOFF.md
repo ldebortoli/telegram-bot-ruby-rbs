@@ -19,18 +19,17 @@ cuenta y configure Trusted Publishing.
 - El paquete 0.1.0 contiene 275 firmas RBS y no incluye scripts ni datos de
   generación.
 - El código validado quedó en `c3e884a`; el CI de GitHub pasa en Ruby 3.3 y 3.4.
-- La sesión RubyGems.org ya está autenticada, pero al abrir Pending Trusted
-  Publishers el sitio exige reconfirmar la contraseña. Esa pantalla quedó
-  abierta para que el usuario la complete; no se creó el tag para evitar un
-  release fallido.
+- El pending trusted publisher fue creado y `v0.1.0` disparó el workflow. OIDC
+  funcionó, pero la acción falló antes del push porque no existía `rake release`.
+  El Rakefile ya adopta `bundler/gem_tasks`; pruebas, RBS, build y presencia de
+  la tarea release pasan localmente. Falta publicar el arreglo, mover el tag y
+  verificar el reintento.
 
 ## Proximos pasos
 
-1. Reconfirmar la contraseña en la pestaña RubyGems.org abierta.
-2. Crear el pending trusted publisher para owner `ldebortoli`, repositorio
-   `telegram-bot-ruby-rbs`, workflow `release.yml` y entorno `release`.
-3. Crear y subir el tag `v0.1.0`; verificar el workflow Release y la versión
-   pública antes de marcar la tarea como DONE.
+1. Publicar el Rakefile corregido en `main`.
+2. Mover el tag remoto `v0.1.0` al nuevo head y verificar el workflow Release.
+3. Confirmar la versión pública antes de marcar la tarea como DONE.
 
 ## Riesgos
 

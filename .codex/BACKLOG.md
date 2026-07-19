@@ -1,14 +1,12 @@
 ﻿# TODO
 
-- [2026-07-18] [BLOCKED: la sesión RubyGems.org ya está autenticada, pero la
-  página de Pending Trusted Publishers exige reconfirmar la contraseña; el
-  usuario debe ingresarla en la pestaña abierta y avisar cuando termine]
-  Crear el publisher para `ldebortoli/telegram-bot-ruby-rbs`, workflow
-  `release.yml`, entorno `release`, y publicar/verificar la versión 0.1.0.
+- No hay tareas pendientes fuera del release en curso.
 
 # IN PROGRESS
 
-- No hay tareas activas mientras se espera la autenticación RubyGems.
+- [2026-07-18] Publicar y verificar 0.1.0. El primer workflow obtuvo credenciales
+  OIDC correctamente, pero falló porque faltaba la tarea estándar `rake release`;
+  el Rakefile ya adopta `bundler/gem_tasks` y el reintento está en preparación.
 
 # DONE
 
