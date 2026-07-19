@@ -1,0 +1,26 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class Sticker < Base
+        def self.new: (file_id: String, file_unique_id: String, type: String, width: Integer, height: Integer, is_animated: bool, is_video: bool, ?thumbnail: PhotoSize, ?emoji: String, ?set_name: String, ?premium_animation: File, ?mask_position: MaskPosition, ?custom_emoji_id: String, ?needs_repainting: true, ?file_size: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader file_id: String
+        attr_reader file_unique_id: String
+        attr_reader type: String
+        attr_reader width: Integer
+        attr_reader height: Integer
+        attr_reader is_animated: bool
+        attr_reader is_video: bool
+        attr_reader thumbnail: PhotoSize?
+        attr_reader emoji: String?
+        attr_reader set_name: String?
+        attr_reader premium_animation: File?
+        attr_reader mask_position: MaskPosition?
+        attr_reader custom_emoji_id: String?
+        attr_reader needs_repainting: true?
+        attr_reader file_size: Integer?
+          end
+        end
+      end
+    end

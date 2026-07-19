@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class PaidMediaPreview < Base
+        def self.new: (?type: String, ?width: Integer, ?height: Integer, ?duration: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader width: Integer?
+        attr_reader height: Integer?
+        attr_reader duration: Integer?
+          end
+        end
+      end
+    end

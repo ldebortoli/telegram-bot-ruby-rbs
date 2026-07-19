@@ -1,0 +1,14 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class Birthdate < Base
+        def self.new: (day: Integer, month: Integer, ?year: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader day: Integer
+        attr_reader month: Integer
+        attr_reader year: Integer?
+          end
+        end
+      end
+    end

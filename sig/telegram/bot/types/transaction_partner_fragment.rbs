@@ -1,0 +1,13 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class TransactionPartnerFragment < Base
+        def self.new: (?type: String, ?withdrawal_state: revenue_withdrawal_state) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader withdrawal_state: revenue_withdrawal_state?
+          end
+        end
+      end
+    end

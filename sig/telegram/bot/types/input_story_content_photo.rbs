@@ -1,0 +1,13 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InputStoryContentPhoto < Base
+        def self.new: (?type: String, photo: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader photo: String
+          end
+        end
+      end
+    end

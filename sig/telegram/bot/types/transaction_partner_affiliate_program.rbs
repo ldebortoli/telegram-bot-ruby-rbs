@@ -1,0 +1,14 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class TransactionPartnerAffiliateProgram < Base
+        def self.new: (?type: String, ?sponsor_user: User, commission_per_mille: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader sponsor_user: User?
+        attr_reader commission_per_mille: Integer
+          end
+        end
+      end
+    end

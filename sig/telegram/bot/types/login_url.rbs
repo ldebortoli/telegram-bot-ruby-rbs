@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class LoginUrl < Base
+        def self.new: (url: String, ?forward_text: String, ?bot_username: String, ?request_write_access: bool) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader url: String
+        attr_reader forward_text: String?
+        attr_reader bot_username: String?
+        attr_reader request_write_access: bool?
+          end
+        end
+      end
+    end

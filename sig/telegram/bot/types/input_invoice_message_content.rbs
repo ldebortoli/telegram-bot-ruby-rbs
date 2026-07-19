@@ -1,0 +1,31 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InputInvoiceMessageContent < Base
+        def self.new: (title: String, description: String, payload: String, ?provider_token: String, currency: String, prices: Array[LabeledPrice], ?max_tip_amount: Integer, ?suggested_tip_amounts: Array[Integer], ?provider_data: String, ?photo_url: String, ?photo_size: Integer, ?photo_width: Integer, ?photo_height: Integer, ?need_name: bool, ?need_phone_number: bool, ?need_email: bool, ?need_shipping_address: bool, ?send_phone_number_to_provider: bool, ?send_email_to_provider: bool, ?is_flexible: bool) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader title: String
+        attr_reader description: String
+        attr_reader payload: String
+        attr_reader provider_token: String?
+        attr_reader currency: String
+        attr_reader prices: Array[LabeledPrice]
+        attr_reader max_tip_amount: Integer
+        attr_reader suggested_tip_amounts: Array[Integer]?
+        attr_reader provider_data: String?
+        attr_reader photo_url: String?
+        attr_reader photo_size: Integer?
+        attr_reader photo_width: Integer?
+        attr_reader photo_height: Integer?
+        attr_reader need_name: bool?
+        attr_reader need_phone_number: bool?
+        attr_reader need_email: bool?
+        attr_reader need_shipping_address: bool?
+        attr_reader send_phone_number_to_provider: bool?
+        attr_reader send_email_to_provider: bool?
+        attr_reader is_flexible: bool?
+          end
+        end
+      end
+    end

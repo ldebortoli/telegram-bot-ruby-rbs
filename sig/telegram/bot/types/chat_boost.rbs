@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ChatBoost < Base
+        def self.new: (boost_id: String, add_date: Integer, expiration_date: Integer, source: chat_boost_source) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader boost_id: String
+        attr_reader add_date: Integer
+        attr_reader expiration_date: Integer
+        attr_reader source: chat_boost_source
+          end
+        end
+      end
+    end

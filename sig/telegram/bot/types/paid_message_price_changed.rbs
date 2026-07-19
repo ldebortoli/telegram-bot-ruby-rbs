@@ -1,0 +1,12 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class PaidMessagePriceChanged < Base
+        def self.new: (paid_message_star_count: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader paid_message_star_count: Integer
+          end
+        end
+      end
+    end

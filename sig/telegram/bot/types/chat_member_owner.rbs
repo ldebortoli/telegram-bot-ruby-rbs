@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ChatMemberOwner < Base
+        def self.new: (?status: String, user: User, is_anonymous: bool, ?custom_title: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader status: String
+        attr_reader user: User
+        attr_reader is_anonymous: bool
+        attr_reader custom_title: String?
+          end
+        end
+      end
+    end

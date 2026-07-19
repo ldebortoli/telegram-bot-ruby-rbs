@@ -1,0 +1,22 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InlineQueryResultAudio < Base
+        def self.new: (?type: String, id: String, audio_url: String, title: String, ?caption: String, ?parse_mode: String, ?caption_entities: Array[MessageEntity], ?performer: String, ?audio_duration: Integer, ?reply_markup: InlineKeyboardMarkup, ?input_message_content: input_message_content) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader id: String
+        attr_reader audio_url: String
+        attr_reader title: String
+        attr_reader caption: String?
+        attr_reader parse_mode: String?
+        attr_reader caption_entities: Array[MessageEntity]?
+        attr_reader performer: String?
+        attr_reader audio_duration: Integer?
+        attr_reader reply_markup: InlineKeyboardMarkup?
+        attr_reader input_message_content: input_message_content?
+          end
+        end
+      end
+    end

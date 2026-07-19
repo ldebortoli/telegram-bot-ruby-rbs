@@ -1,0 +1,16 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InlineQueryResultCachedSticker < Base
+        def self.new: (?type: String, id: String, sticker_file_id: String, ?reply_markup: InlineKeyboardMarkup, ?input_message_content: input_message_content) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader id: String
+        attr_reader sticker_file_id: String
+        attr_reader reply_markup: InlineKeyboardMarkup?
+        attr_reader input_message_content: input_message_content?
+          end
+        end
+      end
+    end

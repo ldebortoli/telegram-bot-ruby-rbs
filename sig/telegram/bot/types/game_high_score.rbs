@@ -1,0 +1,14 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class GameHighScore < Base
+        def self.new: (position: Integer, user: User, score: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader position: Integer
+        attr_reader user: User
+        attr_reader score: Integer
+          end
+        end
+      end
+    end

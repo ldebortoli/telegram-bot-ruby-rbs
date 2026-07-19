@@ -1,0 +1,19 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class CallbackQuery < Base
+        def self.new: (id: String, from: User, ?message: maybe_inaccessible_message, ?inline_message_id: String, chat_instance: String, ?data: String, ?game_short_name: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader id: String
+        attr_reader from: User
+        attr_reader message: maybe_inaccessible_message?
+        attr_reader inline_message_id: String?
+        attr_reader chat_instance: String
+        attr_reader data: String?
+        attr_reader game_short_name: String?
+        def to_s: () -> String
+          end
+        end
+      end
+    end

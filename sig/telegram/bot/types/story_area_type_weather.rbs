@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class StoryAreaTypeWeather < Base
+        def self.new: (?type: String, temperature: Float, emoji: String, background_color: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader temperature: Float
+        attr_reader emoji: String
+        attr_reader background_color: Integer
+          end
+        end
+      end
+    end

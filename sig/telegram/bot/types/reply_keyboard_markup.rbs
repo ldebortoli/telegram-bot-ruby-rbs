@@ -1,0 +1,17 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ReplyKeyboardMarkup < Base
+        def self.new: (keyboard: Array[Array[KeyboardButton]], ?is_persistent: bool, ?resize_keyboard: bool, ?one_time_keyboard: bool, ?input_field_placeholder: String, ?selective: bool) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader keyboard: Array[Array[KeyboardButton]]
+        attr_reader is_persistent: bool
+        attr_reader resize_keyboard: bool
+        attr_reader one_time_keyboard: bool
+        attr_reader input_field_placeholder: String?
+        attr_reader selective: bool?
+          end
+        end
+      end
+    end

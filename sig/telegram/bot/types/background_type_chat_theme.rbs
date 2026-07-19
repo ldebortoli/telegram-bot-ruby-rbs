@@ -1,0 +1,13 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class BackgroundTypeChatTheme < Base
+        def self.new: (?type: String, theme_name: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader theme_name: String
+          end
+        end
+      end
+    end

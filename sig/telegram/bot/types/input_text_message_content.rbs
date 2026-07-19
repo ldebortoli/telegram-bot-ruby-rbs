@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InputTextMessageContent < Base
+        def self.new: (message_text: String, ?parse_mode: String, ?entities: Array[MessageEntity], ?link_preview_options: LinkPreviewOptions) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader message_text: String
+        attr_reader parse_mode: String?
+        attr_reader entities: Array[MessageEntity]?
+        attr_reader link_preview_options: LinkPreviewOptions?
+          end
+        end
+      end
+    end

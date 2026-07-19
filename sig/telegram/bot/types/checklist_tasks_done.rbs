@@ -1,0 +1,14 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ChecklistTasksDone < Base
+        def self.new: (?checklist_message: Message, ?marked_as_done_task_ids: Array[Integer], ?marked_as_not_done_task_ids: Array[Integer]) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader checklist_message: Message?
+        attr_reader marked_as_done_task_ids: Array[Integer]?
+        attr_reader marked_as_not_done_task_ids: Array[Integer]?
+          end
+        end
+      end
+    end

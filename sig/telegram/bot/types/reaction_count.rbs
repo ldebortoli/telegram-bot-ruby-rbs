@@ -1,0 +1,13 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ReactionCount < Base
+        def self.new: (type: reaction_type, total_count: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: reaction_type
+        attr_reader total_count: Integer
+          end
+        end
+      end
+    end

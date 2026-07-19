@@ -1,0 +1,18 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class Venue < Base
+        def self.new: (location: Location, title: String, address: String, ?foursquare_id: String, ?foursquare_type: String, ?google_place_id: String, ?google_place_type: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader location: Location
+        attr_reader title: String
+        attr_reader address: String
+        attr_reader foursquare_id: String?
+        attr_reader foursquare_type: String?
+        attr_reader google_place_id: String?
+        attr_reader google_place_type: String?
+          end
+        end
+      end
+    end

@@ -1,0 +1,21 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class GiftInfo < Base
+        def self.new: (gift: Gift, ?owned_gift_id: String, ?convert_star_count: Integer, ?prepaid_upgrade_star_count: Integer, ?is_upgrade_separate: true, ?can_be_upgraded: true, ?text: String, ?entities: Array[MessageEntity], ?is_private: true, ?unique_gift_number: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader gift: Gift
+        attr_reader owned_gift_id: String?
+        attr_reader convert_star_count: Integer?
+        attr_reader prepaid_upgrade_star_count: Integer?
+        attr_reader is_upgrade_separate: true?
+        attr_reader can_be_upgraded: true?
+        attr_reader text: String?
+        attr_reader entities: Array[MessageEntity]?
+        attr_reader is_private: true?
+        attr_reader unique_gift_number: Integer?
+          end
+        end
+      end
+    end

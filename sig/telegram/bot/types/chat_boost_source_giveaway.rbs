@@ -1,0 +1,16 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ChatBoostSourceGiveaway < Base
+        def self.new: (?source: String, giveaway_message_id: Integer, ?user: User, ?prize_star_count: Integer, ?is_unclaimed: true) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader source: String
+        attr_reader giveaway_message_id: Integer
+        attr_reader user: User?
+        attr_reader prize_star_count: Integer?
+        attr_reader is_unclaimed: true?
+          end
+        end
+      end
+    end

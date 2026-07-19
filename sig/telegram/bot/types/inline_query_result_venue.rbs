@@ -1,0 +1,26 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InlineQueryResultVenue < Base
+        def self.new: (?type: String, id: String, latitude: Float, longitude: Float, title: String, address: String, ?foursquare_id: String, ?foursquare_type: String, ?google_place_id: String, ?google_place_type: String, ?reply_markup: InlineKeyboardMarkup, ?input_message_content: input_message_content, ?thumbnail_url: String, ?thumbnail_width: Integer, ?thumbnail_height: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader id: String
+        attr_reader latitude: Float
+        attr_reader longitude: Float
+        attr_reader title: String
+        attr_reader address: String
+        attr_reader foursquare_id: String?
+        attr_reader foursquare_type: String?
+        attr_reader google_place_id: String?
+        attr_reader google_place_type: String?
+        attr_reader reply_markup: InlineKeyboardMarkup?
+        attr_reader input_message_content: input_message_content?
+        attr_reader thumbnail_url: String?
+        attr_reader thumbnail_width: Integer?
+        attr_reader thumbnail_height: Integer?
+          end
+        end
+      end
+    end

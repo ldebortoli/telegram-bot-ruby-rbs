@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class UserRating < Base
+        def self.new: (level: Integer, rating: Integer, current_level_rating: Integer, ?next_level_rating: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader level: Integer
+        attr_reader rating: Integer
+        attr_reader current_level_rating: Integer
+        attr_reader next_level_rating: Integer?
+          end
+        end
+      end
+    end

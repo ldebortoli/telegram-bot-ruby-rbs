@@ -1,0 +1,17 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ChecklistTask < Base
+        def self.new: (id: Integer, text: String, ?text_entities: Array[MessageEntity], ?completed_by_user: User, ?completed_by_chat: Chat, ?completion_date: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader id: Integer
+        attr_reader text: String
+        attr_reader text_entities: Array[MessageEntity]?
+        attr_reader completed_by_user: User?
+        attr_reader completed_by_chat: Chat?
+        attr_reader completion_date: Integer?
+          end
+        end
+      end
+    end

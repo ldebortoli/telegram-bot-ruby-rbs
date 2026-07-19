@@ -1,0 +1,21 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InlineQueryResultCachedGif < Base
+        def self.new: (?type: String, id: String, gif_file_id: String, ?title: String, ?caption: String, ?parse_mode: String, ?caption_entities: Array[MessageEntity], ?show_caption_above_media: bool, ?reply_markup: InlineKeyboardMarkup, ?input_message_content: input_message_content) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader id: String
+        attr_reader gif_file_id: String
+        attr_reader title: String?
+        attr_reader caption: String?
+        attr_reader parse_mode: String?
+        attr_reader caption_entities: Array[MessageEntity]?
+        attr_reader show_caption_above_media: bool?
+        attr_reader reply_markup: InlineKeyboardMarkup?
+        attr_reader input_message_content: input_message_content?
+          end
+        end
+      end
+    end

@@ -1,0 +1,13 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ChatBoostSourcePremium < Base
+        def self.new: (?source: String, user: User) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader source: String
+        attr_reader user: User
+          end
+        end
+      end
+    end

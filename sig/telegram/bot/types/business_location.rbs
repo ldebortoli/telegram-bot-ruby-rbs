@@ -1,0 +1,13 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class BusinessLocation < Base
+        def self.new: (address: String, ?location: Location) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader address: String
+        attr_reader location: Location?
+          end
+        end
+      end
+    end

@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class BackgroundFillGradient < Base
+        def self.new: (?type: String, top_color: Integer, bottom_color: Integer, rotation_angle: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader top_color: Integer
+        attr_reader bottom_color: Integer
+        attr_reader rotation_angle: Integer
+          end
+        end
+      end
+    end

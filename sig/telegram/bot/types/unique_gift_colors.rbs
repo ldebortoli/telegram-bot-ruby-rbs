@@ -1,0 +1,17 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class UniqueGiftColors < Base
+        def self.new: (model_custom_emoji_id: String, symbol_custom_emoji_id: String, light_theme_main_color: Integer, light_theme_other_colors: Array[Integer], dark_theme_main_color: Integer, dark_theme_other_colors: Array[Integer]) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader model_custom_emoji_id: String
+        attr_reader symbol_custom_emoji_id: String
+        attr_reader light_theme_main_color: Integer
+        attr_reader light_theme_other_colors: Array[Integer]
+        attr_reader dark_theme_main_color: Integer
+        attr_reader dark_theme_other_colors: Array[Integer]
+          end
+        end
+      end
+    end

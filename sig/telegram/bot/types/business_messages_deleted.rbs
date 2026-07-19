@@ -1,0 +1,14 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class BusinessMessagesDeleted < Base
+        def self.new: (business_connection_id: String, chat: Chat, message_ids: Array[Integer]) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader business_connection_id: String
+        attr_reader chat: Chat
+        attr_reader message_ids: Array[Integer]
+          end
+        end
+      end
+    end

@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ChatPhoto < Base
+        def self.new: (small_file_id: String, small_file_unique_id: String, big_file_id: String, big_file_unique_id: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader small_file_id: String
+        attr_reader small_file_unique_id: String
+        attr_reader big_file_id: String
+        attr_reader big_file_unique_id: String
+          end
+        end
+      end
+    end

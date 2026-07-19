@@ -1,0 +1,16 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class Invoice < Base
+        def self.new: (title: String, description: String, start_parameter: String, currency: String, total_amount: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader title: String
+        attr_reader description: String
+        attr_reader start_parameter: String
+        attr_reader currency: String
+        attr_reader total_amount: Integer
+          end
+        end
+      end
+    end

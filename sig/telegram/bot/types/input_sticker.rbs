@@ -1,0 +1,16 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InputSticker < Base
+        def self.new: (sticker: String, format: String, emoji_list: Array[String], ?mask_position: MaskPosition, ?keywords: Array[String]) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader sticker: String
+        attr_reader format: String
+        attr_reader emoji_list: Array[String]
+        attr_reader mask_position: MaskPosition?
+        attr_reader keywords: Array[String]?
+          end
+        end
+      end
+    end

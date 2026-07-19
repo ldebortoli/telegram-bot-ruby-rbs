@@ -1,0 +1,13 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class StoryArea < Base
+        def self.new: (position: StoryAreaPosition, type: story_area_type) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader position: StoryAreaPosition
+        attr_reader type: story_area_type
+          end
+        end
+      end
+    end

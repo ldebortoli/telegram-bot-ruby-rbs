@@ -1,0 +1,14 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class OwnedGifts < Base
+        def self.new: (total_count: Integer, gifts: Array[owned_gift], ?next_offset: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader total_count: Integer
+        attr_reader gifts: Array[owned_gift]
+        attr_reader next_offset: String?
+          end
+        end
+      end
+    end

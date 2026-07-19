@@ -1,0 +1,13 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class Dice < Base
+        def self.new: (emoji: String, value: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader emoji: String
+        attr_reader value: Integer
+          end
+        end
+      end
+    end

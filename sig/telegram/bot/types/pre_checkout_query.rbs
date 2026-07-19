@@ -1,0 +1,18 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class PreCheckoutQuery < Base
+        def self.new: (id: String, from: User, currency: String, total_amount: Integer, invoice_payload: String, ?shipping_option_id: String, ?order_info: OrderInfo) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader id: String
+        attr_reader from: User
+        attr_reader currency: String
+        attr_reader total_amount: Integer
+        attr_reader invoice_payload: String
+        attr_reader shipping_option_id: String?
+        attr_reader order_info: OrderInfo?
+          end
+        end
+      end
+    end

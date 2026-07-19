@@ -1,0 +1,14 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ProximityAlertTriggered < Base
+        def self.new: (traveler: User, watcher: User, distance: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader traveler: User
+        attr_reader watcher: User
+        attr_reader distance: Integer
+          end
+        end
+      end
+    end

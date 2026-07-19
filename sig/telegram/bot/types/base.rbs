@@ -1,0 +1,22 @@
+# Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+module Telegram
+  module Bot
+    module Types
+      module Compactable
+        def to_compact_hash: () -> Hash[Symbol, untyped]
+        def to_json: (*untyped args) -> String
+      end
+
+      module PatternMatching
+        def deconstruct_keys: (Array[Symbol]? keys) -> Hash[Symbol, untyped]
+      end
+
+      class Base
+        include Compactable
+        include PatternMatching
+
+        attr_reader attributes: Hash[Symbol, untyped]
+      end
+    end
+  end
+end

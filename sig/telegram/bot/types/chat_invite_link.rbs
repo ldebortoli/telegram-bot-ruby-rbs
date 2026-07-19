@@ -1,0 +1,22 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ChatInviteLink < Base
+        def self.new: (invite_link: String, creator: User, creates_join_request: bool, is_primary: bool, is_revoked: bool, ?name: String, ?expire_date: Integer, ?member_limit: Integer, ?pending_join_request_count: Integer, ?subscription_period: Integer, ?subscription_price: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader invite_link: String
+        attr_reader creator: User
+        attr_reader creates_join_request: bool
+        attr_reader is_primary: bool
+        attr_reader is_revoked: bool
+        attr_reader name: String?
+        attr_reader expire_date: Integer?
+        attr_reader member_limit: Integer?
+        attr_reader pending_join_request_count: Integer?
+        attr_reader subscription_period: Integer?
+        attr_reader subscription_price: Integer?
+          end
+        end
+      end
+    end

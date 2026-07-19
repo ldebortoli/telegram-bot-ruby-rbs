@@ -1,0 +1,16 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InputStoryContentVideo < Base
+        def self.new: (?type: String, video: String, ?duration: Float, ?cover_frame_timestamp: Float, ?is_animation: bool) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader video: String
+        attr_reader duration: Float?
+        attr_reader cover_frame_timestamp: Float
+        attr_reader is_animation: bool?
+          end
+        end
+      end
+    end

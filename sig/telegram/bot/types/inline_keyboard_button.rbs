@@ -1,0 +1,24 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InlineKeyboardButton < Base
+        def self.new: (text: String, ?icon_custom_emoji_id: String, ?style: String, ?url: String, ?callback_data: String, ?web_app: WebAppInfo, ?login_url: LoginUrl, ?switch_inline_query: String, ?switch_inline_query_current_chat: String, ?switch_inline_query_chosen_chat: SwitchInlineQueryChosenChat, ?copy_text: CopyTextButton, ?callback_game: CallbackGame, ?pay: bool) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader text: String
+        attr_reader icon_custom_emoji_id: String?
+        attr_reader style: String?
+        attr_reader url: String?
+        attr_reader callback_data: String?
+        attr_reader web_app: WebAppInfo?
+        attr_reader login_url: LoginUrl?
+        attr_reader switch_inline_query: String?
+        attr_reader switch_inline_query_current_chat: String?
+        attr_reader switch_inline_query_chosen_chat: SwitchInlineQueryChosenChat?
+        attr_reader copy_text: CopyTextButton?
+        attr_reader callback_game: CallbackGame?
+        attr_reader pay: bool?
+          end
+        end
+      end
+    end

@@ -1,0 +1,14 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class SuggestedPostApproved < Base
+        def self.new: (?suggested_post_message: Message, ?price: SuggestedPostPrice, send_date: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader suggested_post_message: Message?
+        attr_reader price: SuggestedPostPrice?
+        attr_reader send_date: Integer
+          end
+        end
+      end
+    end

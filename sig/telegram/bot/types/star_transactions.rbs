@@ -1,0 +1,12 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class StarTransactions < Base
+        def self.new: (transactions: Array[StarTransaction]) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader transactions: Array[StarTransaction]
+          end
+        end
+      end
+    end

@@ -1,0 +1,50 @@
+# Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+module Telegram
+  module Bot
+    VERSION: String
+
+    def self.configuration: () -> Configuration
+    def self.configuration=: (Configuration) -> Configuration
+    def self.configure: () { (Configuration) -> void } -> void
+
+    class Configuration
+      attr_accessor adapter: Symbol
+      attr_accessor adapter_options: Hash[Symbol, untyped]?
+      attr_accessor connection_open_timeout: Numeric
+      attr_accessor connection_timeout: Numeric
+
+      def initialize: () -> void
+    end
+
+    class Client
+      attr_reader api: Api
+      attr_reader options: Hash[Symbol, untyped]
+      attr_accessor logger: Logger
+
+      def self.run: [T] (String token, ?Hash[Symbol, untyped] options) { (Client) -> T } -> T
+      def initialize: (String token, ?Hash[Symbol, untyped] options) -> void
+      def run: [T] () { (Client) -> T } -> T
+      def listen: () { (Types::Base?) -> void } -> nil
+      def stop: () -> false
+      def fetch_updates: () { (Types::Base?) -> void } -> void
+      def handle_update: (Types::Update update) -> Types::Base?
+    end
+
+    class NullLogger < Logger
+      def initialize: (*untyped) -> void
+      def add: (*untyped) -> nil
+    end
+
+    module Exceptions
+      class Base < StandardError
+      end
+
+      class ResponseError < Base
+        attr_reader response: untyped
+        def initialize: (response: untyped) -> void
+        def error_code: () -> Integer?
+        def data: () -> Hash[Symbol | String, untyped]
+      end
+    end
+  end
+end

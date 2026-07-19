@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ChatBoostRemoved < Base
+        def self.new: (chat: Chat, boost_id: String, remove_date: Integer, source: chat_boost_source) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader chat: Chat
+        attr_reader boost_id: String
+        attr_reader remove_date: Integer
+        attr_reader source: chat_boost_source
+          end
+        end
+      end
+    end

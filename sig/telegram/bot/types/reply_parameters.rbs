@@ -1,0 +1,20 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ReplyParameters < Base
+        def self.new: (message_id: Integer, ?chat_id: (Integer | String), ?allow_sending_without_reply: bool, ?quote: String, ?quote_parse_mode: String, ?quote_entities: Array[MessageEntity], ?quote_position: Integer, ?checklist_task_id: Integer, ?poll_option_id: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader message_id: Integer
+        attr_reader chat_id: ((Integer | String))?
+        attr_reader allow_sending_without_reply: bool?
+        attr_reader quote: String?
+        attr_reader quote_parse_mode: String?
+        attr_reader quote_entities: Array[MessageEntity]?
+        attr_reader quote_position: Integer?
+        attr_reader checklist_task_id: Integer?
+        attr_reader poll_option_id: String?
+          end
+        end
+      end
+    end

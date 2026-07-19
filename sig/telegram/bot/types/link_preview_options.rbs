@@ -1,0 +1,16 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class LinkPreviewOptions < Base
+        def self.new: (?is_disabled: bool, ?url: String, ?prefer_small_media: bool, ?prefer_large_media: bool, ?show_above_text: bool) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader is_disabled: bool?
+        attr_reader url: String?
+        attr_reader prefer_small_media: bool?
+        attr_reader prefer_large_media: bool?
+        attr_reader show_above_text: bool?
+          end
+        end
+      end
+    end

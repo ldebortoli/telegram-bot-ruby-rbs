@@ -1,0 +1,13 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class LabeledPrice < Base
+        def self.new: (label: String, amount: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader label: String
+        attr_reader amount: Integer
+          end
+        end
+      end
+    end

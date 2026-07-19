@@ -1,0 +1,13 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class BusinessOpeningHours < Base
+        def self.new: (time_zone_name: String, opening_hours: Array[BusinessOpeningHoursInterval]) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader time_zone_name: String
+        attr_reader opening_hours: Array[BusinessOpeningHoursInterval]
+          end
+        end
+      end
+    end

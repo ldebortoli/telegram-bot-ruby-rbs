@@ -1,0 +1,690 @@
+  # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+  module Telegram
+    module Bot
+      class Api
+        ENDPOINTS: Hash[String, untyped]
+
+        attr_reader token: String
+        attr_reader url: String
+        attr_reader environment: Symbol
+
+        def initialize: (String token, ?url: String, ?environment: Symbol | String) -> void
+        def connection: () -> untyped
+        def call: (String endpoint, ?Hash[Symbol | String, untyped] raw_params) -> Hash[String, untyped]
+      def add_sticker_to_set: (user_id: Integer, name: String, sticker: Types::InputSticker) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def addStickerToSet: (user_id: Integer, name: String, sticker: Types::InputSticker) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def answer_callback_query: (callback_query_id: String, ?text: String, ?show_alert: bool, ?url: String, ?cache_time: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def answerCallbackQuery: (callback_query_id: String, ?text: String, ?show_alert: bool, ?url: String, ?cache_time: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def answer_inline_query: (inline_query_id: String, results: Array[Types::inline_query_result], ?cache_time: Integer, ?is_personal: bool, ?next_offset: String, ?button: Types::InlineQueryResultsButton) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def answerInlineQuery: (inline_query_id: String, results: Array[Types::inline_query_result], ?cache_time: Integer, ?is_personal: bool, ?next_offset: String, ?button: Types::InlineQueryResultsButton) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def answer_pre_checkout_query: (pre_checkout_query_id: String, ok: bool, ?error_message: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def answerPreCheckoutQuery: (pre_checkout_query_id: String, ok: bool, ?error_message: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def answer_shipping_query: (shipping_query_id: String, ok: bool, ?shipping_options: Array[Types::ShippingOption], ?error_message: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def answerShippingQuery: (shipping_query_id: String, ok: bool, ?shipping_options: Array[Types::ShippingOption], ?error_message: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def answer_web_app_query: (web_app_query_id: String, result: Types::inline_query_result) -> Types::SentWebAppMessage
+                | (?Hash[Symbol | String, untyped] params) -> Types::SentWebAppMessage
+      def answerWebAppQuery: (web_app_query_id: String, result: Types::inline_query_result) -> Types::SentWebAppMessage
+                | (?Hash[Symbol | String, untyped] params) -> Types::SentWebAppMessage
+      def approve_chat_join_request: (chat_id: Integer | String, user_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def approveChatJoinRequest: (chat_id: Integer | String, user_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def approve_suggested_post: (chat_id: Integer, message_id: Integer, ?send_date: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def approveSuggestedPost: (chat_id: Integer, message_id: Integer, ?send_date: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def ban_chat_member: (chat_id: Integer | String, user_id: Integer, ?until_date: Integer, ?revoke_messages: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def banChatMember: (chat_id: Integer | String, user_id: Integer, ?until_date: Integer, ?revoke_messages: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def ban_chat_sender_chat: (chat_id: Integer | String, sender_chat_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def banChatSenderChat: (chat_id: Integer | String, sender_chat_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def close: () -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def close_forum_topic: (chat_id: Integer | String, message_thread_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def closeForumTopic: (chat_id: Integer | String, message_thread_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def close_general_forum_topic: (chat_id: Integer | String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def closeGeneralForumTopic: (chat_id: Integer | String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def convert_gift_to_stars: (business_connection_id: String, owned_gift_id: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def convertGiftToStars: (business_connection_id: String, owned_gift_id: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def copy_message: (chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, from_chat_id: Integer | String, message_id: Integer, ?video_start_timestamp: Integer, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?show_caption_above_media: bool, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::MessageId
+                | (?Hash[Symbol | String, untyped] params) -> Types::MessageId
+      def copyMessage: (chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, from_chat_id: Integer | String, message_id: Integer, ?video_start_timestamp: Integer, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?show_caption_above_media: bool, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::MessageId
+                | (?Hash[Symbol | String, untyped] params) -> Types::MessageId
+      def copy_messages: (chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, from_chat_id: Integer | String, message_ids: Array[Integer], ?disable_notification: bool, ?protect_content: bool, ?remove_caption: bool) -> Array[Types::MessageId]
+                | (?Hash[Symbol | String, untyped] params) -> Array[Types::MessageId]
+      def copyMessages: (chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, from_chat_id: Integer | String, message_ids: Array[Integer], ?disable_notification: bool, ?protect_content: bool, ?remove_caption: bool) -> Array[Types::MessageId]
+                | (?Hash[Symbol | String, untyped] params) -> Array[Types::MessageId]
+      def create_chat_invite_link: (chat_id: Integer | String, ?name: String, ?expire_date: Integer, ?member_limit: Integer, ?creates_join_request: bool) -> Types::ChatInviteLink
+                | (?Hash[Symbol | String, untyped] params) -> Types::ChatInviteLink
+      def createChatInviteLink: (chat_id: Integer | String, ?name: String, ?expire_date: Integer, ?member_limit: Integer, ?creates_join_request: bool) -> Types::ChatInviteLink
+                | (?Hash[Symbol | String, untyped] params) -> Types::ChatInviteLink
+      def create_chat_subscription_invite_link: (chat_id: Integer | String, ?name: String, subscription_period: Integer, subscription_price: Integer) -> Types::ChatInviteLink
+                | (?Hash[Symbol | String, untyped] params) -> Types::ChatInviteLink
+      def createChatSubscriptionInviteLink: (chat_id: Integer | String, ?name: String, subscription_period: Integer, subscription_price: Integer) -> Types::ChatInviteLink
+                | (?Hash[Symbol | String, untyped] params) -> Types::ChatInviteLink
+      def create_forum_topic: (chat_id: Integer | String, name: String, ?icon_color: Integer, ?icon_custom_emoji_id: String) -> Types::ForumTopic
+                | (?Hash[Symbol | String, untyped] params) -> Types::ForumTopic
+      def createForumTopic: (chat_id: Integer | String, name: String, ?icon_color: Integer, ?icon_custom_emoji_id: String) -> Types::ForumTopic
+                | (?Hash[Symbol | String, untyped] params) -> Types::ForumTopic
+      def create_invoice_link: (?business_connection_id: String, title: String, description: String, payload: String, ?provider_token: String, currency: String, prices: Array[Types::LabeledPrice], ?subscription_period: Integer, ?max_tip_amount: Integer, ?suggested_tip_amounts: Array[Integer], ?provider_data: String, ?photo_url: String, ?photo_size: Integer, ?photo_width: Integer, ?photo_height: Integer, ?need_name: bool, ?need_phone_number: bool, ?need_email: bool, ?need_shipping_address: bool, ?send_phone_number_to_provider: bool, ?send_email_to_provider: bool, ?is_flexible: bool) -> String
+                | (?Hash[Symbol | String, untyped] params) -> String
+      def createInvoiceLink: (?business_connection_id: String, title: String, description: String, payload: String, ?provider_token: String, currency: String, prices: Array[Types::LabeledPrice], ?subscription_period: Integer, ?max_tip_amount: Integer, ?suggested_tip_amounts: Array[Integer], ?provider_data: String, ?photo_url: String, ?photo_size: Integer, ?photo_width: Integer, ?photo_height: Integer, ?need_name: bool, ?need_phone_number: bool, ?need_email: bool, ?need_shipping_address: bool, ?send_phone_number_to_provider: bool, ?send_email_to_provider: bool, ?is_flexible: bool) -> String
+                | (?Hash[Symbol | String, untyped] params) -> String
+      def create_new_sticker_set: (user_id: Integer, name: String, title: String, stickers: Array[Types::InputSticker], ?sticker_type: String, ?needs_repainting: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def createNewStickerSet: (user_id: Integer, name: String, title: String, stickers: Array[Types::InputSticker], ?sticker_type: String, ?needs_repainting: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def decline_chat_join_request: (chat_id: Integer | String, user_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def declineChatJoinRequest: (chat_id: Integer | String, user_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def decline_suggested_post: (chat_id: Integer, message_id: Integer, ?comment: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def declineSuggestedPost: (chat_id: Integer, message_id: Integer, ?comment: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def delete_business_messages: (business_connection_id: String, message_ids: Array[Integer]) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def deleteBusinessMessages: (business_connection_id: String, message_ids: Array[Integer]) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def delete_chat_photo: (chat_id: Integer | String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def deleteChatPhoto: (chat_id: Integer | String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def delete_chat_sticker_set: (chat_id: Integer | String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def deleteChatStickerSet: (chat_id: Integer | String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def delete_forum_topic: (chat_id: Integer | String, message_thread_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def deleteForumTopic: (chat_id: Integer | String, message_thread_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def delete_message: (chat_id: Integer | String, message_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def deleteMessage: (chat_id: Integer | String, message_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def delete_messages: (chat_id: Integer | String, message_ids: Array[Integer]) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def deleteMessages: (chat_id: Integer | String, message_ids: Array[Integer]) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def delete_my_commands: (?scope: Types::bot_command_scope, ?language_code: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def deleteMyCommands: (?scope: Types::bot_command_scope, ?language_code: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def delete_sticker_from_set: (sticker: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def deleteStickerFromSet: (sticker: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def delete_sticker_set: (name: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def deleteStickerSet: (name: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def delete_story: (business_connection_id: String, story_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def deleteStory: (business_connection_id: String, story_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def delete_webhook: (?drop_pending_updates: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def deleteWebhook: (?drop_pending_updates: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def edit_chat_invite_link: (chat_id: Integer | String, invite_link: String, ?name: String, ?expire_date: Integer, ?member_limit: Integer, ?creates_join_request: bool) -> Types::ChatInviteLink
+                | (?Hash[Symbol | String, untyped] params) -> Types::ChatInviteLink
+      def editChatInviteLink: (chat_id: Integer | String, invite_link: String, ?name: String, ?expire_date: Integer, ?member_limit: Integer, ?creates_join_request: bool) -> Types::ChatInviteLink
+                | (?Hash[Symbol | String, untyped] params) -> Types::ChatInviteLink
+      def edit_chat_subscription_invite_link: (chat_id: Integer | String, invite_link: String, ?name: String) -> Types::ChatInviteLink
+                | (?Hash[Symbol | String, untyped] params) -> Types::ChatInviteLink
+      def editChatSubscriptionInviteLink: (chat_id: Integer | String, invite_link: String, ?name: String) -> Types::ChatInviteLink
+                | (?Hash[Symbol | String, untyped] params) -> Types::ChatInviteLink
+      def edit_forum_topic: (chat_id: Integer | String, message_thread_id: Integer, ?name: String, ?icon_custom_emoji_id: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def editForumTopic: (chat_id: Integer | String, message_thread_id: Integer, ?name: String, ?icon_custom_emoji_id: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def edit_general_forum_topic: (chat_id: Integer | String, name: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def editGeneralForumTopic: (chat_id: Integer | String, name: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def edit_message_caption: (?business_connection_id: String, ?chat_id: Integer | String, ?message_id: Integer, ?inline_message_id: String, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?show_caption_above_media: bool, ?reply_markup: Types::InlineKeyboardMarkup) -> (Types::Message | bool)
+                | (?Hash[Symbol | String, untyped] params) -> (Types::Message | bool)
+      def editMessageCaption: (?business_connection_id: String, ?chat_id: Integer | String, ?message_id: Integer, ?inline_message_id: String, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?show_caption_above_media: bool, ?reply_markup: Types::InlineKeyboardMarkup) -> (Types::Message | bool)
+                | (?Hash[Symbol | String, untyped] params) -> (Types::Message | bool)
+      def edit_message_checklist: (business_connection_id: String, chat_id: Integer | String, message_id: Integer, checklist: Types::InputChecklist, ?reply_markup: Types::InlineKeyboardMarkup) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def editMessageChecklist: (business_connection_id: String, chat_id: Integer | String, message_id: Integer, checklist: Types::InputChecklist, ?reply_markup: Types::InlineKeyboardMarkup) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def edit_message_live_location: (?business_connection_id: String, ?chat_id: Integer | String, ?message_id: Integer, ?inline_message_id: String, latitude: Float, longitude: Float, ?live_period: Integer, ?horizontal_accuracy: Float, ?heading: Integer, ?proximity_alert_radius: Integer, ?reply_markup: Types::InlineKeyboardMarkup) -> (Types::Message | bool)
+                | (?Hash[Symbol | String, untyped] params) -> (Types::Message | bool)
+      def editMessageLiveLocation: (?business_connection_id: String, ?chat_id: Integer | String, ?message_id: Integer, ?inline_message_id: String, latitude: Float, longitude: Float, ?live_period: Integer, ?horizontal_accuracy: Float, ?heading: Integer, ?proximity_alert_radius: Integer, ?reply_markup: Types::InlineKeyboardMarkup) -> (Types::Message | bool)
+                | (?Hash[Symbol | String, untyped] params) -> (Types::Message | bool)
+      def edit_message_media: (?business_connection_id: String, ?chat_id: Integer | String, ?message_id: Integer, ?inline_message_id: String, media: Types::input_media, ?reply_markup: Types::InlineKeyboardMarkup) -> (Types::Message | bool)
+                | (?Hash[Symbol | String, untyped] params) -> (Types::Message | bool)
+      def editMessageMedia: (?business_connection_id: String, ?chat_id: Integer | String, ?message_id: Integer, ?inline_message_id: String, media: Types::input_media, ?reply_markup: Types::InlineKeyboardMarkup) -> (Types::Message | bool)
+                | (?Hash[Symbol | String, untyped] params) -> (Types::Message | bool)
+      def edit_message_reply_markup: (?business_connection_id: String, ?chat_id: Integer | String, ?message_id: Integer, ?inline_message_id: String, ?reply_markup: Types::InlineKeyboardMarkup) -> (Types::Message | bool)
+                | (?Hash[Symbol | String, untyped] params) -> (Types::Message | bool)
+      def editMessageReplyMarkup: (?business_connection_id: String, ?chat_id: Integer | String, ?message_id: Integer, ?inline_message_id: String, ?reply_markup: Types::InlineKeyboardMarkup) -> (Types::Message | bool)
+                | (?Hash[Symbol | String, untyped] params) -> (Types::Message | bool)
+      def edit_message_text: (?business_connection_id: String, ?chat_id: Integer | String, ?message_id: Integer, ?inline_message_id: String, ?text: String, ?parse_mode: String, ?entities: Array[Types::MessageEntity], ?link_preview_options: Types::LinkPreviewOptions, ?rich_message: untyped, ?reply_markup: Types::InlineKeyboardMarkup) -> (Types::Message | bool)
+                | (?Hash[Symbol | String, untyped] params) -> (Types::Message | bool)
+      def editMessageText: (?business_connection_id: String, ?chat_id: Integer | String, ?message_id: Integer, ?inline_message_id: String, ?text: String, ?parse_mode: String, ?entities: Array[Types::MessageEntity], ?link_preview_options: Types::LinkPreviewOptions, ?rich_message: untyped, ?reply_markup: Types::InlineKeyboardMarkup) -> (Types::Message | bool)
+                | (?Hash[Symbol | String, untyped] params) -> (Types::Message | bool)
+      def edit_story: (business_connection_id: String, story_id: Integer, content: Types::input_story_content, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?areas: Array[Types::StoryArea]) -> Types::Story
+                | (?Hash[Symbol | String, untyped] params) -> Types::Story
+      def editStory: (business_connection_id: String, story_id: Integer, content: Types::input_story_content, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?areas: Array[Types::StoryArea]) -> Types::Story
+                | (?Hash[Symbol | String, untyped] params) -> Types::Story
+      def edit_user_star_subscription: (user_id: Integer, telegram_payment_charge_id: String, is_canceled: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def editUserStarSubscription: (user_id: Integer, telegram_payment_charge_id: String, is_canceled: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def export_chat_invite_link: (chat_id: Integer | String) -> String
+                | (?Hash[Symbol | String, untyped] params) -> String
+      def exportChatInviteLink: (chat_id: Integer | String) -> String
+                | (?Hash[Symbol | String, untyped] params) -> String
+      def forward_message: (chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, from_chat_id: Integer | String, ?video_start_timestamp: Integer, ?disable_notification: bool, ?protect_content: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, message_id: Integer) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def forwardMessage: (chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, from_chat_id: Integer | String, ?video_start_timestamp: Integer, ?disable_notification: bool, ?protect_content: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, message_id: Integer) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def forward_messages: (chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, from_chat_id: Integer | String, message_ids: Array[Integer], ?disable_notification: bool, ?protect_content: bool) -> Array[Types::MessageId]
+                | (?Hash[Symbol | String, untyped] params) -> Array[Types::MessageId]
+      def forwardMessages: (chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, from_chat_id: Integer | String, message_ids: Array[Integer], ?disable_notification: bool, ?protect_content: bool) -> Array[Types::MessageId]
+                | (?Hash[Symbol | String, untyped] params) -> Array[Types::MessageId]
+      def get_available_gifts: () -> Types::Gifts
+                | (?Hash[Symbol | String, untyped] params) -> Types::Gifts
+      def getAvailableGifts: () -> Types::Gifts
+                | (?Hash[Symbol | String, untyped] params) -> Types::Gifts
+      def get_business_account_gifts: (business_connection_id: String, ?exclude_unsaved: bool, ?exclude_saved: bool, ?exclude_unlimited: bool, ?exclude_limited_upgradable: bool, ?exclude_limited_non_upgradable: bool, ?exclude_unique: bool, ?exclude_from_blockchain: bool, ?sort_by_price: bool, ?offset: String, ?limit: Integer) -> Types::OwnedGifts
+                | (?Hash[Symbol | String, untyped] params) -> Types::OwnedGifts
+      def getBusinessAccountGifts: (business_connection_id: String, ?exclude_unsaved: bool, ?exclude_saved: bool, ?exclude_unlimited: bool, ?exclude_limited_upgradable: bool, ?exclude_limited_non_upgradable: bool, ?exclude_unique: bool, ?exclude_from_blockchain: bool, ?sort_by_price: bool, ?offset: String, ?limit: Integer) -> Types::OwnedGifts
+                | (?Hash[Symbol | String, untyped] params) -> Types::OwnedGifts
+      def get_business_account_star_balance: (business_connection_id: String) -> Types::StarAmount
+                | (?Hash[Symbol | String, untyped] params) -> Types::StarAmount
+      def getBusinessAccountStarBalance: (business_connection_id: String) -> Types::StarAmount
+                | (?Hash[Symbol | String, untyped] params) -> Types::StarAmount
+      def get_business_connection: (business_connection_id: String) -> Types::BusinessConnection
+                | (?Hash[Symbol | String, untyped] params) -> Types::BusinessConnection
+      def getBusinessConnection: (business_connection_id: String) -> Types::BusinessConnection
+                | (?Hash[Symbol | String, untyped] params) -> Types::BusinessConnection
+      def get_chat: (chat_id: Integer | String) -> Types::ChatFullInfo
+                | (?Hash[Symbol | String, untyped] params) -> Types::ChatFullInfo
+      def getChat: (chat_id: Integer | String) -> Types::ChatFullInfo
+                | (?Hash[Symbol | String, untyped] params) -> Types::ChatFullInfo
+      def get_chat_administrators: (chat_id: Integer | String, ?return_bots: bool) -> Array[Types::chat_member]
+                | (?Hash[Symbol | String, untyped] params) -> Array[Types::chat_member]
+      def getChatAdministrators: (chat_id: Integer | String, ?return_bots: bool) -> Array[Types::chat_member]
+                | (?Hash[Symbol | String, untyped] params) -> Array[Types::chat_member]
+      def get_chat_gifts: (chat_id: Integer | String, ?exclude_unsaved: bool, ?exclude_saved: bool, ?exclude_unlimited: bool, ?exclude_limited_upgradable: bool, ?exclude_limited_non_upgradable: bool, ?exclude_from_blockchain: bool, ?exclude_unique: bool, ?sort_by_price: bool, ?offset: String, ?limit: Integer) -> Types::OwnedGifts
+                | (?Hash[Symbol | String, untyped] params) -> Types::OwnedGifts
+      def getChatGifts: (chat_id: Integer | String, ?exclude_unsaved: bool, ?exclude_saved: bool, ?exclude_unlimited: bool, ?exclude_limited_upgradable: bool, ?exclude_limited_non_upgradable: bool, ?exclude_from_blockchain: bool, ?exclude_unique: bool, ?sort_by_price: bool, ?offset: String, ?limit: Integer) -> Types::OwnedGifts
+                | (?Hash[Symbol | String, untyped] params) -> Types::OwnedGifts
+      def get_chat_member: (chat_id: Integer | String, user_id: Integer) -> Types::chat_member
+                | (?Hash[Symbol | String, untyped] params) -> Types::chat_member
+      def getChatMember: (chat_id: Integer | String, user_id: Integer) -> Types::chat_member
+                | (?Hash[Symbol | String, untyped] params) -> Types::chat_member
+      def get_chat_member_count: (chat_id: Integer | String) -> Integer
+                | (?Hash[Symbol | String, untyped] params) -> Integer
+      def getChatMemberCount: (chat_id: Integer | String) -> Integer
+                | (?Hash[Symbol | String, untyped] params) -> Integer
+      def get_chat_menu_button: (?chat_id: Integer) -> Types::menu_button
+                | (?Hash[Symbol | String, untyped] params) -> Types::menu_button
+      def getChatMenuButton: (?chat_id: Integer) -> Types::menu_button
+                | (?Hash[Symbol | String, untyped] params) -> Types::menu_button
+      def get_custom_emoji_stickers: (custom_emoji_ids: Array[String]) -> Array[Types::Sticker]
+                | (?Hash[Symbol | String, untyped] params) -> Array[Types::Sticker]
+      def getCustomEmojiStickers: (custom_emoji_ids: Array[String]) -> Array[Types::Sticker]
+                | (?Hash[Symbol | String, untyped] params) -> Array[Types::Sticker]
+      def get_file: (file_id: String) -> Types::File
+                | (?Hash[Symbol | String, untyped] params) -> Types::File
+      def getFile: (file_id: String) -> Types::File
+                | (?Hash[Symbol | String, untyped] params) -> Types::File
+      def get_forum_topic_icon_stickers: () -> Array[Types::Sticker]
+                | (?Hash[Symbol | String, untyped] params) -> Array[Types::Sticker]
+      def getForumTopicIconStickers: () -> Array[Types::Sticker]
+                | (?Hash[Symbol | String, untyped] params) -> Array[Types::Sticker]
+      def get_game_high_scores: (user_id: Integer, ?chat_id: Integer, ?message_id: Integer, ?inline_message_id: String) -> Array[Types::GameHighScore]
+                | (?Hash[Symbol | String, untyped] params) -> Array[Types::GameHighScore]
+      def getGameHighScores: (user_id: Integer, ?chat_id: Integer, ?message_id: Integer, ?inline_message_id: String) -> Array[Types::GameHighScore]
+                | (?Hash[Symbol | String, untyped] params) -> Array[Types::GameHighScore]
+      def get_managed_bot_token: (user_id: Integer) -> String
+                | (?Hash[Symbol | String, untyped] params) -> String
+      def getManagedBotToken: (user_id: Integer) -> String
+                | (?Hash[Symbol | String, untyped] params) -> String
+      def get_me: () -> Types::User
+                | (?Hash[Symbol | String, untyped] params) -> Types::User
+      def getMe: () -> Types::User
+                | (?Hash[Symbol | String, untyped] params) -> Types::User
+      def get_my_commands: (?scope: Types::bot_command_scope, ?language_code: String) -> Array[Types::BotCommand]
+                | (?Hash[Symbol | String, untyped] params) -> Array[Types::BotCommand]
+      def getMyCommands: (?scope: Types::bot_command_scope, ?language_code: String) -> Array[Types::BotCommand]
+                | (?Hash[Symbol | String, untyped] params) -> Array[Types::BotCommand]
+      def get_my_default_administrator_rights: (?for_channels: bool) -> Types::ChatAdministratorRights
+                | (?Hash[Symbol | String, untyped] params) -> Types::ChatAdministratorRights
+      def getMyDefaultAdministratorRights: (?for_channels: bool) -> Types::ChatAdministratorRights
+                | (?Hash[Symbol | String, untyped] params) -> Types::ChatAdministratorRights
+      def get_my_description: (?language_code: String) -> Types::BotDescription
+                | (?Hash[Symbol | String, untyped] params) -> Types::BotDescription
+      def getMyDescription: (?language_code: String) -> Types::BotDescription
+                | (?Hash[Symbol | String, untyped] params) -> Types::BotDescription
+      def get_my_name: (?language_code: String) -> Types::BotName
+                | (?Hash[Symbol | String, untyped] params) -> Types::BotName
+      def getMyName: (?language_code: String) -> Types::BotName
+                | (?Hash[Symbol | String, untyped] params) -> Types::BotName
+      def get_my_short_description: (?language_code: String) -> Types::BotShortDescription
+                | (?Hash[Symbol | String, untyped] params) -> Types::BotShortDescription
+      def getMyShortDescription: (?language_code: String) -> Types::BotShortDescription
+                | (?Hash[Symbol | String, untyped] params) -> Types::BotShortDescription
+      def get_my_star_balance: () -> Types::StarAmount
+                | (?Hash[Symbol | String, untyped] params) -> Types::StarAmount
+      def getMyStarBalance: () -> Types::StarAmount
+                | (?Hash[Symbol | String, untyped] params) -> Types::StarAmount
+      def get_star_transactions: (?offset: Integer, ?limit: Integer) -> Types::StarTransactions
+                | (?Hash[Symbol | String, untyped] params) -> Types::StarTransactions
+      def getStarTransactions: (?offset: Integer, ?limit: Integer) -> Types::StarTransactions
+                | (?Hash[Symbol | String, untyped] params) -> Types::StarTransactions
+      def get_sticker_set: (name: String) -> Types::StickerSet
+                | (?Hash[Symbol | String, untyped] params) -> Types::StickerSet
+      def getStickerSet: (name: String) -> Types::StickerSet
+                | (?Hash[Symbol | String, untyped] params) -> Types::StickerSet
+      def get_updates: (?offset: Integer, ?limit: Integer, ?timeout: Integer, ?allowed_updates: Array[String]) -> Array[Types::Update]
+                | (?Hash[Symbol | String, untyped] params) -> Array[Types::Update]
+      def getUpdates: (?offset: Integer, ?limit: Integer, ?timeout: Integer, ?allowed_updates: Array[String]) -> Array[Types::Update]
+                | (?Hash[Symbol | String, untyped] params) -> Array[Types::Update]
+      def get_user_chat_boosts: (chat_id: Integer | String, user_id: Integer) -> Types::UserChatBoosts
+                | (?Hash[Symbol | String, untyped] params) -> Types::UserChatBoosts
+      def getUserChatBoosts: (chat_id: Integer | String, user_id: Integer) -> Types::UserChatBoosts
+                | (?Hash[Symbol | String, untyped] params) -> Types::UserChatBoosts
+      def get_user_gifts: (user_id: Integer, ?exclude_unlimited: bool, ?exclude_limited_upgradable: bool, ?exclude_limited_non_upgradable: bool, ?exclude_from_blockchain: bool, ?exclude_unique: bool, ?sort_by_price: bool, ?offset: String, ?limit: Integer) -> Types::OwnedGifts
+                | (?Hash[Symbol | String, untyped] params) -> Types::OwnedGifts
+      def getUserGifts: (user_id: Integer, ?exclude_unlimited: bool, ?exclude_limited_upgradable: bool, ?exclude_limited_non_upgradable: bool, ?exclude_from_blockchain: bool, ?exclude_unique: bool, ?sort_by_price: bool, ?offset: String, ?limit: Integer) -> Types::OwnedGifts
+                | (?Hash[Symbol | String, untyped] params) -> Types::OwnedGifts
+      def get_user_profile_audios: (user_id: Integer, ?offset: Integer, ?limit: Integer) -> Types::UserProfileAudios
+                | (?Hash[Symbol | String, untyped] params) -> Types::UserProfileAudios
+      def getUserProfileAudios: (user_id: Integer, ?offset: Integer, ?limit: Integer) -> Types::UserProfileAudios
+                | (?Hash[Symbol | String, untyped] params) -> Types::UserProfileAudios
+      def get_user_profile_photos: (user_id: Integer, ?offset: Integer, ?limit: Integer) -> Types::UserProfilePhotos
+                | (?Hash[Symbol | String, untyped] params) -> Types::UserProfilePhotos
+      def getUserProfilePhotos: (user_id: Integer, ?offset: Integer, ?limit: Integer) -> Types::UserProfilePhotos
+                | (?Hash[Symbol | String, untyped] params) -> Types::UserProfilePhotos
+      def get_webhook_info: () -> Types::WebhookInfo
+                | (?Hash[Symbol | String, untyped] params) -> Types::WebhookInfo
+      def getWebhookInfo: () -> Types::WebhookInfo
+                | (?Hash[Symbol | String, untyped] params) -> Types::WebhookInfo
+      def gift_premium_subscription: (user_id: Integer, month_count: Integer, star_count: Integer, ?text: String, ?text_parse_mode: String, ?text_entities: Array[Types::MessageEntity]) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def giftPremiumSubscription: (user_id: Integer, month_count: Integer, star_count: Integer, ?text: String, ?text_parse_mode: String, ?text_entities: Array[Types::MessageEntity]) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def hide_general_forum_topic: (chat_id: Integer | String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def hideGeneralForumTopic: (chat_id: Integer | String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def leave_chat: (chat_id: Integer | String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def leaveChat: (chat_id: Integer | String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def log_out: () -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def logOut: () -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def pin_chat_message: (?business_connection_id: String, chat_id: Integer | String, message_id: Integer, ?disable_notification: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def pinChatMessage: (?business_connection_id: String, chat_id: Integer | String, message_id: Integer, ?disable_notification: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def post_story: (business_connection_id: String, content: Types::input_story_content, active_period: Integer, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?areas: Array[Types::StoryArea], ?post_to_chat_page: bool, ?protect_content: bool) -> Types::Story
+                | (?Hash[Symbol | String, untyped] params) -> Types::Story
+      def postStory: (business_connection_id: String, content: Types::input_story_content, active_period: Integer, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?areas: Array[Types::StoryArea], ?post_to_chat_page: bool, ?protect_content: bool) -> Types::Story
+                | (?Hash[Symbol | String, untyped] params) -> Types::Story
+      def promote_chat_member: (chat_id: Integer | String, user_id: Integer, ?is_anonymous: bool, ?can_manage_chat: bool, ?can_delete_messages: bool, ?can_manage_video_chats: bool, ?can_restrict_members: bool, ?can_promote_members: bool, ?can_change_info: bool, ?can_invite_users: bool, ?can_post_stories: bool, ?can_edit_stories: bool, ?can_delete_stories: bool, ?can_post_messages: bool, ?can_edit_messages: bool, ?can_pin_messages: bool, ?can_manage_topics: bool, ?can_manage_direct_messages: bool, ?can_manage_tags: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def promoteChatMember: (chat_id: Integer | String, user_id: Integer, ?is_anonymous: bool, ?can_manage_chat: bool, ?can_delete_messages: bool, ?can_manage_video_chats: bool, ?can_restrict_members: bool, ?can_promote_members: bool, ?can_change_info: bool, ?can_invite_users: bool, ?can_post_stories: bool, ?can_edit_stories: bool, ?can_delete_stories: bool, ?can_post_messages: bool, ?can_edit_messages: bool, ?can_pin_messages: bool, ?can_manage_topics: bool, ?can_manage_direct_messages: bool, ?can_manage_tags: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def read_business_message: (business_connection_id: String, chat_id: Integer, message_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def readBusinessMessage: (business_connection_id: String, chat_id: Integer, message_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def refund_star_payment: (user_id: Integer, telegram_payment_charge_id: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def refundStarPayment: (user_id: Integer, telegram_payment_charge_id: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def remove_business_account_profile_photo: (business_connection_id: String, ?is_public: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def removeBusinessAccountProfilePhoto: (business_connection_id: String, ?is_public: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def remove_chat_verification: (chat_id: Integer | String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def removeChatVerification: (chat_id: Integer | String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def remove_my_profile_photo: () -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def removeMyProfilePhoto: () -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def remove_user_verification: (user_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def removeUserVerification: (user_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def reopen_forum_topic: (chat_id: Integer | String, message_thread_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def reopenForumTopic: (chat_id: Integer | String, message_thread_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def reopen_general_forum_topic: (chat_id: Integer | String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def reopenGeneralForumTopic: (chat_id: Integer | String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def replace_managed_bot_token: (user_id: Integer) -> String
+                | (?Hash[Symbol | String, untyped] params) -> String
+      def replaceManagedBotToken: (user_id: Integer) -> String
+                | (?Hash[Symbol | String, untyped] params) -> String
+      def replace_sticker_in_set: (user_id: Integer, name: String, old_sticker: String, sticker: Types::InputSticker) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def replaceStickerInSet: (user_id: Integer, name: String, old_sticker: String, sticker: Types::InputSticker) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def repost_story: (business_connection_id: String, from_chat_id: Integer, from_story_id: Integer, active_period: Integer, ?post_to_chat_page: bool, ?protect_content: bool) -> Types::Story
+                | (?Hash[Symbol | String, untyped] params) -> Types::Story
+      def repostStory: (business_connection_id: String, from_chat_id: Integer, from_story_id: Integer, active_period: Integer, ?post_to_chat_page: bool, ?protect_content: bool) -> Types::Story
+                | (?Hash[Symbol | String, untyped] params) -> Types::Story
+      def restrict_chat_member: (chat_id: Integer | String, user_id: Integer, permissions: Types::ChatPermissions, ?use_independent_chat_permissions: bool, ?until_date: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def restrictChatMember: (chat_id: Integer | String, user_id: Integer, permissions: Types::ChatPermissions, ?use_independent_chat_permissions: bool, ?until_date: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def revoke_chat_invite_link: (chat_id: Integer | String, invite_link: String) -> Types::ChatInviteLink
+                | (?Hash[Symbol | String, untyped] params) -> Types::ChatInviteLink
+      def revokeChatInviteLink: (chat_id: Integer | String, invite_link: String) -> Types::ChatInviteLink
+                | (?Hash[Symbol | String, untyped] params) -> Types::ChatInviteLink
+      def save_prepared_inline_message: (user_id: Integer, result: Types::inline_query_result, ?allow_user_chats: bool, ?allow_bot_chats: bool, ?allow_group_chats: bool, ?allow_channel_chats: bool) -> Types::PreparedInlineMessage
+                | (?Hash[Symbol | String, untyped] params) -> Types::PreparedInlineMessage
+      def savePreparedInlineMessage: (user_id: Integer, result: Types::inline_query_result, ?allow_user_chats: bool, ?allow_bot_chats: bool, ?allow_group_chats: bool, ?allow_channel_chats: bool) -> Types::PreparedInlineMessage
+                | (?Hash[Symbol | String, untyped] params) -> Types::PreparedInlineMessage
+      def save_prepared_keyboard_button: (user_id: Integer, button: Types::KeyboardButton) -> Types::PreparedKeyboardButton
+                | (?Hash[Symbol | String, untyped] params) -> Types::PreparedKeyboardButton
+      def savePreparedKeyboardButton: (user_id: Integer, button: Types::KeyboardButton) -> Types::PreparedKeyboardButton
+                | (?Hash[Symbol | String, untyped] params) -> Types::PreparedKeyboardButton
+      def send_animation: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, animation: Types::InputFile | String, ?duration: Integer, ?width: Integer, ?height: Integer, ?thumbnail: Types::InputFile | String, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?show_caption_above_media: bool, ?has_spoiler: bool, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def sendAnimation: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, animation: Types::InputFile | String, ?duration: Integer, ?width: Integer, ?height: Integer, ?thumbnail: Types::InputFile | String, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?show_caption_above_media: bool, ?has_spoiler: bool, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def send_audio: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, audio: Types::InputFile | String, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?duration: Integer, ?performer: String, ?title: String, ?thumbnail: Types::InputFile | String, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def sendAudio: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, audio: Types::InputFile | String, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?duration: Integer, ?performer: String, ?title: String, ?thumbnail: Types::InputFile | String, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def send_chat_action: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, action: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def sendChatAction: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, action: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def send_checklist: (business_connection_id: String, chat_id: Integer | String, checklist: Types::InputChecklist, ?disable_notification: bool, ?protect_content: bool, ?message_effect_id: String, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def sendChecklist: (business_connection_id: String, chat_id: Integer | String, checklist: Types::InputChecklist, ?disable_notification: bool, ?protect_content: bool, ?message_effect_id: String, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def send_contact: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, phone_number: String, first_name: String, ?last_name: String, ?vcard: String, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def sendContact: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, phone_number: String, first_name: String, ?last_name: String, ?vcard: String, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def send_dice: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?emoji: String, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def sendDice: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?emoji: String, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def send_document: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, document: Types::InputFile | String, ?thumbnail: Types::InputFile | String, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?disable_content_type_detection: bool, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def sendDocument: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, document: Types::InputFile | String, ?thumbnail: Types::InputFile | String, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?disable_content_type_detection: bool, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def send_game: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, game_short_name: String, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def sendGame: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, game_short_name: String, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def send_gift: (?user_id: Integer, ?chat_id: Integer | String, gift_id: String, ?pay_for_upgrade: bool, ?text: String, ?text_parse_mode: String, ?text_entities: Array[Types::MessageEntity]) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def sendGift: (?user_id: Integer, ?chat_id: Integer | String, gift_id: String, ?pay_for_upgrade: bool, ?text: String, ?text_parse_mode: String, ?text_entities: Array[Types::MessageEntity]) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def send_invoice: (chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, title: String, description: String, payload: String, ?provider_token: String, currency: String, prices: Array[Types::LabeledPrice], ?max_tip_amount: Integer, ?suggested_tip_amounts: Array[Integer], ?start_parameter: String, ?provider_data: String, ?photo_url: String, ?photo_size: Integer, ?photo_width: Integer, ?photo_height: Integer, ?need_name: bool, ?need_phone_number: bool, ?need_email: bool, ?need_shipping_address: bool, ?send_phone_number_to_provider: bool, ?send_email_to_provider: bool, ?is_flexible: bool, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def sendInvoice: (chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, title: String, description: String, payload: String, ?provider_token: String, currency: String, prices: Array[Types::LabeledPrice], ?max_tip_amount: Integer, ?suggested_tip_amounts: Array[Integer], ?start_parameter: String, ?provider_data: String, ?photo_url: String, ?photo_size: Integer, ?photo_width: Integer, ?photo_height: Integer, ?need_name: bool, ?need_phone_number: bool, ?need_email: bool, ?need_shipping_address: bool, ?send_phone_number_to_provider: bool, ?send_email_to_provider: bool, ?is_flexible: bool, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def send_location: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, latitude: Float, longitude: Float, ?horizontal_accuracy: Float, ?live_period: Integer, ?heading: Integer, ?proximity_alert_radius: Integer, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def sendLocation: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, latitude: Float, longitude: Float, ?horizontal_accuracy: Float, ?live_period: Integer, ?heading: Integer, ?proximity_alert_radius: Integer, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def send_media_group: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, media: Array[(Types::InputMediaAudio | Types::InputMediaDocument | untyped | Types::InputMediaPhoto | Types::InputMediaVideo)], ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?reply_parameters: Types::ReplyParameters) -> Array[Types::Message]
+                | (?Hash[Symbol | String, untyped] params) -> Array[Types::Message]
+      def sendMediaGroup: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, media: Array[(Types::InputMediaAudio | Types::InputMediaDocument | untyped | Types::InputMediaPhoto | Types::InputMediaVideo)], ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?reply_parameters: Types::ReplyParameters) -> Array[Types::Message]
+                | (?Hash[Symbol | String, untyped] params) -> Array[Types::Message]
+      def send_message: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, text: String, ?parse_mode: String, ?entities: Array[Types::MessageEntity], ?link_preview_options: Types::LinkPreviewOptions, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def sendMessage: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, text: String, ?parse_mode: String, ?entities: Array[Types::MessageEntity], ?link_preview_options: Types::LinkPreviewOptions, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def send_message_draft: (chat_id: Integer, ?message_thread_id: Integer, draft_id: Integer, ?text: String, ?parse_mode: String, ?entities: Array[Types::MessageEntity]) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def sendMessageDraft: (chat_id: Integer, ?message_thread_id: Integer, draft_id: Integer, ?text: String, ?parse_mode: String, ?entities: Array[Types::MessageEntity]) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def send_paid_media: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, star_count: Integer, media: Array[Types::input_paid_media], ?payload: String, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?show_caption_above_media: bool, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def sendPaidMedia: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, star_count: Integer, media: Array[Types::input_paid_media], ?payload: String, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?show_caption_above_media: bool, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def send_photo: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, photo: Types::InputFile | String, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?show_caption_above_media: bool, ?has_spoiler: bool, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def sendPhoto: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, photo: Types::InputFile | String, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?show_caption_above_media: bool, ?has_spoiler: bool, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def send_poll: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, question: String, ?question_parse_mode: String, ?question_entities: Array[Types::MessageEntity], options: Array[Types::InputPollOption], ?is_anonymous: bool, ?type: String, ?allows_multiple_answers: bool, ?allows_revoting: bool, ?shuffle_options: bool, ?allow_adding_options: bool, ?hide_results_until_closes: bool, ?members_only: bool, ?country_codes: Array[String], ?correct_option_ids: Array[Integer], ?explanation: String, ?explanation_parse_mode: String, ?explanation_entities: Array[Types::MessageEntity], ?explanation_media: untyped, ?open_period: Integer, ?close_date: Integer, ?is_closed: bool, ?description: String, ?description_parse_mode: String, ?description_entities: Array[Types::MessageEntity], ?media: untyped, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def sendPoll: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, question: String, ?question_parse_mode: String, ?question_entities: Array[Types::MessageEntity], options: Array[Types::InputPollOption], ?is_anonymous: bool, ?type: String, ?allows_multiple_answers: bool, ?allows_revoting: bool, ?shuffle_options: bool, ?allow_adding_options: bool, ?hide_results_until_closes: bool, ?members_only: bool, ?country_codes: Array[String], ?correct_option_ids: Array[Integer], ?explanation: String, ?explanation_parse_mode: String, ?explanation_entities: Array[Types::MessageEntity], ?explanation_media: untyped, ?open_period: Integer, ?close_date: Integer, ?is_closed: bool, ?description: String, ?description_parse_mode: String, ?description_entities: Array[Types::MessageEntity], ?media: untyped, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def send_sticker: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, sticker: Types::InputFile | String, ?emoji: String, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def sendSticker: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, sticker: Types::InputFile | String, ?emoji: String, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def send_venue: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, latitude: Float, longitude: Float, title: String, address: String, ?foursquare_id: String, ?foursquare_type: String, ?google_place_id: String, ?google_place_type: String, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def sendVenue: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, latitude: Float, longitude: Float, title: String, address: String, ?foursquare_id: String, ?foursquare_type: String, ?google_place_id: String, ?google_place_type: String, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def send_video: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, video: Types::InputFile | String, ?duration: Integer, ?width: Integer, ?height: Integer, ?thumbnail: Types::InputFile | String, ?cover: Types::InputFile | String, ?start_timestamp: Integer, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?show_caption_above_media: bool, ?has_spoiler: bool, ?supports_streaming: bool, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def sendVideo: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, video: Types::InputFile | String, ?duration: Integer, ?width: Integer, ?height: Integer, ?thumbnail: Types::InputFile | String, ?cover: Types::InputFile | String, ?start_timestamp: Integer, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?show_caption_above_media: bool, ?has_spoiler: bool, ?supports_streaming: bool, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def send_video_note: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, video_note: Types::InputFile | String, ?duration: Integer, ?length: Integer, ?thumbnail: Types::InputFile | String, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def sendVideoNote: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, video_note: Types::InputFile | String, ?duration: Integer, ?length: Integer, ?thumbnail: Types::InputFile | String, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def send_voice: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, voice: Types::InputFile | String, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?duration: Integer, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def sendVoice: (?business_connection_id: String, chat_id: Integer | String, ?message_thread_id: Integer, ?direct_messages_topic_id: Integer, ?receiver_user_id: Integer, ?callback_query_id: String, voice: Types::InputFile | String, ?caption: String, ?parse_mode: String, ?caption_entities: Array[Types::MessageEntity], ?duration: Integer, ?disable_notification: bool, ?protect_content: bool, ?allow_paid_broadcast: bool, ?message_effect_id: String, ?suggested_post_parameters: Types::SuggestedPostParameters, ?reply_parameters: Types::ReplyParameters, ?reply_markup: Types::InlineKeyboardMarkup | Types::ReplyKeyboardMarkup | Types::ReplyKeyboardRemove | Types::ForceReply) -> Types::Message
+                | (?Hash[Symbol | String, untyped] params) -> Types::Message
+      def set_business_account_bio: (business_connection_id: String, ?bio: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setBusinessAccountBio: (business_connection_id: String, ?bio: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_business_account_gift_settings: (business_connection_id: String, show_gift_button: bool, accepted_gift_types: Types::AcceptedGiftTypes) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setBusinessAccountGiftSettings: (business_connection_id: String, show_gift_button: bool, accepted_gift_types: Types::AcceptedGiftTypes) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_business_account_name: (business_connection_id: String, first_name: String, ?last_name: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setBusinessAccountName: (business_connection_id: String, first_name: String, ?last_name: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_business_account_profile_photo: (business_connection_id: String, photo: Types::input_profile_photo, ?is_public: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setBusinessAccountProfilePhoto: (business_connection_id: String, photo: Types::input_profile_photo, ?is_public: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_business_account_username: (business_connection_id: String, ?username: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setBusinessAccountUsername: (business_connection_id: String, ?username: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_chat_administrator_custom_title: (chat_id: Integer | String, user_id: Integer, custom_title: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setChatAdministratorCustomTitle: (chat_id: Integer | String, user_id: Integer, custom_title: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_chat_description: (chat_id: Integer | String, ?description: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setChatDescription: (chat_id: Integer | String, ?description: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_chat_member_tag: (chat_id: Integer | String, user_id: Integer, ?tag: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setChatMemberTag: (chat_id: Integer | String, user_id: Integer, ?tag: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_chat_menu_button: (?chat_id: Integer, ?menu_button: Types::menu_button) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setChatMenuButton: (?chat_id: Integer, ?menu_button: Types::menu_button) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_chat_permissions: (chat_id: Integer | String, permissions: Types::ChatPermissions, ?use_independent_chat_permissions: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setChatPermissions: (chat_id: Integer | String, permissions: Types::ChatPermissions, ?use_independent_chat_permissions: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_chat_photo: (chat_id: Integer | String, photo: Types::InputFile) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setChatPhoto: (chat_id: Integer | String, photo: Types::InputFile) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_chat_sticker_set: (chat_id: Integer | String, sticker_set_name: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setChatStickerSet: (chat_id: Integer | String, sticker_set_name: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_chat_title: (chat_id: Integer | String, title: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setChatTitle: (chat_id: Integer | String, title: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_custom_emoji_sticker_set_thumbnail: (name: String, ?custom_emoji_id: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setCustomEmojiStickerSetThumbnail: (name: String, ?custom_emoji_id: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_game_score: (user_id: Integer, score: Integer, ?force: bool, ?disable_edit_message: bool, ?chat_id: Integer, ?message_id: Integer, ?inline_message_id: String) -> (Types::Message | bool)
+                | (?Hash[Symbol | String, untyped] params) -> (Types::Message | bool)
+      def setGameScore: (user_id: Integer, score: Integer, ?force: bool, ?disable_edit_message: bool, ?chat_id: Integer, ?message_id: Integer, ?inline_message_id: String) -> (Types::Message | bool)
+                | (?Hash[Symbol | String, untyped] params) -> (Types::Message | bool)
+      def set_message_reaction: (chat_id: Integer | String, message_id: Integer, ?reaction: Array[Types::reaction_type], ?is_big: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setMessageReaction: (chat_id: Integer | String, message_id: Integer, ?reaction: Array[Types::reaction_type], ?is_big: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_my_commands: (commands: Array[Types::BotCommand], ?scope: Types::bot_command_scope, ?language_code: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setMyCommands: (commands: Array[Types::BotCommand], ?scope: Types::bot_command_scope, ?language_code: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_my_default_administrator_rights: (?rights: Types::ChatAdministratorRights, ?for_channels: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setMyDefaultAdministratorRights: (?rights: Types::ChatAdministratorRights, ?for_channels: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_my_description: (?description: String, ?language_code: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setMyDescription: (?description: String, ?language_code: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_my_name: (?name: String, ?language_code: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setMyName: (?name: String, ?language_code: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_my_profile_photo: (photo: Types::input_profile_photo) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setMyProfilePhoto: (photo: Types::input_profile_photo) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_my_short_description: (?short_description: String, ?language_code: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setMyShortDescription: (?short_description: String, ?language_code: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_passport_data_errors: (user_id: Integer, errors: Array[Types::passport_element_error]) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setPassportDataErrors: (user_id: Integer, errors: Array[Types::passport_element_error]) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_sticker_emoji_list: (sticker: String, emoji_list: Array[String]) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setStickerEmojiList: (sticker: String, emoji_list: Array[String]) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_sticker_keywords: (sticker: String, ?keywords: Array[String]) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setStickerKeywords: (sticker: String, ?keywords: Array[String]) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_sticker_mask_position: (sticker: String, ?mask_position: Types::MaskPosition) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setStickerMaskPosition: (sticker: String, ?mask_position: Types::MaskPosition) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_sticker_position_in_set: (sticker: String, position: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setStickerPositionInSet: (sticker: String, position: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_sticker_set_thumbnail: (name: String, user_id: Integer, ?thumbnail: Types::InputFile | String, format: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setStickerSetThumbnail: (name: String, user_id: Integer, ?thumbnail: Types::InputFile | String, format: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_sticker_set_title: (name: String, title: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setStickerSetTitle: (name: String, title: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_user_emoji_status: (user_id: Integer, ?emoji_status_custom_emoji_id: String, ?emoji_status_expiration_date: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setUserEmojiStatus: (user_id: Integer, ?emoji_status_custom_emoji_id: String, ?emoji_status_expiration_date: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def set_webhook: (url: String, ?certificate: Types::InputFile, ?ip_address: String, ?max_connections: Integer, ?allowed_updates: Array[String], ?drop_pending_updates: bool, ?secret_token: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def setWebhook: (url: String, ?certificate: Types::InputFile, ?ip_address: String, ?max_connections: Integer, ?allowed_updates: Array[String], ?drop_pending_updates: bool, ?secret_token: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def stop_message_live_location: (?business_connection_id: String, ?chat_id: Integer | String, ?message_id: Integer, ?inline_message_id: String, ?reply_markup: Types::InlineKeyboardMarkup) -> (Types::Message | bool)
+                | (?Hash[Symbol | String, untyped] params) -> (Types::Message | bool)
+      def stopMessageLiveLocation: (?business_connection_id: String, ?chat_id: Integer | String, ?message_id: Integer, ?inline_message_id: String, ?reply_markup: Types::InlineKeyboardMarkup) -> (Types::Message | bool)
+                | (?Hash[Symbol | String, untyped] params) -> (Types::Message | bool)
+      def stop_poll: (?business_connection_id: String, chat_id: Integer | String, message_id: Integer, ?reply_markup: Types::InlineKeyboardMarkup) -> Types::Poll
+                | (?Hash[Symbol | String, untyped] params) -> Types::Poll
+      def stopPoll: (?business_connection_id: String, chat_id: Integer | String, message_id: Integer, ?reply_markup: Types::InlineKeyboardMarkup) -> Types::Poll
+                | (?Hash[Symbol | String, untyped] params) -> Types::Poll
+      def transfer_business_account_stars: (business_connection_id: String, star_count: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def transferBusinessAccountStars: (business_connection_id: String, star_count: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def transfer_gift: (business_connection_id: String, owned_gift_id: String, new_owner_chat_id: Integer, ?star_count: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def transferGift: (business_connection_id: String, owned_gift_id: String, new_owner_chat_id: Integer, ?star_count: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def unban_chat_member: (chat_id: Integer | String, user_id: Integer, ?only_if_banned: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def unbanChatMember: (chat_id: Integer | String, user_id: Integer, ?only_if_banned: bool) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def unban_chat_sender_chat: (chat_id: Integer | String, sender_chat_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def unbanChatSenderChat: (chat_id: Integer | String, sender_chat_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def unhide_general_forum_topic: (chat_id: Integer | String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def unhideGeneralForumTopic: (chat_id: Integer | String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def unpin_all_chat_messages: (chat_id: Integer | String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def unpinAllChatMessages: (chat_id: Integer | String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def unpin_all_forum_topic_messages: (chat_id: Integer | String, message_thread_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def unpinAllForumTopicMessages: (chat_id: Integer | String, message_thread_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def unpin_all_general_forum_topic_messages: (chat_id: Integer | String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def unpinAllGeneralForumTopicMessages: (chat_id: Integer | String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def unpin_chat_message: (?business_connection_id: String, chat_id: Integer | String, ?message_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def unpinChatMessage: (?business_connection_id: String, chat_id: Integer | String, ?message_id: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def upgrade_gift: (business_connection_id: String, owned_gift_id: String, ?keep_original_details: bool, ?star_count: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def upgradeGift: (business_connection_id: String, owned_gift_id: String, ?keep_original_details: bool, ?star_count: Integer) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def upload_sticker_file: (user_id: Integer, sticker: Types::InputFile, sticker_format: String) -> Types::File
+                | (?Hash[Symbol | String, untyped] params) -> Types::File
+      def uploadStickerFile: (user_id: Integer, sticker: Types::InputFile, sticker_format: String) -> Types::File
+                | (?Hash[Symbol | String, untyped] params) -> Types::File
+      def verify_chat: (chat_id: Integer | String, ?custom_description: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def verifyChat: (chat_id: Integer | String, ?custom_description: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def verify_user: (user_id: Integer, ?custom_description: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      def verifyUser: (user_id: Integer, ?custom_description: String) -> bool
+                | (?Hash[Symbol | String, untyped] params) -> bool
+      end
+    end
+  end

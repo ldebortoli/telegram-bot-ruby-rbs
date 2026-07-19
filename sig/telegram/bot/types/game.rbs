@@ -1,0 +1,17 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class Game < Base
+        def self.new: (title: String, description: String, photo: Array[PhotoSize], ?text: String, ?text_entities: Array[MessageEntity], ?animation: Animation) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader title: String
+        attr_reader description: String
+        attr_reader photo: Array[PhotoSize]
+        attr_reader text: String?
+        attr_reader text_entities: Array[MessageEntity]?
+        attr_reader animation: Animation?
+          end
+        end
+      end
+    end

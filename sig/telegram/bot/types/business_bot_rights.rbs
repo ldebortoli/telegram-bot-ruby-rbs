@@ -1,0 +1,25 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class BusinessBotRights < Base
+        def self.new: (?can_reply: true, ?can_read_messages: true, ?can_delete_sent_messages: true, ?can_delete_all_messages: true, ?can_edit_name: true, ?can_edit_bio: true, ?can_edit_profile_photo: true, ?can_edit_username: true, ?can_change_gift_settings: true, ?can_view_gifts_and_stars: true, ?can_convert_gifts_to_stars: true, ?can_transfer_and_upgrade_gifts: true, ?can_transfer_stars: true, ?can_manage_stories: true) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader can_reply: true?
+        attr_reader can_read_messages: true?
+        attr_reader can_delete_sent_messages: true?
+        attr_reader can_delete_all_messages: true?
+        attr_reader can_edit_name: true?
+        attr_reader can_edit_bio: true?
+        attr_reader can_edit_profile_photo: true?
+        attr_reader can_edit_username: true?
+        attr_reader can_change_gift_settings: true?
+        attr_reader can_view_gifts_and_stars: true?
+        attr_reader can_convert_gifts_to_stars: true?
+        attr_reader can_transfer_and_upgrade_gifts: true?
+        attr_reader can_transfer_stars: true?
+        attr_reader can_manage_stories: true?
+          end
+        end
+      end
+    end

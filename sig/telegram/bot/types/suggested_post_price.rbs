@@ -1,0 +1,13 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class SuggestedPostPrice < Base
+        def self.new: (currency: String, amount: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader currency: String
+        attr_reader amount: Integer
+          end
+        end
+      end
+    end

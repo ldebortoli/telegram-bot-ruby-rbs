@@ -1,0 +1,16 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class RefundedPayment < Base
+        def self.new: (?currency: String, total_amount: Integer, invoice_payload: String, telegram_payment_charge_id: String, ?provider_payment_charge_id: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader currency: String
+        attr_reader total_amount: Integer
+        attr_reader invoice_payload: String
+        attr_reader telegram_payment_charge_id: String
+        attr_reader provider_payment_charge_id: String?
+          end
+        end
+      end
+    end

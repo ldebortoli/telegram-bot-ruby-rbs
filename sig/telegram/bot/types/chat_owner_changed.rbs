@@ -1,0 +1,12 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ChatOwnerChanged < Base
+        def self.new: (new_owner: User) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader new_owner: User
+          end
+        end
+      end
+    end

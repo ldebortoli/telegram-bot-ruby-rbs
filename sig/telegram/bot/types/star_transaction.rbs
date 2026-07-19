@@ -1,0 +1,17 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class StarTransaction < Base
+        def self.new: (id: String, amount: Integer, ?nanostar_amount: Integer, date: Integer, ?source: transaction_partner, ?receiver: transaction_partner) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader id: String
+        attr_reader amount: Integer
+        attr_reader nanostar_amount: Integer?
+        attr_reader date: Integer
+        attr_reader source: transaction_partner?
+        attr_reader receiver: transaction_partner?
+          end
+        end
+      end
+    end

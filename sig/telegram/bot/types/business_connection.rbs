@@ -1,0 +1,17 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class BusinessConnection < Base
+        def self.new: (id: String, user: User, user_chat_id: Integer, date: Integer, ?rights: BusinessBotRights, is_enabled: bool) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader id: String
+        attr_reader user: User
+        attr_reader user_chat_id: Integer
+        attr_reader date: Integer
+        attr_reader rights: BusinessBotRights?
+        attr_reader is_enabled: bool
+          end
+        end
+      end
+    end

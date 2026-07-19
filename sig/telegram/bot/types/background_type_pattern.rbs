@@ -1,0 +1,17 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class BackgroundTypePattern < Base
+        def self.new: (?type: String, document: Document, fill: background_fill, intensity: Integer, ?is_inverted: true, ?is_moving: true) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader document: Document
+        attr_reader fill: background_fill
+        attr_reader intensity: Integer
+        attr_reader is_inverted: true?
+        attr_reader is_moving: true?
+          end
+        end
+      end
+    end

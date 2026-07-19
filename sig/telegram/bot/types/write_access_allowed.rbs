@@ -1,0 +1,14 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class WriteAccessAllowed < Base
+        def self.new: (?from_request: bool, ?web_app_name: String, ?from_attachment_menu: bool) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader from_request: bool?
+        attr_reader web_app_name: String?
+        attr_reader from_attachment_menu: bool?
+          end
+        end
+      end
+    end

@@ -1,0 +1,12 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class VideoChatEnded < Base
+        def self.new: (duration: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader duration: Integer
+          end
+        end
+      end
+    end

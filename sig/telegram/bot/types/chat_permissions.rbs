@@ -1,0 +1,26 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ChatPermissions < Base
+        def self.new: (?can_send_messages: bool, ?can_send_audios: bool, ?can_send_documents: bool, ?can_send_photos: bool, ?can_send_videos: bool, ?can_send_video_notes: bool, ?can_send_voice_notes: bool, ?can_send_polls: bool, ?can_send_other_messages: bool, ?can_add_web_page_previews: bool, ?can_edit_tag: bool, ?can_change_info: bool, ?can_invite_users: bool, ?can_pin_messages: bool, ?can_manage_topics: bool) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader can_send_messages: bool?
+        attr_reader can_send_audios: bool?
+        attr_reader can_send_documents: bool?
+        attr_reader can_send_photos: bool?
+        attr_reader can_send_videos: bool?
+        attr_reader can_send_video_notes: bool?
+        attr_reader can_send_voice_notes: bool?
+        attr_reader can_send_polls: bool?
+        attr_reader can_send_other_messages: bool?
+        attr_reader can_add_web_page_previews: bool?
+        attr_reader can_edit_tag: bool?
+        attr_reader can_change_info: bool?
+        attr_reader can_invite_users: bool?
+        attr_reader can_pin_messages: bool?
+        attr_reader can_manage_topics: bool?
+          end
+        end
+      end
+    end

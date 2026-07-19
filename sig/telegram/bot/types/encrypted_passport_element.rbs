@@ -1,0 +1,21 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class EncryptedPassportElement < Base
+        def self.new: (type: String, ?data: String, ?phone_number: String, ?email: String, ?files: Array[PassportFile], ?front_side: PassportFile, ?reverse_side: PassportFile, ?selfie: PassportFile, ?translation: Array[PassportFile], hash: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader data: String?
+        attr_reader phone_number: String?
+        attr_reader email: String?
+        attr_reader files: Array[PassportFile]?
+        attr_reader front_side: PassportFile?
+        attr_reader reverse_side: PassportFile?
+        attr_reader selfie: PassportFile?
+        attr_reader translation: Array[PassportFile]?
+        attr_reader hash: String
+          end
+        end
+      end
+    end

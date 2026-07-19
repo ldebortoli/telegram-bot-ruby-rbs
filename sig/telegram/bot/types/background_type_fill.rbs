@@ -1,0 +1,14 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class BackgroundTypeFill < Base
+        def self.new: (?type: String, fill: background_fill, dark_theme_dimming: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader fill: background_fill
+        attr_reader dark_theme_dimming: Integer
+          end
+        end
+      end
+    end

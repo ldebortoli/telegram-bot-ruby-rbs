@@ -1,0 +1,17 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class Document < Base
+        def self.new: (file_id: String, file_unique_id: String, ?thumbnail: PhotoSize, ?file_name: String, ?mime_type: String, ?file_size: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader file_id: String
+        attr_reader file_unique_id: String
+        attr_reader thumbnail: PhotoSize?
+        attr_reader file_name: String?
+        attr_reader mime_type: String?
+        attr_reader file_size: Integer?
+          end
+        end
+      end
+    end

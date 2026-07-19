@@ -1,0 +1,14 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InlineQueryResultsButton < Base
+        def self.new: (text: String, ?web_app: WebAppInfo, ?start_parameter: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader text: String
+        attr_reader web_app: WebAppInfo?
+        attr_reader start_parameter: String?
+          end
+        end
+      end
+    end

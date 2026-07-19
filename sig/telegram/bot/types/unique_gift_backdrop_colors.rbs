@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class UniqueGiftBackdropColors < Base
+        def self.new: (center_color: Integer, edge_color: Integer, symbol_color: Integer, text_color: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader center_color: Integer
+        attr_reader edge_color: Integer
+        attr_reader symbol_color: Integer
+        attr_reader text_color: Integer
+          end
+        end
+      end
+    end

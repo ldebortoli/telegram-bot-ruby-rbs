@@ -1,0 +1,17 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InlineQuery < Base
+        def self.new: (id: String, from: User, query: String, offset: String, ?chat_type: String, ?location: Location) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader id: String
+        attr_reader from: User
+        attr_reader query: String
+        attr_reader offset: String
+        attr_reader chat_type: String?
+        attr_reader location: Location?
+          end
+        end
+      end
+    end

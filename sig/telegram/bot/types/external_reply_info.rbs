@@ -1,0 +1,36 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ExternalReplyInfo < Base
+        def self.new: (origin: message_origin, ?chat: Chat, ?message_id: Integer, ?link_preview_options: LinkPreviewOptions, ?animation: Animation, ?audio: Audio, ?document: Document, ?paid_media: PaidMediaInfo, ?photo: Array[PhotoSize], ?sticker: Sticker, ?story: Story, ?video: Video, ?video_note: VideoNote, ?voice: Voice, ?has_media_spoiler: true, ?checklist: Checklist, ?contact: Contact, ?dice: Dice, ?game: Game, ?giveaway: Giveaway, ?giveaway_winners: GiveawayWinners, ?invoice: Invoice, ?location: Location, ?poll: Poll, ?venue: Venue) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader origin: message_origin
+        attr_reader chat: Chat?
+        attr_reader message_id: Integer?
+        attr_reader link_preview_options: LinkPreviewOptions?
+        attr_reader animation: Animation?
+        attr_reader audio: Audio?
+        attr_reader document: Document?
+        attr_reader paid_media: PaidMediaInfo?
+        attr_reader photo: Array[PhotoSize]?
+        attr_reader sticker: Sticker?
+        attr_reader story: Story?
+        attr_reader video: Video?
+        attr_reader video_note: VideoNote?
+        attr_reader voice: Voice?
+        attr_reader has_media_spoiler: true?
+        attr_reader checklist: Checklist?
+        attr_reader contact: Contact?
+        attr_reader dice: Dice?
+        attr_reader game: Game?
+        attr_reader giveaway: Giveaway?
+        attr_reader giveaway_winners: GiveawayWinners?
+        attr_reader invoice: Invoice?
+        attr_reader location: Location?
+        attr_reader poll: Poll?
+        attr_reader venue: Venue?
+          end
+        end
+      end
+    end

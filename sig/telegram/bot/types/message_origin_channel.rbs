@@ -1,0 +1,16 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class MessageOriginChannel < Base
+        def self.new: (?type: String, date: Integer, chat: Chat, message_id: Integer, ?author_signature: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader date: Integer
+        attr_reader chat: Chat
+        attr_reader message_id: Integer
+        attr_reader author_signature: String?
+          end
+        end
+      end
+    end

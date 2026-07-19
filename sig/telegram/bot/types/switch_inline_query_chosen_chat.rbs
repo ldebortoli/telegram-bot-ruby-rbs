@@ -1,0 +1,16 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class SwitchInlineQueryChosenChat < Base
+        def self.new: (?query: String, ?allow_user_chats: bool, ?allow_bot_chats: bool, ?allow_group_chats: bool, ?allow_channel_chats: bool) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader query: String?
+        attr_reader allow_user_chats: bool?
+        attr_reader allow_bot_chats: bool?
+        attr_reader allow_group_chats: bool?
+        attr_reader allow_channel_chats: bool?
+          end
+        end
+      end
+    end

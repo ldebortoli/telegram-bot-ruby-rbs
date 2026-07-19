@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class SuggestedPostPaid < Base
+        def self.new: (?suggested_post_message: Message, currency: String, ?amount: Integer, ?star_amount: StarAmount) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader suggested_post_message: Message?
+        attr_reader currency: String
+        attr_reader amount: Integer?
+        attr_reader star_amount: StarAmount?
+          end
+        end
+      end
+    end

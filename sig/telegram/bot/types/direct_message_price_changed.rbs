@@ -1,0 +1,13 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class DirectMessagePriceChanged < Base
+        def self.new: (are_direct_messages_enabled: bool, ?direct_message_star_count: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader are_direct_messages_enabled: bool
+        attr_reader direct_message_star_count: Integer
+          end
+        end
+      end
+    end

@@ -1,0 +1,20 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class Giveaway < Base
+        def self.new: (chats: Array[Chat], winners_selection_date: Integer, winner_count: Integer, ?only_new_members: true, ?has_public_winners: true, ?prize_description: String, ?country_codes: Array[String], ?prize_star_count: Integer, ?premium_subscription_month_count: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader chats: Array[Chat]
+        attr_reader winners_selection_date: Integer
+        attr_reader winner_count: Integer
+        attr_reader only_new_members: true?
+        attr_reader has_public_winners: true?
+        attr_reader prize_description: String?
+        attr_reader country_codes: Array[String]?
+        attr_reader prize_star_count: Integer?
+        attr_reader premium_subscription_month_count: Integer?
+          end
+        end
+      end
+    end

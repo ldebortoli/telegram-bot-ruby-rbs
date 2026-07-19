@@ -1,0 +1,17 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class Location < Base
+        def self.new: (latitude: Float, longitude: Float, ?horizontal_accuracy: Float, ?live_period: Integer, ?heading: Integer, ?proximity_alert_radius: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader latitude: Float
+        attr_reader longitude: Float
+        attr_reader horizontal_accuracy: Float?
+        attr_reader live_period: Integer?
+        attr_reader heading: Integer?
+        attr_reader proximity_alert_radius: Integer?
+          end
+        end
+      end
+    end

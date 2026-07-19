@@ -1,0 +1,375 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "bundler/setup"
+require "fileutils"
+require "yaml"
+require "telegram/bot"
+
+ROOT = File.expand_path("..", __dir__)
+SNAPSHOT = YAML.safe_load_file(File.join(ROOT, "data/telegram_bot_api.yml"), permitted_classes: [Time])
+WRAPPER = Gem::Specification.find_by_name("telegram-bot-ruby", ">= 2.7.0", "< 2.8")
+SOURCE_ROOT = WRAPPER.full_gem_path
+TYPE_SOURCE = File.join(SOURCE_ROOT, "lib/telegram/bot/types")
+SIG_ROOT = File.join(ROOT, "sig/telegram/bot")
+
+def snake_case(name)
+  name.gsub(/([A-Z]+)([A-Z][a-z])/, '\\1_\\2')
+      .gsub(/([a-z\d])([A-Z])/, '\\1_\\2')
+      .downcase
+end
+
+def split_union(expression)
+  depth = 0
+  start = 0
+  parts = []
+  expression.each_char.with_index do |char, index|
+    depth += 1 if char == "("
+    depth -= 1 if char == ")"
+    next unless char == "|" && depth.zero?
+
+    parts << expression[start...index].strip
+    start = index + 1
+  end
+  parts << expression[start..].strip
+  parts
+end
+
+def strip_constraints(expression)
+  result = expression.dup
+  loop do
+    previous = result
+    result = result.gsub(/\.(?:constrained|default)\([^()]*\)/, "")
+    break if result == previous
+  end
+  result
+end
+
+def source_type(expression, aliases, namespace: false)
+  expression = strip_constraints(expression.strip)
+  optional = expression.sub!(/\.optional\z/, "")
+  parts = split_union(expression)
+  if parts.length > 1
+    value = "(#{parts.map { |part| source_type(part, aliases, namespace:) }.join(' | ')})"
+    value = "#{value}?" if optional
+    return value
+  end
+
+  value = if expression.start_with?("Types::Array.of(") && expression.end_with?(")")
+            inner = expression.delete_prefix("Types::Array.of(")[0...-1]
+            "Array[#{source_type(inner, aliases, namespace:)}]"
+          else
+            primitives = {
+              "Types::Bool" => "bool",
+              "Types::Float" => "Float",
+              "Types::Integer" => "Integer",
+              "Types::String" => "String",
+              "Types::True" => "true"
+            }
+            primitives.fetch(expression) do
+              alias_name = aliases[expression]
+              if alias_name
+                namespace ? "Types::#{alias_name}" : alias_name
+              elsif expression.start_with?("Types::")
+                name = expression.delete_prefix("Types::")
+                nested_alias = aliases[name]
+                if nested_alias
+                  namespace ? "Types::#{nested_alias}" : nested_alias
+                else
+                  namespace ? "Types::#{name}" : name
+                end
+              else
+                namespace ? "Types::#{expression}" : expression
+              end
+            end
+          end
+  optional ? "#{value}?" : value
+end
+
+def doc_type(expression, aliases, namespace: true)
+  text = expression.gsub(" ", " ").gsub(/\s+/, " ").strip
+  return "untyped" if text.empty?
+
+  if text.start_with?("Array of ")
+    inner = text.delete_prefix("Array of ")
+    alternatives = inner.split(/\s*(?:,|\bor\b|\band\b)\s*/).reject(&:empty?)
+    type = alternatives.map { |part| doc_type(part, aliases, namespace:) }.uniq.join(" | ")
+    type = "(#{type})" if type.include?(" | ")
+    return "Array[#{type}]"
+  end
+
+  alternatives = text.split(/\s+(?:or|and)\s+/)
+  return alternatives.map { |part| doc_type(part, aliases, namespace:) }.uniq.join(" | ") if alternatives.length > 1
+
+  primitives = {
+    "Boolean" => "bool",
+    "Float" => "Float",
+    "Float number" => "Float",
+    "Integer" => "Integer",
+    "String" => "String",
+    "True" => "true"
+  }
+  return primitives[text] if primitives.key?(text)
+
+  normalized = text.gsub(/[^A-Za-z0-9_]/, "")
+  return "untyped" if normalized.empty? || !normalized.match?(/\A[A-Z]/)
+
+  alias_name = aliases[normalized]
+  return namespace ? "Types::#{alias_name}" : alias_name if alias_name
+
+  return "untyped" unless CLASSES.key?(normalized)
+
+  namespace ? "Types::#{normalized}" : normalized
+end
+
+def nilable(type)
+  type.include?(" | ") ? "(#{type})?" : "#{type}?"
+end
+
+def wrapper_unions
+  unions = {}
+  Dir[File.join(TYPE_SOURCE, "*.rb")].sort.each do |path|
+    source = File.read(path)
+    source.scan(/^\s*([A-Z][A-Za-z0-9]+) = \(\s*(.*?)^\s*\)/m) do |name, body|
+      members = body.scan(/\b[A-Z][A-Za-z0-9]+\b/).uniq
+      unions[name] = members unless members.empty?
+    end
+  end
+  unions
+end
+
+def wrapper_classes
+  classes = {}
+  Dir[File.join(TYPE_SOURCE, "*.rb")].sort.each do |path|
+    source = File.read(path)
+    name = source[/^\s*class ([A-Z][A-Za-z0-9]+) < Base/, 1]
+    next unless name
+
+    fields = source.scan(/^\s*attribute(\?)? :([a-zA-Z0-9_]+),\s*(.+)$/).map do |optional, field, expression|
+      {
+        "name" => field,
+        "expression" => expression.strip,
+        "optional_key" => !optional.nil? || expression.include?(".default("),
+        "nilable" => !optional.nil? && !expression.include?(".default(")
+      }
+    end
+    classes[name] = { "path" => path, "fields" => fields }
+  end
+  classes
+end
+
+def endpoints
+  source = File.read(File.join(SOURCE_ROOT, "lib/telegram/bot/api/endpoints.rb"))
+  body = source[/ENDPOINTS = \{(.*?)\n\s*\}\.freeze/m, 1] or raise "ENDPOINTS was not found"
+  body.scan(/^\s*'([^']+)' => (.+?),?$/).to_h
+end
+
+UNIONS = wrapper_unions
+ALIASES = UNIONS.to_h { |name, _| [name, snake_case(name)] }
+CLASSES = wrapper_classes
+ENDPOINTS = endpoints
+
+FileUtils.rm_rf(SIG_ROOT)
+FileUtils.mkdir_p(File.join(SIG_ROOT, "types"))
+
+core = <<~RBS
+  # Generated for telegram-bot-ruby #{WRAPPER.version}. Do not edit by hand.
+  module Telegram
+    module Bot
+      VERSION: String
+
+      def self.configuration: () -> Configuration
+      def self.configuration=: (Configuration) -> Configuration
+      def self.configure: () { (Configuration) -> void } -> void
+
+      class Configuration
+        attr_accessor adapter: Symbol
+        attr_accessor adapter_options: Hash[Symbol, untyped]?
+        attr_accessor connection_open_timeout: Numeric
+        attr_accessor connection_timeout: Numeric
+
+        def initialize: () -> void
+      end
+
+      class Client
+        attr_reader api: Api
+        attr_reader options: Hash[Symbol, untyped]
+        attr_accessor logger: Logger
+
+        def self.run: [T] (String token, ?Hash[Symbol, untyped] options) { (Client) -> T } -> T
+        def initialize: (String token, ?Hash[Symbol, untyped] options) -> void
+        def run: [T] () { (Client) -> T } -> T
+        def listen: () { (Types::Base?) -> void } -> nil
+        def stop: () -> false
+        def fetch_updates: () { (Types::Base?) -> void } -> void
+        def handle_update: (Types::Update update) -> Types::Base?
+      end
+
+      class NullLogger < Logger
+        def initialize: (*untyped) -> void
+        def add: (*untyped) -> nil
+      end
+
+      module Exceptions
+        class Base < StandardError
+        end
+
+        class ResponseError < Base
+          attr_reader response: untyped
+          def initialize: (response: untyped) -> void
+          def error_code: () -> Integer?
+          def data: () -> Hash[Symbol | String, untyped]
+        end
+      end
+    end
+  end
+RBS
+File.write(File.join(SIG_ROOT, "core.rbs"), core)
+
+base = <<~RBS
+  # Generated for telegram-bot-ruby #{WRAPPER.version}. Do not edit by hand.
+  module Telegram
+    module Bot
+      module Types
+        module Compactable
+          def to_compact_hash: () -> Hash[Symbol, untyped]
+          def to_json: (*untyped args) -> String
+        end
+
+        module PatternMatching
+          def deconstruct_keys: (Array[Symbol]? keys) -> Hash[Symbol, untyped]
+        end
+
+        class Base
+          include Compactable
+          include PatternMatching
+
+          attr_reader attributes: Hash[Symbol, untyped]
+        end
+      end
+    end
+  end
+RBS
+File.write(File.join(SIG_ROOT, "types/base.rbs"), base)
+
+union_lines = UNIONS.sort.map do |name, members|
+  alias_name = ALIASES.fetch(name)
+  "        type #{alias_name} = #{members.join(' | ')}\n        #{name}: untyped"
+end.join("\n\n")
+File.write(File.join(SIG_ROOT, "types/unions.rbs"), <<~RBS)
+  # Generated for telegram-bot-ruby #{WRAPPER.version}. Do not edit by hand.
+  module Telegram
+    module Bot
+      module Types
+#{union_lines}
+      end
+    end
+  end
+RBS
+
+CLASSES.sort.each do |name, definition|
+  fields = definition.fetch("fields").map do |field|
+    type = source_type(field.fetch("expression"), ALIASES)
+    field.merge("type" => type, "reader_type" => field.fetch("nilable") ? nilable(type) : type)
+  end
+
+  keywords = fields.map do |field|
+    prefix = field.fetch("optional_key") ? "?" : ""
+    "#{prefix}#{field.fetch('name')}: #{field.fetch('type')}"
+  end
+  constructor = keywords.empty? ? "() -> instance" : "(#{keywords.join(', ')}) -> instance"
+  readers = fields.map { |field| "        attr_reader #{field.fetch('name')}: #{field.fetch('reader_type')}" }
+  extras = case name
+           when "CallbackQuery", "Message"
+             ["        def to_s: () -> String"]
+           when "Update"
+             ["        def current_message: () -> Base?"]
+           else
+             []
+           end
+
+  body = (["        def self.new: #{constructor}",
+           "                    | (?Hash[Symbol | String, untyped] attributes) -> instance"] + readers + extras).join("\n")
+  File.write(File.join(SIG_ROOT, "types/#{snake_case(name)}.rbs"), <<~RBS)
+    # Generated for telegram-bot-ruby #{WRAPPER.version}. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class #{name} < Base
+#{body}
+          end
+        end
+      end
+    end
+  RBS
+end
+
+method_lines = ENDPOINTS.sort.flat_map do |endpoint, expression|
+  return_type = source_type(expression, ALIASES, namespace: true)
+  parameters = SNAPSHOT.dig("methods", endpoint, "parameters") || []
+  keywords = parameters.map do |parameter|
+    prefix = parameter.fetch("required") ? "" : "?"
+    "#{prefix}#{parameter.fetch('name')}: #{doc_type(parameter.fetch('type'), ALIASES)}"
+  end
+  explicit = keywords.empty? ? "() -> #{return_type}" : "(#{keywords.join(', ')}) -> #{return_type}"
+  generic = "(?Hash[Symbol | String, untyped] params) -> #{return_type}"
+  names = [snake_case(endpoint), endpoint].uniq
+  names.flat_map do |name|
+    ["      def #{name}: #{explicit}", "                | #{generic}"]
+  end
+end
+
+api = <<~RBS
+  # Generated for telegram-bot-ruby #{WRAPPER.version}. Do not edit by hand.
+  module Telegram
+    module Bot
+      class Api
+        ENDPOINTS: Hash[String, untyped]
+
+        attr_reader token: String
+        attr_reader url: String
+        attr_reader environment: Symbol
+
+        def initialize: (String token, ?url: String, ?environment: Symbol | String) -> void
+        def connection: () -> untyped
+        def call: (String endpoint, ?Hash[Symbol | String, untyped] raw_params) -> Hash[String, untyped]
+#{method_lines.join("\n")}
+      end
+    end
+  end
+RBS
+File.write(File.join(SIG_ROOT, "api.rbs"), api)
+
+official_types = SNAPSHOT.fetch("types")
+official_methods = SNAPSHOT.fetch("methods")
+unsupported_fields = CLASSES.sort.to_h do |name, definition|
+  official = official_types.dig(name, "fields") || []
+  wrapper_fields = definition.fetch("fields").map { |field| field.fetch("name") }
+  [name, official.map { |field| field.fetch("name") } - wrapper_fields]
+end.reject { |_, fields| fields.empty? }
+
+compatibility = {
+  "telegram_bot_api" => SNAPSHOT.fetch("api_version"),
+  "telegram_bot_ruby" => WRAPPER.version.to_s,
+  "wrapper" => {
+    "concrete_types" => CLASSES.length,
+    "union_types" => UNIONS.length,
+    "endpoints" => ENDPOINTS.length
+  },
+  "official" => {
+    "types" => official_types.length,
+    "methods" => official_methods.length
+  },
+  "not_yet_in_wrapper" => {
+    "types" => official_types.keys - CLASSES.keys - UNIONS.keys,
+    "methods" => official_methods.keys - ENDPOINTS.keys,
+    "fields_on_existing_types" => unsupported_fields
+  },
+  "wrapper_only" => {
+    "types" => CLASSES.keys + UNIONS.keys - official_types.keys,
+    "methods" => ENDPOINTS.keys - official_methods.keys
+  }
+}
+File.write(File.join(ROOT, "data/compatibility.yml"), YAML.dump(compatibility), mode: "w:UTF-8")
+
+puts "Generated #{CLASSES.length} concrete types, #{UNIONS.length} unions and #{ENDPOINTS.length} endpoints for telegram-bot-ruby #{WRAPPER.version}"

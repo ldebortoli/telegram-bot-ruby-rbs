@@ -1,0 +1,12 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class BotDescription < Base
+        def self.new: (description: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader description: String
+          end
+        end
+      end
+    end

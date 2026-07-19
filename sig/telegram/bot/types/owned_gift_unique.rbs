@@ -1,0 +1,20 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class OwnedGiftUnique < Base
+        def self.new: (?type: String, gift: UniqueGift, ?owned_gift_id: String, ?sender_user: User, send_date: Integer, ?is_saved: true, ?can_be_transferred: true, ?transfer_star_count: Integer, ?next_transfer_date: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader gift: UniqueGift
+        attr_reader owned_gift_id: String?
+        attr_reader sender_user: User?
+        attr_reader send_date: Integer
+        attr_reader is_saved: true?
+        attr_reader can_be_transferred: true?
+        attr_reader transfer_star_count: Integer?
+        attr_reader next_transfer_date: Integer?
+          end
+        end
+      end
+    end

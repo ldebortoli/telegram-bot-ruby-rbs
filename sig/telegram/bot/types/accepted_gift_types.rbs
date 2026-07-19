@@ -1,0 +1,16 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class AcceptedGiftTypes < Base
+        def self.new: (unlimited_gifts: bool, limited_gifts: bool, unique_gifts: bool, premium_subscription: bool, gifts_from_channels: bool) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader unlimited_gifts: bool
+        attr_reader limited_gifts: bool
+        attr_reader unique_gifts: bool
+        attr_reader premium_subscription: bool
+        attr_reader gifts_from_channels: bool
+          end
+        end
+      end
+    end

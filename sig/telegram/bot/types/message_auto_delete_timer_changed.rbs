@@ -1,0 +1,12 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class MessageAutoDeleteTimerChanged < Base
+        def self.new: (message_auto_delete_time: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader message_auto_delete_time: Integer
+          end
+        end
+      end
+    end

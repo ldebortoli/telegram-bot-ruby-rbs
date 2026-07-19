@@ -1,0 +1,121 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "digest"
+require "fileutils"
+require "net/http"
+require "nokogiri"
+require "time"
+require "uri"
+require "yaml"
+
+SOURCE_URL = "https://core.telegram.org/bots/api"
+
+def fetch(uri, redirects = 5)
+  raise "too many redirects" if redirects.zero?
+
+  request = Net::HTTP::Get.new(uri)
+  request["User-Agent"] = "telegram-bot-ruby-rbs generator"
+  response = Net::HTTP.start(uri.host, uri.port, use_ssl: true, open_timeout: 15, read_timeout: 45) do |http|
+    http.request(request)
+  end
+
+  case response
+  when Net::HTTPSuccess
+    response.body
+  when Net::HTTPRedirection
+    fetch(URI.join(uri, response.fetch("location")), redirects - 1)
+  else
+    raise "Telegram documentation returned HTTP #{response.code}"
+  end
+end
+
+def section_nodes(heading)
+  nodes = []
+  node = heading.next_element
+  while node && !%w[h3 h4].include?(node.name)
+    nodes << node
+    node = node.next_element
+  end
+  nodes
+end
+
+def table_rows(table)
+  table.css("tbody tr").map do |row|
+    row.css("td").map { |cell| cell.text.gsub(/\s+/, " ").strip }
+  end
+end
+
+html = fetch(URI(SOURCE_URL))
+document = Nokogiri::HTML5(html)
+version_text = document.css("p strong").map(&:text).find { |text| text.match?(/\ABot API \d+\.\d+\z/) }
+raise "Bot API version was not found" unless version_text
+
+types = {}
+methods = {}
+
+document.css("h4").each do |heading|
+  title = heading.text.gsub(/\s+/, " ").strip
+  next unless title.match?(/\A[A-Za-z][A-Za-z0-9]+\z/)
+  parent_section = heading.xpath("preceding::h3[1]").first&.text&.gsub(/\s+/, " ")&.strip
+  next if parent_section == "Recent changes"
+
+  nodes = section_nodes(heading)
+  section_text = nodes.map(&:text).join(" ").gsub(/\s+/, " ").strip
+  table = nodes.find { |node| node.name == "table" }
+  headers = table&.css("thead th")&.map { |cell| cell.text.strip }
+
+  if title.match?(/\A[A-Z]/)
+    type_section = headers == %w[Field Type Description] ||
+                   section_text.match?(/\A(?:This object|Represents|Describes|Contains|A placeholder|This class)\b/i) ||
+                   section_text.match?(/\b(?:should|can|may) be one of\b/i)
+    next unless type_section
+
+    entry = { "fields" => [], "union" => [] }
+    if headers == %w[Field Type Description]
+      entry["fields"] = table_rows(table).filter_map do |cells|
+        next unless cells.length >= 3
+
+        {
+          "name" => cells[0],
+          "type" => cells[1],
+          "optional" => cells[2].start_with?("Optional")
+        }
+      end
+    end
+
+    list_types = nodes.select { |node| node.name == "ul" }.flat_map do |list|
+      list.css("li a").map { |link| link.text.strip }.select { |name| name.match?(/\A[A-Z][A-Za-z0-9]+\z/) }
+    end
+    entry["union"] = list_types.uniq
+    types[title] = entry
+  else
+    parameters = []
+    if headers == %w[Parameter Type Required Description]
+      parameters = table_rows(table).filter_map do |cells|
+        next unless cells.length >= 4
+
+        {
+          "name" => cells[0],
+          "type" => cells[1],
+          "required" => cells[2] == "Yes"
+        }
+      end
+    end
+    methods[title] = { "parameters" => parameters }
+  end
+end
+
+snapshot = {
+  "api_version" => version_text.delete_prefix("Bot API "),
+  "source_url" => SOURCE_URL,
+  "retrieved_at" => Time.now.utc.iso8601,
+  "source_sha256" => Digest::SHA256.hexdigest(html),
+  "types" => types.sort.to_h,
+  "methods" => methods.sort.to_h
+}
+
+target = File.expand_path("../data/telegram_bot_api.yml", __dir__)
+FileUtils.mkdir_p(File.dirname(target))
+File.write(target, YAML.dump(snapshot), mode: "w:UTF-8")
+puts "Wrote #{types.length} types and #{methods.length} methods from Bot API #{snapshot.fetch('api_version')}"

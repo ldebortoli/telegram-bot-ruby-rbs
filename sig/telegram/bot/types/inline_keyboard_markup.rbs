@@ -1,0 +1,12 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InlineKeyboardMarkup < Base
+        def self.new: (inline_keyboard: Array[Array[InlineKeyboardButton]]) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader inline_keyboard: Array[Array[InlineKeyboardButton]]
+          end
+        end
+      end
+    end

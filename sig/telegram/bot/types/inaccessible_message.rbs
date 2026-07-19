@@ -1,0 +1,14 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InaccessibleMessage < Base
+        def self.new: (chat: Chat, message_id: Integer, date: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader chat: Chat
+        attr_reader message_id: Integer
+        attr_reader date: Integer
+          end
+        end
+      end
+    end

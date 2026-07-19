@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InputContactMessageContent < Base
+        def self.new: (phone_number: String, first_name: String, ?last_name: String, ?vcard: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader phone_number: String
+        attr_reader first_name: String
+        attr_reader last_name: String?
+        attr_reader vcard: String?
+          end
+        end
+      end
+    end

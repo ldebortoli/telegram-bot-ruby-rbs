@@ -1,0 +1,22 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InlineQueryResultContact < Base
+        def self.new: (?type: String, id: String, phone_number: String, first_name: String, ?last_name: String, ?vcard: String, ?reply_markup: InlineKeyboardMarkup, ?input_message_content: input_message_content, ?thumbnail_url: String, ?thumbnail_width: Integer, ?thumbnail_height: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader id: String
+        attr_reader phone_number: String
+        attr_reader first_name: String
+        attr_reader last_name: String?
+        attr_reader vcard: String?
+        attr_reader reply_markup: InlineKeyboardMarkup?
+        attr_reader input_message_content: input_message_content?
+        attr_reader thumbnail_url: String?
+        attr_reader thumbnail_width: Integer?
+        attr_reader thumbnail_height: Integer?
+          end
+        end
+      end
+    end

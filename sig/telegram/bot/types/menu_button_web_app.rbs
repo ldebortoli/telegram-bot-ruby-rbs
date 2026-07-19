@@ -1,0 +1,14 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class MenuButtonWebApp < Base
+        def self.new: (?type: String, text: String, web_app: WebAppInfo) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader text: String
+        attr_reader web_app: WebAppInfo
+          end
+        end
+      end
+    end

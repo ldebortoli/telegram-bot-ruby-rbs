@@ -1,0 +1,13 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class UserProfilePhotos < Base
+        def self.new: (total_count: Integer, photos: Array[Array[PhotoSize]]) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader total_count: Integer
+        attr_reader photos: Array[Array[PhotoSize]]
+          end
+        end
+      end
+    end

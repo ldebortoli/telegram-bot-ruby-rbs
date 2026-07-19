@@ -1,0 +1,171 @@
+---
+telegram_bot_api: '10.2'
+telegram_bot_ruby: 2.7.0
+wrapper:
+  concrete_types: 271
+  union_types: 21
+  endpoints: 169
+official:
+  types: 388
+  methods: 185
+not_yet_in_wrapper:
+  types:
+  - BotAccessSettings
+  - BotSubscriptionUpdated
+  - Community
+  - CommunityChatAdded
+  - CommunityChatRemoved
+  - InputMediaLink
+  - InputMediaLivePhoto
+  - InputMediaLocation
+  - InputMediaSticker
+  - InputMediaVenue
+  - InputMediaVoiceNote
+  - InputPaidMediaLivePhoto
+  - InputPollMedia
+  - InputPollOptionMedia
+  - InputRichBlock
+  - InputRichBlockAnchor
+  - InputRichBlockAnimation
+  - InputRichBlockAudio
+  - InputRichBlockBlockQuotation
+  - InputRichBlockCollage
+  - InputRichBlockDetails
+  - InputRichBlockDivider
+  - InputRichBlockFooter
+  - InputRichBlockList
+  - InputRichBlockListItem
+  - InputRichBlockMap
+  - InputRichBlockMathematicalExpression
+  - InputRichBlockParagraph
+  - InputRichBlockPhoto
+  - InputRichBlockPreformatted
+  - InputRichBlockPullQuotation
+  - InputRichBlockSectionHeading
+  - InputRichBlockSlideshow
+  - InputRichBlockTable
+  - InputRichBlockThinking
+  - InputRichBlockVideo
+  - InputRichBlockVoiceNote
+  - InputRichMessage
+  - InputRichMessageContent
+  - InputRichMessageMedia
+  - Link
+  - LivePhoto
+  - PaidMediaLivePhoto
+  - PollMedia
+  - RichBlock
+  - RichBlockAnchor
+  - RichBlockAnimation
+  - RichBlockAudio
+  - RichBlockBlockQuotation
+  - RichBlockCaption
+  - RichBlockCollage
+  - RichBlockDetails
+  - RichBlockDivider
+  - RichBlockFooter
+  - RichBlockList
+  - RichBlockListItem
+  - RichBlockMap
+  - RichBlockMathematicalExpression
+  - RichBlockParagraph
+  - RichBlockPhoto
+  - RichBlockPreformatted
+  - RichBlockPullQuotation
+  - RichBlockSectionHeading
+  - RichBlockSlideshow
+  - RichBlockTable
+  - RichBlockTableCell
+  - RichBlockThinking
+  - RichBlockVideo
+  - RichBlockVoiceNote
+  - RichMessage
+  - RichText
+  - RichTextAnchor
+  - RichTextAnchorLink
+  - RichTextBankCardNumber
+  - RichTextBold
+  - RichTextBotCommand
+  - RichTextCashtag
+  - RichTextCode
+  - RichTextCustomEmoji
+  - RichTextDateTime
+  - RichTextEmailAddress
+  - RichTextHashtag
+  - RichTextItalic
+  - RichTextMarked
+  - RichTextMathematicalExpression
+  - RichTextMention
+  - RichTextPhoneNumber
+  - RichTextReference
+  - RichTextReferenceLink
+  - RichTextSpoiler
+  - RichTextStrikethrough
+  - RichTextSubscript
+  - RichTextSuperscript
+  - RichTextTextMention
+  - RichTextUnderline
+  - RichTextUrl
+  - SentGuestMessage
+  methods:
+  - answerChatJoinRequestQuery
+  - answerGuestQuery
+  - deleteAllMessageReactions
+  - deleteEphemeralMessage
+  - deleteMessageReaction
+  - editEphemeralMessageCaption
+  - editEphemeralMessageMedia
+  - editEphemeralMessageReplyMarkup
+  - editEphemeralMessageText
+  - getManagedBotAccessSettings
+  - getUserPersonalChatMessages
+  - sendChatJoinRequestWebApp
+  - sendLivePhoto
+  - sendRichMessage
+  - sendRichMessageDraft
+  - setManagedBotAccessSettings
+  fields_on_existing_types:
+    BotCommand:
+    - is_ephemeral
+    ChatFullInfo:
+    - guard_bot
+    - community
+    ChatJoinRequest:
+    - query_id
+    ChatMemberRestricted:
+    - can_react_to_messages
+    ChatPermissions:
+    - can_react_to_messages
+    ExternalReplyInfo:
+    - live_photo
+    InputPollOption:
+    - media
+    Message:
+    - receiver_user
+    - ephemeral_message_id
+    - guest_query_id
+    - guest_bot_caller_user
+    - guest_bot_caller_chat
+    - rich_message
+    - live_photo
+    - community_chat_added
+    - community_chat_removed
+    Poll:
+    - members_only
+    - country_codes
+    - explanation_media
+    - media
+    PollOption:
+    - media
+    ReplyParameters:
+    - ephemeral_message_id
+    Update:
+    - guest_message
+    - subscription
+    User:
+    - supports_guest_queries
+    - supports_join_request_queries
+wrapper_only:
+  types:
+  - Error
+  methods: []

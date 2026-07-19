@@ -1,0 +1,17 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InputChecklist < Base
+        def self.new: (title: String, ?parse_mode: String, ?title_entities: Array[MessageEntity], tasks: Array[InputChecklistTask], ?others_can_add_tasks: bool, ?others_can_mark_tasks_as_done: bool) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader title: String
+        attr_reader parse_mode: String?
+        attr_reader title_entities: Array[MessageEntity]?
+        attr_reader tasks: Array[InputChecklistTask]
+        attr_reader others_can_add_tasks: bool?
+        attr_reader others_can_mark_tasks_as_done: bool?
+          end
+        end
+      end
+    end

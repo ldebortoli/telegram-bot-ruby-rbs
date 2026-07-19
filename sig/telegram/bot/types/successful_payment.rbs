@@ -1,0 +1,21 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class SuccessfulPayment < Base
+        def self.new: (currency: String, total_amount: Integer, invoice_payload: String, ?subscription_expiration_date: Integer, ?is_recurring: true, ?is_first_recurring: true, ?shipping_option_id: String, ?order_info: OrderInfo, telegram_payment_charge_id: String, provider_payment_charge_id: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader currency: String
+        attr_reader total_amount: Integer
+        attr_reader invoice_payload: String
+        attr_reader subscription_expiration_date: Integer?
+        attr_reader is_recurring: true?
+        attr_reader is_first_recurring: true?
+        attr_reader shipping_option_id: String?
+        attr_reader order_info: OrderInfo?
+        attr_reader telegram_payment_charge_id: String
+        attr_reader provider_payment_charge_id: String
+          end
+        end
+      end
+    end

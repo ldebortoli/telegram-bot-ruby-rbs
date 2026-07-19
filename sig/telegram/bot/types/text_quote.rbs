@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class TextQuote < Base
+        def self.new: (text: String, ?entities: Array[MessageEntity], position: Integer, ?is_manual: true) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader text: String
+        attr_reader entities: Array[MessageEntity]?
+        attr_reader position: Integer
+        attr_reader is_manual: true?
+          end
+        end
+      end
+    end

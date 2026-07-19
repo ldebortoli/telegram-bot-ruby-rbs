@@ -1,0 +1,13 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ForumTopicEdited < Base
+        def self.new: (?name: String, ?icon_custom_emoji_id: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader name: String?
+        attr_reader icon_custom_emoji_id: String?
+          end
+        end
+      end
+    end

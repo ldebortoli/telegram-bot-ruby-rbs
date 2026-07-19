@@ -1,0 +1,14 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ForceReply < Base
+        def self.new: (force_reply: true, ?input_field_placeholder: String, ?selective: bool) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader force_reply: true
+        attr_reader input_field_placeholder: String?
+        attr_reader selective: bool?
+          end
+        end
+      end
+    end

@@ -1,0 +1,16 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class AffiliateInfo < Base
+        def self.new: (?affiliate_user: User, ?affiliate_chat: Chat, commission_per_mille: Integer, amount: Integer, ?nanostar_amount: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader affiliate_user: User?
+        attr_reader affiliate_chat: Chat?
+        attr_reader commission_per_mille: Integer
+        attr_reader amount: Integer
+        attr_reader nanostar_amount: Integer?
+          end
+        end
+      end
+    end

@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class StoryAreaTypeSuggestedReaction < Base
+        def self.new: (?type: String, reaction_type: reaction_type, ?is_dark: bool, ?is_flipped: bool) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader reaction_type: reaction_type
+        attr_reader is_dark: bool?
+        attr_reader is_flipped: bool?
+          end
+        end
+      end
+    end

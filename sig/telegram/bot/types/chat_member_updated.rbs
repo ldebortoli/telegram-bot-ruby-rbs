@@ -1,0 +1,19 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ChatMemberUpdated < Base
+        def self.new: (chat: Chat, from: User, date: Integer, old_chat_member: chat_member, new_chat_member: chat_member, ?invite_link: ChatInviteLink, ?via_join_request: bool, ?via_chat_folder_invite_link: bool) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader chat: Chat
+        attr_reader from: User
+        attr_reader date: Integer
+        attr_reader old_chat_member: chat_member
+        attr_reader new_chat_member: chat_member
+        attr_reader invite_link: ChatInviteLink?
+        attr_reader via_join_request: bool?
+        attr_reader via_chat_folder_invite_link: bool?
+          end
+        end
+      end
+    end

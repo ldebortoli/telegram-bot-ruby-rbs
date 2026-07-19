@@ -1,0 +1,18 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class MessageReactionUpdated < Base
+        def self.new: (chat: Chat, message_id: Integer, ?user: User, ?actor_chat: Chat, date: Integer, old_reaction: Array[reaction_type], new_reaction: Array[reaction_type]) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader chat: Chat
+        attr_reader message_id: Integer
+        attr_reader user: User?
+        attr_reader actor_chat: Chat?
+        attr_reader date: Integer
+        attr_reader old_reaction: Array[reaction_type]
+        attr_reader new_reaction: Array[reaction_type]
+          end
+        end
+      end
+    end

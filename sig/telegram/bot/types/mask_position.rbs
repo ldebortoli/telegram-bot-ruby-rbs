@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class MaskPosition < Base
+        def self.new: (point: String, x_shift: Float, y_shift: Float, scale: Float) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader point: String
+        attr_reader x_shift: Float
+        attr_reader y_shift: Float
+        attr_reader scale: Float
+          end
+        end
+      end
+    end

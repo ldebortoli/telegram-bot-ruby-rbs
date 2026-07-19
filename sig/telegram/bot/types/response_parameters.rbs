@@ -1,0 +1,13 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ResponseParameters < Base
+        def self.new: (?migrate_to_chat_id: Integer, ?retry_after: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader migrate_to_chat_id: Integer?
+        attr_reader retry_after: Integer?
+          end
+        end
+      end
+    end

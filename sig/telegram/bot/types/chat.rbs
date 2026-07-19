@@ -1,0 +1,19 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class Chat < Base
+        def self.new: (id: Integer, type: String, ?title: String, ?username: String, ?first_name: String, ?last_name: String, ?is_forum: true, ?is_direct_messages: true) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader id: Integer
+        attr_reader type: String
+        attr_reader title: String?
+        attr_reader username: String?
+        attr_reader first_name: String?
+        attr_reader last_name: String?
+        attr_reader is_forum: true?
+        attr_reader is_direct_messages: true?
+          end
+        end
+      end
+    end

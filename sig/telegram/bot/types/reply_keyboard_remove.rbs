@@ -1,0 +1,13 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ReplyKeyboardRemove < Base
+        def self.new: (remove_keyboard: true, ?selective: bool) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader remove_keyboard: true
+        attr_reader selective: bool?
+          end
+        end
+      end
+    end

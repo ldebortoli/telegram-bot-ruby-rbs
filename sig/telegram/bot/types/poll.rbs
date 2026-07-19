@@ -1,0 +1,28 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class Poll < Base
+        def self.new: (id: String, question: String, ?question_entities: Array[MessageEntity], options: Array[PollOption], total_voter_count: Integer, is_closed: bool, is_anonymous: bool, type: String, allows_multiple_answers: bool, allows_revoting: bool, ?correct_option_ids: Array[Integer], ?explanation: String, ?explanation_entities: Array[MessageEntity], ?open_period: Integer, ?close_date: Integer, ?description: String, ?description_entities: Array[MessageEntity]) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader id: String
+        attr_reader question: String
+        attr_reader question_entities: Array[MessageEntity]?
+        attr_reader options: Array[PollOption]
+        attr_reader total_voter_count: Integer
+        attr_reader is_closed: bool
+        attr_reader is_anonymous: bool
+        attr_reader type: String
+        attr_reader allows_multiple_answers: bool
+        attr_reader allows_revoting: bool
+        attr_reader correct_option_ids: Array[Integer]?
+        attr_reader explanation: String?
+        attr_reader explanation_entities: Array[MessageEntity]?
+        attr_reader open_period: Integer?
+        attr_reader close_date: Integer?
+        attr_reader description: String?
+        attr_reader description_entities: Array[MessageEntity]?
+          end
+        end
+      end
+    end

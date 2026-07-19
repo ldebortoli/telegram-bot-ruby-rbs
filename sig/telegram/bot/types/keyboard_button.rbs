@@ -1,0 +1,21 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class KeyboardButton < Base
+        def self.new: (text: String, ?icon_custom_emoji_id: String, ?style: String, ?request_users: KeyboardButtonRequestUsers, ?request_chat: KeyboardButtonRequestChat, ?request_managed_bot: KeyboardButtonRequestManagedBot, ?request_contact: bool, ?request_location: bool, ?request_poll: KeyboardButtonPollType, ?web_app: WebAppInfo) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader text: String
+        attr_reader icon_custom_emoji_id: String?
+        attr_reader style: String?
+        attr_reader request_users: KeyboardButtonRequestUsers?
+        attr_reader request_chat: KeyboardButtonRequestChat?
+        attr_reader request_managed_bot: KeyboardButtonRequestManagedBot?
+        attr_reader request_contact: bool?
+        attr_reader request_location: bool?
+        attr_reader request_poll: KeyboardButtonPollType?
+        attr_reader web_app: WebAppInfo?
+          end
+        end
+      end
+    end

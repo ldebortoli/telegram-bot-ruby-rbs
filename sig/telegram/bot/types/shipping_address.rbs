@@ -1,0 +1,17 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ShippingAddress < Base
+        def self.new: (country_code: String, state: String, city: String, street_line1: String, street_line2: String, post_code: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader country_code: String
+        attr_reader state: String
+        attr_reader city: String
+        attr_reader street_line1: String
+        attr_reader street_line2: String
+        attr_reader post_code: String
+          end
+        end
+      end
+    end

@@ -1,0 +1,69 @@
+  # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+  module Telegram
+    module Bot
+      module Types
+        type background_fill = BackgroundFillSolid | BackgroundFillGradient | BackgroundFillFreeformGradient
+        BackgroundFill: untyped
+
+        type background_type = BackgroundTypeFill | BackgroundTypeWallpaper | BackgroundTypePattern | BackgroundTypeChatTheme
+        BackgroundType: untyped
+
+        type bot_command_scope = BotCommandScopeDefault | BotCommandScopeAllPrivateChats | BotCommandScopeAllGroupChats | BotCommandScopeAllChatAdministrators | BotCommandScopeChat | BotCommandScopeChatAdministrators | BotCommandScopeChatMember
+        BotCommandScope: untyped
+
+        type chat_boost_source = ChatBoostSourcePremium | ChatBoostSourceGiftCode | ChatBoostSourceGiveaway
+        ChatBoostSource: untyped
+
+        type chat_member = ChatMemberOwner | ChatMemberAdministrator | ChatMemberMember | ChatMemberRestricted | ChatMemberLeft | ChatMemberBanned
+        ChatMember: untyped
+
+        type inline_query_result = InlineQueryResultCachedAudio | InlineQueryResultCachedDocument | InlineQueryResultCachedGif | InlineQueryResultCachedMpeg4Gif | InlineQueryResultCachedPhoto | InlineQueryResultCachedSticker | InlineQueryResultCachedVideo | InlineQueryResultCachedVoice | InlineQueryResultArticle | InlineQueryResultAudio | InlineQueryResultContact | InlineQueryResultGame | InlineQueryResultDocument | InlineQueryResultGif | InlineQueryResultLocation | InlineQueryResultMpeg4Gif | InlineQueryResultPhoto | InlineQueryResultVenue | InlineQueryResultVideo | InlineQueryResultVoice
+        InlineQueryResult: untyped
+
+        type input_media = InputMediaAnimation | InputMediaDocument | InputMediaAudio | InputMediaPhoto | InputMediaVideo
+        InputMedia: untyped
+
+        type input_message_content = InputTextMessageContent | InputLocationMessageContent | InputVenueMessageContent | InputContactMessageContent | InputInvoiceMessageContent
+        InputMessageContent: untyped
+
+        type input_paid_media = InputPaidMediaPhoto | InputPaidMediaVideo
+        InputPaidMedia: untyped
+
+        type input_profile_photo = InputProfilePhotoStatic | InputProfilePhotoAnimated
+        InputProfilePhoto: untyped
+
+        type input_story_content = InputStoryContentPhoto | InputStoryContentVideo
+        InputStoryContent: untyped
+
+        type maybe_inaccessible_message = Message | InaccessibleMessage
+        MaybeInaccessibleMessage: untyped
+
+        type menu_button = MenuButtonCommands | MenuButtonWebApp | MenuButtonDefault
+        MenuButton: untyped
+
+        type message_origin = MessageOriginUser | MessageOriginHiddenUser | MessageOriginChat | MessageOriginChannel
+        MessageOrigin: untyped
+
+        type owned_gift = OwnedGiftRegular | OwnedGiftUnique
+        OwnedGift: untyped
+
+        type paid_media = PaidMediaPreview | PaidMediaPhoto | PaidMediaVideo
+        PaidMedia: untyped
+
+        type passport_element_error = PassportElementErrorDataField | PassportElementErrorFrontSide | PassportElementErrorReverseSide | PassportElementErrorSelfie | PassportElementErrorFile | PassportElementErrorFiles | PassportElementErrorTranslationFile | PassportElementErrorTranslationFiles | PassportElementErrorUnspecified
+        PassportElementError: untyped
+
+        type reaction_type = ReactionTypeEmoji | ReactionTypeCustomEmoji | ReactionTypePaid
+        ReactionType: untyped
+
+        type revenue_withdrawal_state = RevenueWithdrawalStatePending | RevenueWithdrawalStateSucceeded | RevenueWithdrawalStateFailed
+        RevenueWithdrawalState: untyped
+
+        type story_area_type = StoryAreaTypeLocation | StoryAreaTypeSuggestedReaction | StoryAreaTypeLink | StoryAreaTypeWeather | StoryAreaTypeUniqueGift
+        StoryAreaType: untyped
+
+        type transaction_partner = TransactionPartnerUser | TransactionPartnerChat | TransactionPartnerAffiliateProgram | TransactionPartnerFragment | TransactionPartnerTelegramAds | TransactionPartnerTelegramApi | TransactionPartnerOther
+        TransactionPartner: untyped
+      end
+    end
+  end

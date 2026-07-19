@@ -1,0 +1,11 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InputFile < Base
+        def self.new: () -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+          end
+        end
+      end
+    end

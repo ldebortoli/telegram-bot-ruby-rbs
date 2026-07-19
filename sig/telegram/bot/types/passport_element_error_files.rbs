@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class PassportElementErrorFiles < Base
+        def self.new: (?source: String, type: String, file_hashes: Array[String], message: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader source: String
+        attr_reader type: String
+        attr_reader file_hashes: Array[String]
+        attr_reader message: String
+          end
+        end
+      end
+    end

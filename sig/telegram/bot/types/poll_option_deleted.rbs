@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class PollOptionDeleted < Base
+        def self.new: (?poll_message: maybe_inaccessible_message, option_persistent_id: String, option_text: String, ?option_text_entities: Array[MessageEntity]) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader poll_message: maybe_inaccessible_message?
+        attr_reader option_persistent_id: String
+        attr_reader option_text: String
+        attr_reader option_text_entities: Array[MessageEntity]?
+          end
+        end
+      end
+    end

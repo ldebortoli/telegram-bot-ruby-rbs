@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InlineQueryResultGame < Base
+        def self.new: (?type: String, id: String, game_short_name: String, ?reply_markup: InlineKeyboardMarkup) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader id: String
+        attr_reader game_short_name: String
+        attr_reader reply_markup: InlineKeyboardMarkup?
+          end
+        end
+      end
+    end

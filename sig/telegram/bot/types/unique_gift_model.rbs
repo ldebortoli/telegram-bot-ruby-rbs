@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class UniqueGiftModel < Base
+        def self.new: (name: String, sticker: Sticker, rarity_per_mille: Integer, ?rarity: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader name: String
+        attr_reader sticker: Sticker
+        attr_reader rarity_per_mille: Integer
+        attr_reader rarity: String?
+          end
+        end
+      end
+    end

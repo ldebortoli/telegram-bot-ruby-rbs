@@ -1,0 +1,17 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class StoryAreaPosition < Base
+        def self.new: (x_percentage: Float, y_percentage: Float, width_percentage: Float, height_percentage: Float, rotation_angle: Float, corner_radius_percentage: Float) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader x_percentage: Float
+        attr_reader y_percentage: Float
+        attr_reader width_percentage: Float
+        attr_reader height_percentage: Float
+        attr_reader rotation_angle: Float
+        attr_reader corner_radius_percentage: Float
+          end
+        end
+      end
+    end

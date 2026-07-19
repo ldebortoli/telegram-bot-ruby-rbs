@@ -1,0 +1,18 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class PollOption < Base
+        def self.new: (persistent_id: String, text: String, ?text_entities: Array[MessageEntity], voter_count: Integer, ?added_by_user: User, ?added_by_chat: Chat, ?addition_date: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader persistent_id: String
+        attr_reader text: String
+        attr_reader text_entities: Array[MessageEntity]?
+        attr_reader voter_count: Integer
+        attr_reader added_by_user: User?
+        attr_reader added_by_chat: Chat?
+        attr_reader addition_date: Integer?
+          end
+        end
+      end
+    end

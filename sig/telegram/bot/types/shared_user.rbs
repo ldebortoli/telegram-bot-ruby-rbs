@@ -1,0 +1,16 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class SharedUser < Base
+        def self.new: (user_id: Integer, ?first_name: String, ?last_name: String, ?username: String, ?photo: Array[PhotoSize]) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader user_id: Integer
+        attr_reader first_name: String?
+        attr_reader last_name: String?
+        attr_reader username: String?
+        attr_reader photo: Array[PhotoSize]?
+          end
+        end
+      end
+    end

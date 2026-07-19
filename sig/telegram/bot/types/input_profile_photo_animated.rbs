@@ -1,0 +1,14 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InputProfilePhotoAnimated < Base
+        def self.new: (?type: String, animation: String, ?main_frame_timestamp: Float) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader animation: String
+        attr_reader main_frame_timestamp: Float
+          end
+        end
+      end
+    end

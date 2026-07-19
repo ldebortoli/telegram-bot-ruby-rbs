@@ -1,0 +1,62 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class ChatFullInfo < Base
+        def self.new: (id: Integer, type: String, ?title: String, ?username: String, ?first_name: String, ?last_name: String, ?is_forum: true, ?is_direct_messages: true, accent_color_id: Integer, max_reaction_count: Integer, ?photo: ChatPhoto, ?active_usernames: Array[String], ?birthdate: Birthdate, ?business_intro: BusinessIntro, ?business_location: BusinessLocation, ?business_opening_hours: BusinessOpeningHours, ?personal_chat: Chat, ?parent_chat: Chat, ?available_reactions: Array[reaction_type], ?background_custom_emoji_id: String, ?profile_accent_color_id: Integer, ?profile_background_custom_emoji_id: String, ?emoji_status_custom_emoji_id: String, ?emoji_status_expiration_date: Integer, ?bio: String, ?has_private_forwards: true, ?has_restricted_voice_and_video_messages: true, ?join_to_send_messages: true, ?join_by_request: true, ?description: String, ?invite_link: String, ?pinned_message: Message, ?permissions: ChatPermissions, accepted_gift_types: AcceptedGiftTypes, ?can_send_paid_media: true, ?slow_mode_delay: Integer, ?unrestrict_boost_count: Integer, ?message_auto_delete_time: Integer, ?has_aggressive_anti_spam_enabled: true, ?has_hidden_members: true, ?has_protected_content: true, ?has_visible_history: true, ?sticker_set_name: String, ?can_set_sticker_set: true, ?custom_emoji_sticker_set_name: String, ?linked_chat_id: Integer, ?location: ChatLocation, ?rating: UserRating, ?first_profile_audio: Audio, ?unique_gift_colors: UniqueGiftColors, ?paid_message_star_count: Integer) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader id: Integer
+        attr_reader type: String
+        attr_reader title: String?
+        attr_reader username: String?
+        attr_reader first_name: String?
+        attr_reader last_name: String?
+        attr_reader is_forum: true?
+        attr_reader is_direct_messages: true?
+        attr_reader accent_color_id: Integer
+        attr_reader max_reaction_count: Integer
+        attr_reader photo: ChatPhoto?
+        attr_reader active_usernames: Array[String]?
+        attr_reader birthdate: Birthdate?
+        attr_reader business_intro: BusinessIntro?
+        attr_reader business_location: BusinessLocation?
+        attr_reader business_opening_hours: BusinessOpeningHours?
+        attr_reader personal_chat: Chat?
+        attr_reader parent_chat: Chat?
+        attr_reader available_reactions: Array[reaction_type]?
+        attr_reader background_custom_emoji_id: String?
+        attr_reader profile_accent_color_id: Integer?
+        attr_reader profile_background_custom_emoji_id: String?
+        attr_reader emoji_status_custom_emoji_id: String?
+        attr_reader emoji_status_expiration_date: Integer?
+        attr_reader bio: String?
+        attr_reader has_private_forwards: true?
+        attr_reader has_restricted_voice_and_video_messages: true?
+        attr_reader join_to_send_messages: true?
+        attr_reader join_by_request: true?
+        attr_reader description: String?
+        attr_reader invite_link: String?
+        attr_reader pinned_message: Message?
+        attr_reader permissions: ChatPermissions?
+        attr_reader accepted_gift_types: AcceptedGiftTypes
+        attr_reader can_send_paid_media: true?
+        attr_reader slow_mode_delay: Integer?
+        attr_reader unrestrict_boost_count: Integer?
+        attr_reader message_auto_delete_time: Integer?
+        attr_reader has_aggressive_anti_spam_enabled: true?
+        attr_reader has_hidden_members: true?
+        attr_reader has_protected_content: true?
+        attr_reader has_visible_history: true?
+        attr_reader sticker_set_name: String?
+        attr_reader can_set_sticker_set: true?
+        attr_reader custom_emoji_sticker_set_name: String?
+        attr_reader linked_chat_id: Integer?
+        attr_reader location: ChatLocation?
+        attr_reader rating: UserRating?
+        attr_reader first_profile_audio: Audio?
+        attr_reader unique_gift_colors: UniqueGiftColors?
+        attr_reader paid_message_star_count: Integer?
+          end
+        end
+      end
+    end

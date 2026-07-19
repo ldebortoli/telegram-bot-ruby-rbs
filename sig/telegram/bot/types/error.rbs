@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class Error < Base
+        def self.new: (ok: bool, error_code: Integer, description: String, ?parameters: ResponseParameters) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader ok: bool
+        attr_reader error_code: Integer
+        attr_reader description: String
+        attr_reader parameters: ResponseParameters?
+          end
+        end
+      end
+    end

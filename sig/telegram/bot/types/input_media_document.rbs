@@ -1,0 +1,18 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InputMediaDocument < Base
+        def self.new: (?type: String, media: String, ?thumbnail: String, ?caption: String, ?parse_mode: String, ?caption_entities: Array[MessageEntity], ?disable_content_type_detection: bool) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader media: String
+        attr_reader thumbnail: String?
+        attr_reader caption: String?
+        attr_reader parse_mode: String?
+        attr_reader caption_entities: Array[MessageEntity]?
+        attr_reader disable_content_type_detection: bool?
+          end
+        end
+      end
+    end

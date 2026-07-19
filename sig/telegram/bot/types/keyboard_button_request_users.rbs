@@ -1,0 +1,18 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class KeyboardButtonRequestUsers < Base
+        def self.new: (request_id: Integer, ?user_is_bot: bool, ?user_is_premium: bool, ?max_quantity: Integer, ?request_name: bool, ?request_username: bool, ?request_photo: bool) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader request_id: Integer
+        attr_reader user_is_bot: bool?
+        attr_reader user_is_premium: bool?
+        attr_reader max_quantity: Integer
+        attr_reader request_name: bool?
+        attr_reader request_username: bool?
+        attr_reader request_photo: bool?
+          end
+        end
+      end
+    end

@@ -1,0 +1,24 @@
+    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class Gift < Base
+        def self.new: (id: String, sticker: Sticker, star_count: Integer, ?upgrade_star_count: Integer, ?is_premium: true, ?has_colors: true, ?total_count: Integer, ?remaining_count: Integer, ?personal_total_count: Integer, ?personal_remaining_count: Integer, ?background: GiftBackground, ?unique_gift_variant_count: Integer, ?publisher_chat: Chat) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader id: String
+        attr_reader sticker: Sticker
+        attr_reader star_count: Integer
+        attr_reader upgrade_star_count: Integer?
+        attr_reader is_premium: true?
+        attr_reader has_colors: true?
+        attr_reader total_count: Integer?
+        attr_reader remaining_count: Integer?
+        attr_reader personal_total_count: Integer?
+        attr_reader personal_remaining_count: Integer?
+        attr_reader background: GiftBackground?
+        attr_reader unique_gift_variant_count: Integer?
+        attr_reader publisher_chat: Chat?
+          end
+        end
+      end
+    end
