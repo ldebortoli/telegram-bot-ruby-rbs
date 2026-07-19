@@ -1,10 +1,10 @@
 ﻿# TODO
 
-- [2026-07-18] [BLOCKED: RubyGems.org no tiene una sesión autenticada en el
-  navegador disponible y no existe una credencial local; un propietario debe
-  iniciar sesión y crear el pending trusted publisher para
-  `ldebortoli/telegram-bot-ruby-rbs`, workflow `release.yml`, entorno
-  `release`] Publicar y verificar `telegram-bot-ruby-rbs` 0.1.0.
+- [2026-07-18] [BLOCKED: la sesión RubyGems.org ya está autenticada, pero la
+  página de Pending Trusted Publishers exige reconfirmar la contraseña; el
+  usuario debe ingresarla en la pestaña abierta y avisar cuando termine]
+  Crear el publisher para `ldebortoli/telegram-bot-ruby-rbs`, workflow
+  `release.yml`, entorno `release`, y publicar/verificar la versión 0.1.0.
 
 # IN PROGRESS
 
