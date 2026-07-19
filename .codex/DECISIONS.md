@@ -31,3 +31,12 @@ No borrar decisiones anteriores. Si una decision cambia, agregar una nueva entra
   `rubygems/release-gem@v1`, usando OIDC y el entorno GitHub `release`.
 - Motivo: evitar API keys de RubyGems en el repositorio o en secretos de larga
   duración y permitir el alta inicial mediante pending trusted publisher.
+
+## D-004 - Las tareas de publicación provienen de Bundler
+
+- Estado: vigente.
+- Fecha: 2026-07-18.
+- Decisión: cargar `bundler/gem_tasks` en el Rakefile para ofrecer las tareas
+  estándar `build`, `install` y `release` que consume `release-gem@v1`.
+- Motivo: la acción oficial obtiene credenciales OIDC y ejecuta
+  `bundle exec rake release`; una tarea de build propia no completa ese contrato.

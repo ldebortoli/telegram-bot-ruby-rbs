@@ -14,6 +14,8 @@ Telegram Bot API.
 - Git: True
 - Rama detectada: `main`
 - Remoto origin: `https://github.com/ldebortoli/telegram-bot-ruby-rbs.git`
+- RubyGems: `https://rubygems.org/gems/telegram-bot-ruby-rbs`
+- Versión pública actual: `0.1.0`
 
 ## Arquitectura
 
