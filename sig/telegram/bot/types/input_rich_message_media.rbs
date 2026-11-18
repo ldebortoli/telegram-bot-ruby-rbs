@@ -1,0 +1,13 @@
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InputRichMessageMedia < Base
+        def self.new: (id: String, media: (InputMediaAnimation | InputMediaAudio | InputMediaPhoto | InputMediaVideo | InputMediaVoiceNote)) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader id: String
+        attr_reader media: (InputMediaAnimation | InputMediaAudio | InputMediaPhoto | InputMediaVideo | InputMediaVoiceNote)
+          end
+        end
+      end
+    end

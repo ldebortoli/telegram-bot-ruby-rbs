@@ -1,0 +1,14 @@
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class RichTextCustomEmoji < Base
+        def self.new: (?type: String, custom_emoji_id: String, alternative_text: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader custom_emoji_id: String
+        attr_reader alternative_text: String
+          end
+        end
+      end
+    end

@@ -1,0 +1,12 @@
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InputRichMessageContent < Base
+        def self.new: (rich_message: InputRichMessage) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader rich_message: InputRichMessage
+          end
+        end
+      end
+    end

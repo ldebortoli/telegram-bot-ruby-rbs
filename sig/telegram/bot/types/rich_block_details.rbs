@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class RichBlockDetails < Base
+        def self.new: (?type: String, summary: rich_text, blocks: Array[rich_block], ?is_open: true) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader summary: rich_text
+        attr_reader blocks: Array[rich_block]
+        attr_reader is_open: true?
+          end
+        end
+      end
+    end

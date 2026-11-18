@@ -1,0 +1,13 @@
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class PaidMediaLivePhoto < Base
+        def self.new: (?type: String, live_photo: LivePhoto) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader live_photo: LivePhoto
+          end
+        end
+      end
+    end

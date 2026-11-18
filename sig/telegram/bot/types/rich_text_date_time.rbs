@@ -1,0 +1,15 @@
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class RichTextDateTime < Base
+        def self.new: (?type: String, text: rich_text, unix_time: Integer, date_time_format: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader text: rich_text
+        attr_reader unix_time: Integer
+        attr_reader date_time_format: String
+          end
+        end
+      end
+    end

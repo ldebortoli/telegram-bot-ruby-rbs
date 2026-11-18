@@ -1,9 +1,9 @@
-    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
     module Telegram
       module Bot
         module Types
           class User < Base
-        def self.new: (id: Integer, is_bot: bool, first_name: String, ?last_name: String, ?username: String, ?language_code: String, ?is_premium: true, ?added_to_attachment_menu: true, ?can_join_groups: bool, ?can_read_all_group_messages: bool, ?supports_inline_queries: bool, ?can_connect_to_business: bool, ?has_main_web_app: bool, ?has_topics_enabled: bool, ?allows_users_to_create_topics: bool, ?can_manage_bots: bool) -> instance
+        def self.new: (id: Integer, is_bot: bool, first_name: String, ?last_name: String, ?username: String, ?language_code: String, ?is_premium: true, ?added_to_attachment_menu: true, ?can_join_groups: bool, ?can_read_all_group_messages: bool, ?supports_guest_queries: bool, ?supports_inline_queries: bool, ?can_connect_to_business: bool, ?has_main_web_app: bool, ?has_topics_enabled: bool, ?allows_users_to_create_topics: bool, ?can_manage_bots: bool, ?supports_join_request_queries: bool) -> instance
                     | (?Hash[Symbol | String, untyped] attributes) -> instance
         attr_reader id: Integer
         attr_reader is_bot: bool
@@ -15,12 +15,14 @@
         attr_reader added_to_attachment_menu: true?
         attr_reader can_join_groups: bool?
         attr_reader can_read_all_group_messages: bool?
+        attr_reader supports_guest_queries: bool?
         attr_reader supports_inline_queries: bool?
         attr_reader can_connect_to_business: bool?
         attr_reader has_main_web_app: bool?
         attr_reader has_topics_enabled: bool?
         attr_reader allows_users_to_create_topics: bool?
         attr_reader can_manage_bots: bool?
+        attr_reader supports_join_request_queries: bool?
           end
         end
       end

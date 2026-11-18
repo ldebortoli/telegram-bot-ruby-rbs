@@ -1,4 +1,4 @@
-  # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+  # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
   module Telegram
     module Bot
       module Types
@@ -20,17 +20,26 @@
         type inline_query_result = InlineQueryResultCachedAudio | InlineQueryResultCachedDocument | InlineQueryResultCachedGif | InlineQueryResultCachedMpeg4Gif | InlineQueryResultCachedPhoto | InlineQueryResultCachedSticker | InlineQueryResultCachedVideo | InlineQueryResultCachedVoice | InlineQueryResultArticle | InlineQueryResultAudio | InlineQueryResultContact | InlineQueryResultGame | InlineQueryResultDocument | InlineQueryResultGif | InlineQueryResultLocation | InlineQueryResultMpeg4Gif | InlineQueryResultPhoto | InlineQueryResultVenue | InlineQueryResultVideo | InlineQueryResultVoice
         InlineQueryResult: untyped
 
-        type input_media = InputMediaAnimation | InputMediaDocument | InputMediaAudio | InputMediaPhoto | InputMediaVideo
+        type input_media = InputMediaAnimation | InputMediaAudio | InputMediaDocument | InputMediaLivePhoto | InputMediaPhoto | InputMediaVideo
         InputMedia: untyped
 
-        type input_message_content = InputTextMessageContent | InputLocationMessageContent | InputVenueMessageContent | InputContactMessageContent | InputInvoiceMessageContent
+        type input_message_content = InputTextMessageContent | InputRichMessageContent | InputLocationMessageContent | InputVenueMessageContent | InputContactMessageContent | InputInvoiceMessageContent
         InputMessageContent: untyped
 
-        type input_paid_media = InputPaidMediaPhoto | InputPaidMediaVideo
+        type input_paid_media = InputPaidMediaLivePhoto | InputPaidMediaPhoto | InputPaidMediaVideo
         InputPaidMedia: untyped
+
+        type input_poll_media = InputMediaAnimation | InputMediaAudio | InputMediaDocument | InputMediaLivePhoto | InputMediaLocation | InputMediaPhoto | InputMediaVenue | InputMediaVideo
+        InputPollMedia: untyped
+
+        type input_poll_option_media = InputMediaAnimation | InputMediaLink | InputMediaLivePhoto | InputMediaLocation | InputMediaPhoto | InputMediaSticker | InputMediaVenue | InputMediaVideo
+        InputPollOptionMedia: untyped
 
         type input_profile_photo = InputProfilePhotoStatic | InputProfilePhotoAnimated
         InputProfilePhoto: untyped
+
+        type input_rich_block = InputRichBlockParagraph | InputRichBlockSectionHeading | InputRichBlockPreformatted | InputRichBlockFooter | InputRichBlockDivider | InputRichBlockMathematicalExpression | InputRichBlockAnchor | InputRichBlockList | InputRichBlockBlockQuotation | InputRichBlockPullQuotation | InputRichBlockCollage | InputRichBlockSlideshow | InputRichBlockTable | InputRichBlockDetails | InputRichBlockMap | InputRichBlockAnimation | InputRichBlockAudio | InputRichBlockPhoto | InputRichBlockVideo | InputRichBlockVoiceNote | InputRichBlockThinking
+        InputRichBlock: untyped
 
         type input_story_content = InputStoryContentPhoto | InputStoryContentVideo
         InputStoryContent: untyped
@@ -47,7 +56,7 @@
         type owned_gift = OwnedGiftRegular | OwnedGiftUnique
         OwnedGift: untyped
 
-        type paid_media = PaidMediaPreview | PaidMediaPhoto | PaidMediaVideo
+        type paid_media = PaidMediaLivePhoto | PaidMediaPhoto | PaidMediaPreview | PaidMediaVideo
         PaidMedia: untyped
 
         type passport_element_error = PassportElementErrorDataField | PassportElementErrorFrontSide | PassportElementErrorReverseSide | PassportElementErrorSelfie | PassportElementErrorFile | PassportElementErrorFiles | PassportElementErrorTranslationFile | PassportElementErrorTranslationFiles | PassportElementErrorUnspecified
@@ -58,6 +67,12 @@
 
         type revenue_withdrawal_state = RevenueWithdrawalStatePending | RevenueWithdrawalStateSucceeded | RevenueWithdrawalStateFailed
         RevenueWithdrawalState: untyped
+
+        type rich_block = RichBlockParagraph | RichBlockSectionHeading | RichBlockPreformatted | RichBlockFooter | RichBlockDivider | RichBlockMathematicalExpression | RichBlockAnchor | RichBlockList | RichBlockBlockQuotation | RichBlockPullQuotation | RichBlockCollage | RichBlockSlideshow | RichBlockTable | RichBlockDetails | RichBlockMap | RichBlockAnimation | RichBlockAudio | RichBlockPhoto | RichBlockVideo | RichBlockVoiceNote | RichBlockThinking
+        RichBlock: untyped
+
+        type rich_text = String | Array[rich_text] | RichTextBold | RichTextItalic | RichTextUnderline | RichTextStrikethrough | RichTextSpoiler | RichTextDateTime | RichTextTextMention | RichTextSubscript | RichTextSuperscript | RichTextMarked | RichTextCode | RichTextCustomEmoji | RichTextMathematicalExpression | RichTextUrl | RichTextEmailAddress | RichTextPhoneNumber | RichTextBankCardNumber | RichTextMention | RichTextHashtag | RichTextCashtag | RichTextBotCommand | RichTextAnchor | RichTextAnchorLink | RichTextReference | RichTextReferenceLink
+        RichText: untyped
 
         type story_area_type = StoryAreaTypeLocation | StoryAreaTypeSuggestedReaction | StoryAreaTypeLink | StoryAreaTypeWeather | StoryAreaTypeUniqueGift
         StoryAreaType: untyped

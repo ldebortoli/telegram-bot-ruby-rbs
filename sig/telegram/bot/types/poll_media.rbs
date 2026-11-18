@@ -1,0 +1,21 @@
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class PollMedia < Base
+        def self.new: (?animation: Animation, ?audio: Audio, ?document: Document, ?link: Link, ?live_photo: LivePhoto, ?location: Location, ?photo: Array[PhotoSize], ?sticker: Sticker, ?venue: Venue, ?video: Video) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader animation: Animation?
+        attr_reader audio: Audio?
+        attr_reader document: Document?
+        attr_reader link: Link?
+        attr_reader live_photo: LivePhoto?
+        attr_reader location: Location?
+        attr_reader photo: Array[PhotoSize]?
+        attr_reader sticker: Sticker?
+        attr_reader venue: Venue?
+        attr_reader video: Video?
+          end
+        end
+      end
+    end

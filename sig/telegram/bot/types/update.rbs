@@ -1,9 +1,9 @@
-    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
     module Telegram
       module Bot
         module Types
           class Update < Base
-        def self.new: (update_id: Integer, ?message: Message, ?edited_message: Message, ?channel_post: Message, ?edited_channel_post: Message, ?business_connection: BusinessConnection, ?business_message: Message, ?edited_business_message: Message, ?deleted_business_messages: BusinessMessagesDeleted, ?message_reaction: MessageReactionUpdated, ?message_reaction_count: MessageReactionCountUpdated, ?inline_query: InlineQuery, ?chosen_inline_result: ChosenInlineResult, ?callback_query: CallbackQuery, ?shipping_query: ShippingQuery, ?pre_checkout_query: PreCheckoutQuery, ?purchased_paid_media: PaidMediaPurchased, ?poll: Poll, ?poll_answer: PollAnswer, ?my_chat_member: ChatMemberUpdated, ?chat_member: ChatMemberUpdated, ?chat_join_request: ChatJoinRequest, ?chat_boost: ChatBoostUpdated, ?removed_chat_boost: ChatBoostRemoved, ?managed_bot: ManagedBotUpdated) -> instance
+        def self.new: (update_id: Integer, ?message: Message, ?edited_message: Message, ?channel_post: Message, ?edited_channel_post: Message, ?business_connection: BusinessConnection, ?business_message: Message, ?edited_business_message: Message, ?deleted_business_messages: BusinessMessagesDeleted, ?guest_message: Message, ?message_reaction: MessageReactionUpdated, ?message_reaction_count: MessageReactionCountUpdated, ?inline_query: InlineQuery, ?chosen_inline_result: ChosenInlineResult, ?callback_query: CallbackQuery, ?shipping_query: ShippingQuery, ?pre_checkout_query: PreCheckoutQuery, ?purchased_paid_media: PaidMediaPurchased, ?poll: Poll, ?poll_answer: PollAnswer, ?my_chat_member: ChatMemberUpdated, ?chat_member: ChatMemberUpdated, ?chat_join_request: ChatJoinRequest, ?chat_boost: ChatBoostUpdated, ?removed_chat_boost: ChatBoostRemoved, ?managed_bot: ManagedBotUpdated, ?subscription: BotSubscriptionUpdated) -> instance
                     | (?Hash[Symbol | String, untyped] attributes) -> instance
         attr_reader update_id: Integer
         attr_reader message: Message?
@@ -14,6 +14,7 @@
         attr_reader business_message: Message?
         attr_reader edited_business_message: Message?
         attr_reader deleted_business_messages: BusinessMessagesDeleted?
+        attr_reader guest_message: Message?
         attr_reader message_reaction: MessageReactionUpdated?
         attr_reader message_reaction_count: MessageReactionCountUpdated?
         attr_reader inline_query: InlineQuery?
@@ -30,6 +31,7 @@
         attr_reader chat_boost: ChatBoostUpdated?
         attr_reader removed_chat_boost: ChatBoostRemoved?
         attr_reader managed_bot: ManagedBotUpdated?
+        attr_reader subscription: BotSubscriptionUpdated?
         def current_message: () -> Base?
           end
         end

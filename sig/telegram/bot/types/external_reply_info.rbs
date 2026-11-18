@@ -1,9 +1,9 @@
-    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
     module Telegram
       module Bot
         module Types
           class ExternalReplyInfo < Base
-        def self.new: (origin: message_origin, ?chat: Chat, ?message_id: Integer, ?link_preview_options: LinkPreviewOptions, ?animation: Animation, ?audio: Audio, ?document: Document, ?paid_media: PaidMediaInfo, ?photo: Array[PhotoSize], ?sticker: Sticker, ?story: Story, ?video: Video, ?video_note: VideoNote, ?voice: Voice, ?has_media_spoiler: true, ?checklist: Checklist, ?contact: Contact, ?dice: Dice, ?game: Game, ?giveaway: Giveaway, ?giveaway_winners: GiveawayWinners, ?invoice: Invoice, ?location: Location, ?poll: Poll, ?venue: Venue) -> instance
+        def self.new: (origin: message_origin, ?chat: Chat, ?message_id: Integer, ?link_preview_options: LinkPreviewOptions, ?animation: Animation, ?audio: Audio, ?document: Document, ?live_photo: LivePhoto, ?paid_media: PaidMediaInfo, ?photo: Array[PhotoSize], ?sticker: Sticker, ?story: Story, ?video: Video, ?video_note: VideoNote, ?voice: Voice, ?has_media_spoiler: true, ?checklist: Checklist, ?contact: Contact, ?dice: Dice, ?game: Game, ?giveaway: Giveaway, ?giveaway_winners: GiveawayWinners, ?invoice: Invoice, ?location: Location, ?poll: Poll, ?venue: Venue) -> instance
                     | (?Hash[Symbol | String, untyped] attributes) -> instance
         attr_reader origin: message_origin
         attr_reader chat: Chat?
@@ -12,6 +12,7 @@
         attr_reader animation: Animation?
         attr_reader audio: Audio?
         attr_reader document: Document?
+        attr_reader live_photo: LivePhoto?
         attr_reader paid_media: PaidMediaInfo?
         attr_reader photo: Array[PhotoSize]?
         attr_reader sticker: Sticker?

@@ -1,13 +1,14 @@
-    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
     module Telegram
       module Bot
         module Types
           class InputPollOption < Base
-        def self.new: (text: String, ?text_parse_mode: String, ?text_entities: Array[MessageEntity]) -> instance
+        def self.new: (text: String, ?text_parse_mode: String, ?text_entities: Array[MessageEntity], ?media: input_poll_option_media) -> instance
                     | (?Hash[Symbol | String, untyped] attributes) -> instance
         attr_reader text: String
         attr_reader text_parse_mode: String?
         attr_reader text_entities: Array[MessageEntity]?
+        attr_reader media: input_poll_option_media?
           end
         end
       end

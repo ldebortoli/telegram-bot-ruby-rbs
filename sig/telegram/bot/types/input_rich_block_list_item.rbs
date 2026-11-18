@@ -1,0 +1,16 @@
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InputRichBlockListItem < Base
+        def self.new: (blocks: Array[input_rich_block], ?has_checkbox: true, ?is_checked: true, ?value: Integer, ?type: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader blocks: Array[input_rich_block]
+        attr_reader has_checkbox: true?
+        attr_reader is_checked: true?
+        attr_reader value: Integer?
+        attr_reader type: String?
+          end
+        end
+      end
+    end

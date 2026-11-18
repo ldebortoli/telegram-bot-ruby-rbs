@@ -1,0 +1,14 @@
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InputRichBlockSlideshow < Base
+        def self.new: (?type: String, blocks: Array[input_rich_block], ?caption: RichBlockCaption) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader blocks: Array[input_rich_block]
+        attr_reader caption: RichBlockCaption?
+          end
+        end
+      end
+    end
