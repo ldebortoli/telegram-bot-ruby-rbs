@@ -1,8 +1,8 @@
 ---
-api_version: '10.2'
+api_version: '10.4'
 source_url: https://core.telegram.org/bots/api
-retrieved_at: '2026-07-18T23:41:50Z'
-source_sha256: 050c644d595ddd23cd8cab4bd690e043ea1fd776d74471eaf2be2f8845ca356a
+retrieved_at: '2026-11-18T01:01:34Z'
+source_sha256: ed0ba4dc2ff46eb6b2ecc68409ed673fc13056d69a5f2f8e4310a5a92f212661
 types:
   AcceptedGiftTypes:
     fields:
@@ -69,6 +69,27 @@ types:
     - name: file_size
       type: Integer
       optional: true
+    union: []
+  AreaPosition:
+    fields:
+    - name: x_percentage
+      type: Float
+      optional: false
+    - name: y_percentage
+      type: Float
+      optional: false
+    - name: width_percentage
+      type: Float
+      optional: false
+    - name: height_percentage
+      type: Float
+      optional: false
+    - name: rotation_angle
+      type: Float
+      optional: false
+    - name: corner_radius_percentage
+      type: Float
+      optional: false
     union: []
   Audio:
     fields:
@@ -557,6 +578,9 @@ types:
     - name: can_manage_tags
       type: Boolean
       optional: true
+    - name: can_send_welcome_messages
+      type: Boolean
+      optional: false
     union: []
   ChatBackground:
     fields:
@@ -812,6 +836,12 @@ types:
     - name: community
       type: Community
       optional: true
+    - name: ton_wallet_card
+      type: TonWalletCard
+      optional: true
+    - name: share_theme
+      type: ChatShareTheme
+      optional: true
     union: []
   ChatInviteLink:
     fields:
@@ -953,6 +983,9 @@ types:
     - name: can_manage_tags
       type: Boolean
       optional: true
+    - name: can_send_welcome_messages
+      type: Boolean
+      optional: false
     - name: custom_title
       type: String
       optional: true
@@ -1179,6 +1212,50 @@ types:
       type: String
       optional: false
     union: []
+  ChatShareTheme:
+    fields: []
+    union:
+    - ChatShareThemeEmoji
+    - ChatShareThemeUniqueGift
+  ChatShareThemeBackdrop:
+    fields:
+    - name: id
+      type: Integer
+      optional: false
+    - name: name
+      type: String
+      optional: false
+    - name: colors
+      type: UniqueGiftBackdropColors
+      optional: false
+    union: []
+  ChatShareThemeBackdrops:
+    fields:
+    - name: backdrops
+      type: Array of ChatShareThemeBackdrop
+      optional: false
+    union: []
+  ChatShareThemeEmoji:
+    fields:
+    - name: type
+      type: String
+      optional: false
+    - name: emojis
+      type: Array of EmojiType
+      optional: false
+    - name: background_backdrop_id
+      type: Integer
+      optional: true
+    union: []
+  ChatShareThemeUniqueGift:
+    fields:
+    - name: type
+      type: String
+      optional: false
+    - name: gift
+      type: UniqueGift
+      optional: false
+    union: []
   ChatShared:
     fields:
     - name: request_id
@@ -1290,6 +1367,12 @@ types:
       type: Community
       optional: false
     union: []
+  CommunityChatJoined:
+    fields:
+    - name: community
+      type: Community
+      optional: false
+    union: []
   CommunityChatRemoved:
     fields: []
     union: []
@@ -1344,6 +1427,9 @@ types:
       type: User
       optional: true
     union: []
+  DisabledButton:
+    fields: []
+    union: []
   Document:
     fields:
     - name: file_id
@@ -1364,6 +1450,29 @@ types:
     - name: file_size
       type: Integer
       optional: true
+    union: []
+  EmojiType:
+    fields: []
+    union:
+    - EmojiTypeEmoji
+    - EmojiTypeCustomEmoji
+  EmojiTypeCustomEmoji:
+    fields:
+    - name: type
+      type: String
+      optional: false
+    - name: custom_emoji_id
+      type: String
+      optional: false
+    union: []
+  EmojiTypeEmoji:
+    fields:
+    - name: type
+      type: String
+      optional: false
+    - name: emoji
+      type: String
+      optional: false
     union: []
   EncryptedCredentials:
     fields:
@@ -1409,6 +1518,18 @@ types:
     - name: hash
       type: String
       optional: false
+    union: []
+  EphemeralMessageParameters:
+    fields:
+    - name: receiver_user_id
+      type: Integer
+      optional: true
+    - name: callback_query_id
+      type: String
+      optional: true
+    - name: replace_callback_query_message
+      type: Boolean
+      optional: true
     union: []
   ExternalReplyInfo:
     fields:
@@ -1456,6 +1577,9 @@ types:
       optional: true
     - name: voice
       type: Voice
+      optional: true
+    - name: widget
+      type: Widget
       optional: true
     - name: has_media_spoiler
       type: 'True'
@@ -1841,12 +1965,18 @@ types:
     - name: pay
       type: Boolean
       optional: true
+    - name: disabled
+      type: DisabledButton
+      optional: true
     union: []
   InlineKeyboardMarkup:
     fields:
     - name: inline_keyboard
       type: Array of Array of InlineKeyboardButton
       optional: false
+    - name: force_reply
+      type: Boolean
+      optional: true
     union: []
   InlineQuery:
     fields:
@@ -3062,6 +3192,8 @@ types:
     - InputVenueMessageContent
     - InputContactMessageContent
     - InputInvoiceMessageContent
+    - InputWidgetMessageContent
+    - InputSharedWidgetMessageContent
   InputPaidMedia:
     fields: []
     union:
@@ -3194,14 +3326,17 @@ types:
     - InputRichBlockAnchor
     - InputRichBlockList
     - InputRichBlockBlockQuotation
+    - InputRichBlockExpandableBlockQuotation
     - InputRichBlockPullQuotation
     - InputRichBlockCollage
     - InputRichBlockSlideshow
     - InputRichBlockTable
     - InputRichBlockDetails
     - InputRichBlockMap
+    - InputRichBlockButtons
     - InputRichBlockAnimation
     - InputRichBlockAudio
+    - InputRichBlockDocument
     - InputRichBlockPhoto
     - InputRichBlockVideo
     - InputRichBlockVoiceNote
@@ -3251,6 +3386,18 @@ types:
       type: RichText
       optional: true
     union: []
+  InputRichBlockButtons:
+    fields:
+    - name: type
+      type: String
+      optional: false
+    - name: buttons
+      type: Array of RichMessageButton
+      optional: false
+    - name: align
+      type: String
+      optional: true
+    union: []
   InputRichBlockCollage:
     fields:
     - name: type
@@ -3283,6 +3430,30 @@ types:
     - name: type
       type: String
       optional: false
+    union: []
+  InputRichBlockDocument:
+    fields:
+    - name: type
+      type: String
+      optional: false
+    - name: document
+      type: InputMediaDocument
+      optional: false
+    - name: caption
+      type: RichBlockCaption
+      optional: true
+    union: []
+  InputRichBlockExpandableBlockQuotation:
+    fields:
+    - name: type
+      type: String
+      optional: false
+    - name: text
+      type: RichText
+      optional: false
+    - name: credit
+      type: RichText
+      optional: true
     union: []
   InputRichBlockFooter:
     fields:
@@ -3330,13 +3501,13 @@ types:
       optional: false
     - name: zoom
       type: Integer
-      optional: false
+      optional: true
     - name: width
       type: Integer
-      optional: false
+      optional: true
     - name: height
       type: Integer
-      optional: false
+      optional: true
     - name: caption
       type: RichBlockCaption
       optional: true
@@ -3433,6 +3604,9 @@ types:
     - name: is_striped
       type: 'True'
       optional: true
+    - name: is_compact
+      type: 'True'
+      optional: true
     - name: caption
       type: RichText
       optional: true
@@ -3503,9 +3677,30 @@ types:
       type: String
       optional: false
     - name: media
-      type: InputMediaAnimation or InputMediaAudio or InputMediaPhoto or InputMediaVideo
-        or InputMediaVoiceNote
+      type: InputMediaAnimation or InputMediaAudio or InputMediaDocument or InputMediaPhoto
+        or InputMediaVideo or InputMediaVoiceNote
       optional: false
+    union: []
+  InputSharedWidgetMessageContent:
+    fields:
+    - name: widget_id
+      type: String
+      optional: false
+    - name: chat_data
+      type: String
+      optional: true
+    - name: caption
+      type: String
+      optional: true
+    - name: parse_mode
+      type: String
+      optional: true
+    - name: caption_entities
+      type: Array of MessageEntity
+      optional: true
+    - name: show_caption_above_media
+      type: Boolean
+      optional: true
     union: []
   InputSticker:
     fields:
@@ -3597,6 +3792,42 @@ types:
       optional: true
     - name: google_place_type
       type: String
+      optional: true
+    union: []
+  InputWidgetMessageContent:
+    fields:
+    - name: html
+      type: String
+      optional: false
+    - name: width
+      type: Integer
+      optional: true
+    - name: height
+      type: Integer
+      optional: true
+    - name: public_data
+      type: String
+      optional: true
+    - name: chat_data
+      type: String
+      optional: true
+    - name: caption
+      type: String
+      optional: true
+    - name: parse_mode
+      type: String
+      optional: true
+    - name: caption_entities
+      type: Array of MessageEntity
+      optional: true
+    - name: show_caption_above_media
+      type: Boolean
+      optional: true
+    - name: allow_queries
+      type: Boolean
+      optional: true
+    - name: is_shared
+      type: Boolean
       optional: true
     union: []
   Invoice:
@@ -4056,6 +4287,9 @@ types:
     - name: voice
       type: Voice
       optional: true
+    - name: widget
+      type: Widget
+      optional: true
     - name: caption
       type: String
       optional: true
@@ -4182,6 +4416,9 @@ types:
     - name: community_chat_added
       type: CommunityChatAdded
       optional: true
+    - name: community_chat_joined
+      type: CommunityChatJoined
+      optional: true
     - name: community_chat_removed
       type: CommunityChatRemoved
       optional: true
@@ -4224,6 +4461,9 @@ types:
     - name: paid_message_price_changed
       type: PaidMessagePriceChanged
       optional: true
+    - name: paid_messages_waived
+      type: PaidMessagesWaived
+      optional: true
     - name: poll_option_added
       type: PollOptionAdded
       optional: true
@@ -4244,6 +4484,9 @@ types:
       optional: true
     - name: suggested_post_refunded
       type: SuggestedPostRefunded
+      optional: true
+    - name: ton_wallet_transfer
+      type: TonWalletTransfer
       optional: true
     - name: video_chat_scheduled
       type: VideoChatScheduled
@@ -4299,6 +4542,18 @@ types:
     - name: date_time_format
       type: String
       optional: true
+    union: []
+  MessageGenerationStopped:
+    fields:
+    - name: chat
+      type: Chat
+      optional: false
+    - name: message_thread_id
+      type: Integer
+      optional: true
+    - name: draft_id
+      type: Integer
+      optional: false
     union: []
   MessageId:
     fields:
@@ -4591,6 +4846,9 @@ types:
     - name: paid_message_star_count
       type: Integer
       optional: false
+    union: []
+  PaidMessagesWaived:
+    fields: []
     union: []
   PassportData:
     fields:
@@ -5086,6 +5344,9 @@ types:
     - name: selective
       type: Boolean
       optional: true
+    - name: force_reply
+      type: Boolean
+      optional: true
     union: []
   ReplyKeyboardRemove:
     fields:
@@ -5118,6 +5379,9 @@ types:
       optional: true
     - name: quote_entities
       type: Array of MessageEntity
+      optional: true
+    - name: quote_rich_texts
+      type: Array of RichText
       optional: true
     - name: quote_position
       type: Integer
@@ -5180,14 +5444,17 @@ types:
     - RichBlockAnchor
     - RichBlockList
     - RichBlockBlockQuotation
+    - RichBlockExpandableBlockQuotation
     - RichBlockPullQuotation
     - RichBlockCollage
     - RichBlockSlideshow
     - RichBlockTable
     - RichBlockDetails
     - RichBlockMap
+    - RichBlockButtons
     - RichBlockAnimation
     - RichBlockAudio
+    - RichBlockDocument
     - RichBlockPhoto
     - RichBlockVideo
     - RichBlockVoiceNote
@@ -5240,6 +5507,18 @@ types:
       type: RichText
       optional: true
     union: []
+  RichBlockButtons:
+    fields:
+    - name: type
+      type: String
+      optional: false
+    - name: buttons
+      type: Array of RichMessageButton
+      optional: false
+    - name: align
+      type: String
+      optional: true
+    union: []
   RichBlockCaption:
     fields:
     - name: text
@@ -5281,6 +5560,30 @@ types:
     - name: type
       type: String
       optional: false
+    union: []
+  RichBlockDocument:
+    fields:
+    - name: type
+      type: String
+      optional: false
+    - name: document
+      type: Document
+      optional: false
+    - name: caption
+      type: RichBlockCaption
+      optional: true
+    union: []
+  RichBlockExpandableBlockQuotation:
+    fields:
+    - name: type
+      type: String
+      optional: false
+    - name: text
+      type: RichText
+      optional: false
+    - name: credit
+      type: RichText
+      optional: true
     union: []
   RichBlockFooter:
     fields:
@@ -5437,6 +5740,9 @@ types:
     - name: is_striped
       type: 'True'
       optional: true
+    - name: is_compact
+      type: 'True'
+      optional: true
     - name: caption
       type: RichText
       optional: true
@@ -5507,6 +5813,42 @@ types:
       type: Boolean
       optional: true
     union: []
+  RichMessageButton:
+    fields:
+    - name: text
+      type: RichText
+      optional: false
+    - name: style
+      type: String
+      optional: true
+    - name: url
+      type: String
+      optional: true
+    - name: callback_data
+      type: String
+      optional: true
+    - name: web_app
+      type: WebAppInfo
+      optional: true
+    - name: login_url
+      type: LoginUrl
+      optional: true
+    - name: switch_inline_query
+      type: String
+      optional: true
+    - name: switch_inline_query_current_chat
+      type: String
+      optional: true
+    - name: switch_inline_query_chosen_chat
+      type: SwitchInlineQueryChosenChat
+      optional: true
+    - name: copy_text
+      type: CopyTextButton
+      optional: true
+    - name: disabled
+      type: DisabledButton
+      optional: true
+    union: []
   RichText:
     fields: []
     union:
@@ -5527,10 +5869,12 @@ types:
     - RichTextEmailAddress
     - RichTextPhoneNumber
     - RichTextBankCardNumber
+    - RichTextTonAddress
     - RichTextMention
     - RichTextHashtag
     - RichTextCashtag
     - RichTextBotCommand
+    - RichTextButton
     - RichTextAnchor
     - RichTextAnchorLink
     - RichTextReference
@@ -5587,6 +5931,15 @@ types:
       optional: false
     - name: bot_command
       type: String
+      optional: false
+    union: []
+  RichTextButton:
+    fields:
+    - name: type
+      type: String
+      optional: false
+    - name: button
+      type: RichMessageButton
       optional: false
     union: []
   RichTextCashtag:
@@ -5784,6 +6137,18 @@ types:
       type: User
       optional: false
     union: []
+  RichTextTonAddress:
+    fields:
+    - name: type
+      type: String
+      optional: false
+    - name: text
+      type: RichText
+      optional: false
+    - name: address
+      type: String
+      optional: false
+    union: []
   RichTextUnderline:
     fields:
     - name: type
@@ -5834,6 +6199,24 @@ types:
     - name: photo
       type: Array of PhotoSize
       optional: true
+    union: []
+  SharedWidgetQuery:
+    fields:
+    - name: id
+      type: String
+      optional: false
+    - name: from
+      type: User
+      optional: false
+    - name: type
+      type: WidgetQueryType
+      optional: false
+    - name: data
+      type: String
+      optional: false
+    - name: widget_id
+      type: String
+      optional: false
     union: []
   ShippingAddress:
     fields:
@@ -5997,31 +6380,10 @@ types:
   StoryArea:
     fields:
     - name: position
-      type: StoryAreaPosition
+      type: AreaPosition
       optional: false
     - name: type
       type: StoryAreaType
-      optional: false
-    union: []
-  StoryAreaPosition:
-    fields:
-    - name: x_percentage
-      type: Float
-      optional: false
-    - name: y_percentage
-      type: Float
-      optional: false
-    - name: width_percentage
-      type: Float
-      optional: false
-    - name: height_percentage
-      type: Float
-      optional: false
-    - name: rotation_angle
-      type: Float
-      optional: false
-    - name: corner_radius_percentage
-      type: Float
       optional: false
     union: []
   StoryAreaType:
@@ -6238,11 +6600,86 @@ types:
     - name: entities
       type: Array of MessageEntity
       optional: true
+    - name: rich_texts
+      type: Array of RichText
+      optional: true
     - name: position
       type: Integer
       optional: false
     - name: is_manual
       type: 'True'
+      optional: true
+    union: []
+  TonNft:
+    fields:
+    - name: address
+      type: String
+      optional: false
+    - name: collection_address
+      type: String
+      optional: true
+    - name: index
+      type: String
+      optional: false
+    - name: name
+      type: String
+      optional: false
+    - name: description
+      type: String
+      optional: false
+    - name: attributes
+      type: Array of TonNftAttribute
+      optional: true
+    - name: gift
+      type: UniqueGift
+      optional: true
+    union: []
+  TonNftAttribute:
+    fields:
+    - name: trait_type
+      type: String
+      optional: false
+    - name: value
+      type: String
+      optional: false
+    union: []
+  TonWalletCard:
+    fields:
+    - name: address
+      type: String
+      optional: false
+    - name: amount
+      type: String
+      optional: false
+    - name: stickers
+      type: Array of TonWalletCardSticker
+      optional: false
+    - name: background_nft_address
+      type: String
+      optional: true
+    union: []
+  TonWalletCardSticker:
+    fields:
+    - name: position
+      type: AreaPosition
+      optional: false
+    - name: nft
+      type: TonNft
+      optional: false
+    union: []
+  TonWalletTransfer:
+    fields:
+    - name: transaction_id
+      type: String
+      optional: false
+    - name: peer_address
+      type: String
+      optional: false
+    - name: amount
+      type: String
+      optional: false
+    - name: comment
+      type: String
       optional: true
     union: []
   TransactionPartner:
@@ -6437,6 +6874,15 @@ types:
     - name: origin
       type: String
       optional: false
+    - name: text
+      type: String
+      optional: true
+    - name: entities
+      type: Array of MessageEntity
+      optional: true
+    - name: is_private
+      type: 'True'
+      optional: true
     - name: last_resale_currency
       type: String
       optional: true
@@ -6527,6 +6973,12 @@ types:
     - name: callback_query
       type: CallbackQuery
       optional: true
+    - name: widget_query
+      type: WidgetQuery
+      optional: true
+    - name: shared_widget_query
+      type: SharedWidgetQuery
+      optional: true
     - name: shipping_query
       type: ShippingQuery
       optional: true
@@ -6562,6 +7014,9 @@ types:
       optional: true
     - name: subscription
       type: BotSubscriptionUpdated
+      optional: true
+    - name: stopped_message_generation
+      type: MessageGenerationStopped
       optional: true
     union: []
   User:
@@ -6858,6 +7313,114 @@ types:
       type: Array of String
       optional: true
     union: []
+  Widget:
+    fields:
+    - name: id
+      type: String
+      optional: true
+    - name: width
+      type: Integer
+      optional: true
+    - name: height
+      type: Integer
+      optional: true
+    - name: html
+      type: String
+      optional: false
+    - name: public_data
+      type: String
+      optional: true
+    - name: chat_data
+      type: String
+      optional: true
+    union: []
+  WidgetQuery:
+    fields:
+    - name: id
+      type: String
+      optional: false
+    - name: from
+      type: User
+      optional: false
+    - name: chat
+      type: Chat
+      optional: true
+    - name: message_id
+      type: Integer
+      optional: true
+    - name: inline_message_id
+      type: String
+      optional: true
+    - name: chat_instance
+      type: String
+      optional: false
+    - name: chat_type
+      type: String
+      optional: true
+    - name: type
+      type: WidgetQueryType
+      optional: false
+    - name: data
+      type: String
+      optional: false
+    - name: widget_id
+      type: String
+      optional: true
+    union: []
+  WidgetQueryType:
+    fields: []
+    union:
+    - WidgetQueryTypeData
+    - WidgetQueryTypeSignData
+    - WidgetQueryTypeSentTransaction
+  WidgetQueryTypeData:
+    fields:
+    - name: type
+      type: String
+      optional: false
+    - name: wallet_card
+      type: TonWalletCard
+      optional: true
+    union: []
+  WidgetQueryTypeSentTransaction:
+    fields:
+    - name: type
+      type: String
+      optional: false
+    - name: wallet
+      type: WidgetQueryWallet
+      optional: false
+    - name: msg_hash
+      type: String
+      optional: false
+    union: []
+  WidgetQueryTypeSignData:
+    fields:
+    - name: type
+      type: String
+      optional: false
+    - name: wallet
+      type: WidgetQueryWallet
+      optional: false
+    - name: sign_data
+      type: String
+      optional: false
+    union: []
+  WidgetQueryWallet:
+    fields:
+    - name: address
+      type: String
+      optional: false
+    - name: amount
+      type: String
+      optional: false
+    - name: public_key
+      type: String
+      optional: true
+    - name: state_init
+      type: String
+      optional: true
+    union: []
   WriteAccessAllowed:
     fields:
     - name: from_request
@@ -6968,6 +7531,14 @@ methods:
     - name: result
       type: InlineQueryResult
       required: true
+  answerWidgetQuery:
+    parameters:
+    - name: widget_query_id
+      type: String
+      required: true
+    - name: data
+      type: String
+      required: false
   approveChatJoinRequest:
     parameters:
     - name: chat_id
@@ -7275,6 +7846,14 @@ methods:
     - name: actor_chat_id
       type: Integer
       required: false
+  deleteBusinessAccountGift:
+    parameters:
+    - name: business_connection_id
+      type: String
+      required: true
+    - name: owned_gift_id
+      type: String
+      required: true
   deleteBusinessMessages:
     parameters:
     - name: business_connection_id
@@ -7424,6 +8003,9 @@ methods:
     - name: caption_entities
       type: Array of MessageEntity
       required: false
+    - name: show_caption_above_media
+      type: Boolean
+      required: false
     - name: reply_markup
       type: InlineKeyboardMarkup
       required: false
@@ -7471,12 +8053,15 @@ methods:
       required: true
     - name: text
       type: String
-      required: true
+      required: false
     - name: parse_mode
       type: String
       required: false
     - name: entities
       type: Array of MessageEntity
+      required: false
+    - name: rich_message
+      type: InputRichMessage
       required: false
     - name: link_preview_options
       type: LinkPreviewOptions
@@ -7655,6 +8240,34 @@ methods:
       required: false
     - name: reply_markup
       type: InlineKeyboardMarkup
+      required: false
+  editMessageWidgetData:
+    parameters:
+    - name: chat_id
+      type: Integer or String
+      required: false
+    - name: message_id
+      type: Integer
+      required: false
+    - name: inline_message_id
+      type: String
+      required: false
+    - name: public_data
+      type: String
+      required: false
+    - name: chat_data
+      type: String
+      required: false
+  editSharedWidgetData:
+    parameters:
+    - name: widget_id
+      type: String
+      required: true
+    - name: public_data
+      type: String
+      required: true
+    - name: cache_time
+      type: Integer
       required: false
   editStory:
     parameters:
@@ -7863,6 +8476,8 @@ methods:
     - name: chat_id
       type: Integer
       required: false
+  getChatShareThemeBackdrops:
+    parameters: []
   getCustomEmojiStickers:
     parameters:
     - name: custom_emoji_ids
@@ -7940,6 +8555,11 @@ methods:
       type: Integer
       required: false
   getStickerSet:
+    parameters:
+    - name: name
+      type: String
+      required: true
+  getUniqueGift:
     parameters:
     - name: name
       type: String
@@ -8161,6 +8781,9 @@ methods:
     - name: can_manage_tags
       type: Boolean
       required: false
+    - name: can_send_welcome_messages
+      type: Boolean
+      required: false
   readBusinessMessage:
     parameters:
     - name: business_connection_id
@@ -8312,18 +8935,15 @@ methods:
       required: false
     - name: chat_id
       type: Integer or String
-      required: true
+      required: false
     - name: message_thread_id
       type: Integer
       required: false
     - name: direct_messages_topic_id
       type: Integer
       required: false
-    - name: receiver_user_id
-      type: Integer
-      required: false
-    - name: callback_query_id
-      type: String
+    - name: ephemeral_message_parameters
+      type: EphemeralMessageParameters
       required: false
     - name: animation
       type: InputFile or String
@@ -8384,18 +9004,15 @@ methods:
       required: false
     - name: chat_id
       type: Integer or String
-      required: true
+      required: false
     - name: message_thread_id
       type: Integer
       required: false
     - name: direct_messages_topic_id
       type: Integer
       required: false
-    - name: receiver_user_id
-      type: Integer
-      required: false
-    - name: callback_query_id
-      type: String
+    - name: ephemeral_message_parameters
+      type: EphemeralMessageParameters
       required: false
     - name: audio
       type: InputFile or String
@@ -8498,18 +9115,15 @@ methods:
       required: false
     - name: chat_id
       type: Integer or String
-      required: true
+      required: false
     - name: message_thread_id
       type: Integer
       required: false
     - name: direct_messages_topic_id
       type: Integer
       required: false
-    - name: receiver_user_id
-      type: Integer
-      required: false
-    - name: callback_query_id
-      type: String
+    - name: ephemeral_message_parameters
+      type: EphemeralMessageParameters
       required: false
     - name: phone_number
       type: String
@@ -8591,18 +9205,15 @@ methods:
       required: false
     - name: chat_id
       type: Integer or String
-      required: true
+      required: false
     - name: message_thread_id
       type: Integer
       required: false
     - name: direct_messages_topic_id
       type: Integer
       required: false
-    - name: receiver_user_id
-      type: Integer
-      required: false
-    - name: callback_query_id
-      type: String
+    - name: ephemeral_message_parameters
+      type: EphemeralMessageParameters
       required: false
     - name: document
       type: InputFile or String
@@ -8801,18 +9412,15 @@ methods:
       required: false
     - name: chat_id
       type: Integer or String
-      required: true
+      required: false
     - name: message_thread_id
       type: Integer
       required: false
     - name: direct_messages_topic_id
       type: Integer
       required: false
-    - name: receiver_user_id
-      type: Integer
-      required: false
-    - name: callback_query_id
-      type: String
+    - name: ephemeral_message_parameters
+      type: EphemeralMessageParameters
       required: false
     - name: live_photo
       type: InputFile or String
@@ -8864,18 +9472,15 @@ methods:
       required: false
     - name: chat_id
       type: Integer or String
-      required: true
+      required: false
     - name: message_thread_id
       type: Integer
       required: false
     - name: direct_messages_topic_id
       type: Integer
       required: false
-    - name: receiver_user_id
-      type: Integer
-      required: false
-    - name: callback_query_id
-      type: String
+    - name: ephemeral_message_parameters
+      type: EphemeralMessageParameters
       required: false
     - name: latitude
       type: Float
@@ -8957,18 +9562,15 @@ methods:
       required: false
     - name: chat_id
       type: Integer or String
-      required: true
+      required: false
     - name: message_thread_id
       type: Integer
       required: false
     - name: direct_messages_topic_id
       type: Integer
       required: false
-    - name: receiver_user_id
-      type: Integer
-      required: false
-    - name: callback_query_id
-      type: String
+    - name: ephemeral_message_parameters
+      type: EphemeralMessageParameters
       required: false
     - name: text
       type: String
@@ -9023,6 +9625,12 @@ methods:
       required: false
     - name: entities
       type: Array of MessageEntity
+      required: false
+    - name: can_stop
+      type: Boolean
+      required: false
+    - name: keep_on_stop
+      type: Boolean
       required: false
   sendPaidMedia:
     parameters:
@@ -9085,18 +9693,15 @@ methods:
       required: false
     - name: chat_id
       type: Integer or String
-      required: true
+      required: false
     - name: message_thread_id
       type: Integer
       required: false
     - name: direct_messages_topic_id
       type: Integer
       required: false
-    - name: receiver_user_id
-      type: Integer
-      required: false
-    - name: callback_query_id
-      type: String
+    - name: ephemeral_message_parameters
+      type: EphemeralMessageParameters
       required: false
     - name: photo
       type: InputFile or String
@@ -9250,12 +9855,15 @@ methods:
       required: false
     - name: chat_id
       type: Integer or String
-      required: true
+      required: false
     - name: message_thread_id
       type: Integer
       required: false
     - name: direct_messages_topic_id
       type: Integer
+      required: false
+    - name: ephemeral_message_parameters
+      type: EphemeralMessageParameters
       required: false
     - name: rich_message
       type: InputRichMessage
@@ -9296,6 +9904,57 @@ methods:
     - name: rich_message
       type: InputRichMessage
       required: true
+    - name: can_stop
+      type: Boolean
+      required: false
+    - name: keep_on_stop
+      type: Boolean
+      required: false
+  sendSharedWidget:
+    parameters:
+    - name: chat_id
+      type: Integer or String
+      required: true
+    - name: message_thread_id
+      type: Integer
+      required: false
+    - name: widget_id
+      type: String
+      required: true
+    - name: chat_data
+      type: String
+      required: false
+    - name: caption
+      type: String
+      required: false
+    - name: parse_mode
+      type: String
+      required: false
+    - name: caption_entities
+      type: Array of MessageEntity
+      required: false
+    - name: show_caption_above_media
+      type: Boolean
+      required: false
+    - name: disable_notification
+      type: Boolean
+      required: false
+    - name: protect_content
+      type: Boolean
+      required: false
+    - name: allow_paid_broadcast
+      type: Boolean
+      required: false
+    - name: message_effect_id
+      type: String
+      required: false
+    - name: reply_parameters
+      type: ReplyParameters
+      required: false
+    - name: reply_markup
+      type: InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or
+        ForceReply
+      required: false
   sendSticker:
     parameters:
     - name: business_connection_id
@@ -9303,18 +9962,15 @@ methods:
       required: false
     - name: chat_id
       type: Integer or String
-      required: true
+      required: false
     - name: message_thread_id
       type: Integer
       required: false
     - name: direct_messages_topic_id
       type: Integer
       required: false
-    - name: receiver_user_id
-      type: Integer
-      required: false
-    - name: callback_query_id
-      type: String
+    - name: ephemeral_message_parameters
+      type: EphemeralMessageParameters
       required: false
     - name: sticker
       type: InputFile or String
@@ -9351,18 +10007,15 @@ methods:
       required: false
     - name: chat_id
       type: Integer or String
-      required: true
+      required: false
     - name: message_thread_id
       type: Integer
       required: false
     - name: direct_messages_topic_id
       type: Integer
       required: false
-    - name: receiver_user_id
-      type: Integer
-      required: false
-    - name: callback_query_id
-      type: String
+    - name: ephemeral_message_parameters
+      type: EphemeralMessageParameters
       required: false
     - name: latitude
       type: Float
@@ -9417,18 +10070,15 @@ methods:
       required: false
     - name: chat_id
       type: Integer or String
-      required: true
+      required: false
     - name: message_thread_id
       type: Integer
       required: false
     - name: direct_messages_topic_id
       type: Integer
       required: false
-    - name: receiver_user_id
-      type: Integer
-      required: false
-    - name: callback_query_id
-      type: String
+    - name: ephemeral_message_parameters
+      type: EphemeralMessageParameters
       required: false
     - name: video
       type: InputFile or String
@@ -9498,18 +10148,15 @@ methods:
       required: false
     - name: chat_id
       type: Integer or String
-      required: true
+      required: false
     - name: message_thread_id
       type: Integer
       required: false
     - name: direct_messages_topic_id
       type: Integer
       required: false
-    - name: receiver_user_id
-      type: Integer
-      required: false
-    - name: callback_query_id
-      type: String
+    - name: ephemeral_message_parameters
+      type: EphemeralMessageParameters
       required: false
     - name: video_note
       type: InputFile or String
@@ -9552,18 +10199,15 @@ methods:
       required: false
     - name: chat_id
       type: Integer or String
-      required: true
+      required: false
     - name: message_thread_id
       type: Integer
       required: false
     - name: direct_messages_topic_id
       type: Integer
       required: false
-    - name: receiver_user_id
-      type: Integer
-      required: false
-    - name: callback_query_id
-      type: String
+    - name: ephemeral_message_parameters
+      type: EphemeralMessageParameters
       required: false
     - name: voice
       type: InputFile or String
@@ -9594,6 +10238,66 @@ methods:
       required: false
     - name: suggested_post_parameters
       type: SuggestedPostParameters
+      required: false
+    - name: reply_parameters
+      type: ReplyParameters
+      required: false
+    - name: reply_markup
+      type: InlineKeyboardMarkup or ReplyKeyboardMarkup or ReplyKeyboardRemove or
+        ForceReply
+      required: false
+  sendWidget:
+    parameters:
+    - name: chat_id
+      type: Integer or String
+      required: true
+    - name: message_thread_id
+      type: Integer
+      required: false
+    - name: html
+      type: String
+      required: true
+    - name: width
+      type: Integer
+      required: false
+    - name: height
+      type: Integer
+      required: false
+    - name: public_data
+      type: String
+      required: false
+    - name: chat_data
+      type: String
+      required: false
+    - name: caption
+      type: String
+      required: false
+    - name: parse_mode
+      type: String
+      required: false
+    - name: caption_entities
+      type: Array of MessageEntity
+      required: false
+    - name: show_caption_above_media
+      type: Boolean
+      required: false
+    - name: allow_queries
+      type: Boolean
+      required: false
+    - name: is_shared
+      type: Boolean
+      required: false
+    - name: disable_notification
+      type: Boolean
+      required: false
+    - name: protect_content
+      type: Boolean
+      required: false
+    - name: allow_paid_broadcast
+      type: Boolean
+      required: false
+    - name: message_effect_id
+      type: String
       required: false
     - name: reply_parameters
       type: ReplyParameters
@@ -10063,6 +10767,12 @@ methods:
     - name: custom_description
       type: String
       required: false
+    - name: custom_description_parse_mode
+      type: String
+      required: false
+    - name: custom_description_entities
+      type: Array of MessageEntity
+      required: false
   verifyUser:
     parameters:
     - name: user_id
@@ -10070,4 +10780,10 @@ methods:
       required: true
     - name: custom_description
       type: String
+      required: false
+    - name: custom_description_parse_mode
+      type: String
+      required: false
+    - name: custom_description_entities
+      type: Array of MessageEntity
       required: false

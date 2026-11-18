@@ -1,9 +1,9 @@
-    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
     module Telegram
       module Bot
         module Types
           class ChatJoinRequest < Base
-        def self.new: (chat: Chat, from: User, user_chat_id: Integer, date: Integer, ?bio: String, ?invite_link: ChatInviteLink) -> instance
+        def self.new: (chat: Chat, from: User, user_chat_id: Integer, date: Integer, ?bio: String, ?invite_link: ChatInviteLink, ?query_id: String) -> instance
                     | (?Hash[Symbol | String, untyped] attributes) -> instance
         attr_reader chat: Chat
         attr_reader from: User
@@ -11,6 +11,7 @@
         attr_reader date: Integer
         attr_reader bio: String?
         attr_reader invite_link: ChatInviteLink?
+        attr_reader query_id: String?
           end
         end
       end

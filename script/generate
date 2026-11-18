@@ -6,12 +6,12 @@ require "fileutils"
 require "yaml"
 require "telegram/bot"
 
-ROOT = File.expand_path("..", __dir__)
-SNAPSHOT = YAML.safe_load_file(File.join(ROOT, "data/telegram_bot_api.yml"), permitted_classes: [Time])
-WRAPPER = Gem::Specification.find_by_name("telegram-bot-ruby", ">= 2.7.0", "< 2.8")
+GENERATOR_ROOT = File.expand_path("..", __dir__)
+SNAPSHOT = YAML.safe_load_file(File.join(GENERATOR_ROOT, "data/telegram_bot_api.yml"), permitted_classes: [Time])
+WRAPPER = Gem::Specification.find_by_name("telegram-bot-ruby", ">= 2.8.1", "< 2.9")
 SOURCE_ROOT = WRAPPER.full_gem_path
 TYPE_SOURCE = File.join(SOURCE_ROOT, "lib/telegram/bot/types")
-SIG_ROOT = File.join(ROOT, "sig/telegram/bot")
+SIG_ROOT = File.join(GENERATOR_ROOT, "sig/telegram/bot")
 
 def snake_case(name)
   name.gsub(/([A-Z]+)([A-Z][a-z])/, '\\1_\\2')
@@ -46,8 +46,12 @@ def strip_constraints(expression)
 end
 
 def source_type(expression, aliases, namespace: false)
+  expression = expression.gsub(/Types\.deferred\(:([A-Z][A-Za-z0-9]+)\)/, '\\1')
   expression = strip_constraints(expression.strip)
   optional = expression.sub!(/\.optional\z/, "")
+  if expression.start_with?("(") && expression.end_with?(")") && split_union(expression).length == 1
+    expression = expression[1...-1]
+  end
   parts = split_union(expression)
   if parts.length > 1
     value = "(#{parts.map { |part| source_type(part, aliases, namespace:) }.join(' | ')})"
@@ -131,7 +135,7 @@ def wrapper_unions
   Dir[File.join(TYPE_SOURCE, "*.rb")].sort.each do |path|
     source = File.read(path)
     source.scan(/^\s*([A-Z][A-Za-z0-9]+) = \(\s*(.*?)^\s*\)/m) do |name, body|
-      members = body.scan(/\b[A-Z][A-Za-z0-9]+\b/).uniq
+      members = split_union(body).reject(&:empty?).uniq
       unions[name] = members unless members.empty?
     end
   end
@@ -224,7 +228,7 @@ core = <<~RBS
     end
   end
 RBS
-File.write(File.join(SIG_ROOT, "core.rbs"), core)
+File.binwrite(File.join(SIG_ROOT, "core.rbs"), core)
 
 base = <<~RBS
   # Generated for telegram-bot-ruby #{WRAPPER.version}. Do not edit by hand.
@@ -250,13 +254,14 @@ base = <<~RBS
     end
   end
 RBS
-File.write(File.join(SIG_ROOT, "types/base.rbs"), base)
+File.binwrite(File.join(SIG_ROOT, "types/base.rbs"), base)
 
 union_lines = UNIONS.sort.map do |name, members|
   alias_name = ALIASES.fetch(name)
-  "        type #{alias_name} = #{members.join(' | ')}\n        #{name}: untyped"
+  types = members.map { |member| source_type(member, ALIASES) }
+  "        type #{alias_name} = #{types.join(' | ')}\n        #{name}: untyped"
 end.join("\n\n")
-File.write(File.join(SIG_ROOT, "types/unions.rbs"), <<~RBS)
+File.binwrite(File.join(SIG_ROOT, "types/unions.rbs"), <<~RBS)
   # Generated for telegram-bot-ruby #{WRAPPER.version}. Do not edit by hand.
   module Telegram
     module Bot
@@ -290,7 +295,7 @@ CLASSES.sort.each do |name, definition|
 
   body = (["        def self.new: #{constructor}",
            "                    | (?Hash[Symbol | String, untyped] attributes) -> instance"] + readers + extras).join("\n")
-  File.write(File.join(SIG_ROOT, "types/#{snake_case(name)}.rbs"), <<~RBS)
+  File.binwrite(File.join(SIG_ROOT, "types/#{snake_case(name)}.rbs"), <<~RBS)
     # Generated for telegram-bot-ruby #{WRAPPER.version}. Do not edit by hand.
     module Telegram
       module Bot
@@ -338,7 +343,7 @@ api = <<~RBS
     end
   end
 RBS
-File.write(File.join(SIG_ROOT, "api.rbs"), api)
+File.binwrite(File.join(SIG_ROOT, "api.rbs"), api)
 
 official_types = SNAPSHOT.fetch("types")
 official_methods = SNAPSHOT.fetch("methods")
@@ -370,6 +375,6 @@ compatibility = {
     "methods" => ENDPOINTS.keys - official_methods.keys
   }
 }
-File.write(File.join(ROOT, "data/compatibility.yml"), YAML.dump(compatibility), mode: "w:UTF-8")
+File.binwrite(File.join(GENERATOR_ROOT, "data/compatibility.yml"), YAML.dump(compatibility))
 
 puts "Generated #{CLASSES.length} concrete types, #{UNIONS.length} unions and #{ENDPOINTS.length} endpoints for telegram-bot-ruby #{WRAPPER.version}"

@@ -1,4 +1,4 @@
-# Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+# Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
 module Telegram
   module Bot
     VERSION: String

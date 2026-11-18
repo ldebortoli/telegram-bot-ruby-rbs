@@ -1,0 +1,17 @@
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class RichBlockTableCell < Base
+        def self.new: (?text: rich_text, ?is_header: true, ?colspan: Integer, ?rowspan: Integer, align: String, valign: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader text: rich_text?
+        attr_reader is_header: true?
+        attr_reader colspan: Integer?
+        attr_reader rowspan: Integer?
+        attr_reader align: String
+        attr_reader valign: String
+          end
+        end
+      end
+    end

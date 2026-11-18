@@ -1,0 +1,14 @@
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InputRichBlockVideo < Base
+        def self.new: (?type: String, video: InputMediaVideo, ?caption: RichBlockCaption) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader video: InputMediaVideo
+        attr_reader caption: RichBlockCaption?
+          end
+        end
+      end
+    end

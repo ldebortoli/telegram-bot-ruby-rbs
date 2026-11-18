@@ -1,0 +1,14 @@
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InputRichBlockPreformatted < Base
+        def self.new: (?type: String, text: rich_text, ?language: String) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader text: rich_text
+        attr_reader language: String?
+          end
+        end
+      end
+    end

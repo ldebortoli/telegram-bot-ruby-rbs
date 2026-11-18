@@ -1,0 +1,16 @@
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class RichBlockTable < Base
+        def self.new: (?type: String, cells: Array[Array[RichBlockTableCell]], ?is_bordered: true, ?is_striped: true, ?caption: rich_text) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader cells: Array[Array[RichBlockTableCell]]
+        attr_reader is_bordered: true?
+        attr_reader is_striped: true?
+        attr_reader caption: rich_text?
+          end
+        end
+      end
+    end

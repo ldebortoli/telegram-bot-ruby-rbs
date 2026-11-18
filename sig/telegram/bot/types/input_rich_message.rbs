@@ -1,0 +1,17 @@
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InputRichMessage < Base
+        def self.new: (?blocks: Array[input_rich_block], ?html: String, ?markdown: String, ?media: Array[InputRichMessageMedia], ?is_rtl: bool, ?skip_entity_detection: bool) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader blocks: Array[input_rich_block]?
+        attr_reader html: String?
+        attr_reader markdown: String?
+        attr_reader media: Array[InputRichMessageMedia]?
+        attr_reader is_rtl: bool?
+        attr_reader skip_entity_detection: bool?
+          end
+        end
+      end
+    end

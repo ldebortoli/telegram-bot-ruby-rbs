@@ -1,12 +1,13 @@
-    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
     module Telegram
       module Bot
         module Types
           class BotCommand < Base
-        def self.new: (command: String, description: String) -> instance
+        def self.new: (command: String, description: String, ?is_ephemeral: bool) -> instance
                     | (?Hash[Symbol | String, untyped] attributes) -> instance
         attr_reader command: String
         attr_reader description: String
+        attr_reader is_ephemeral: bool?
           end
         end
       end

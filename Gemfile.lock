@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    telegram-bot-ruby-rbs (0.1.0)
-      telegram-bot-ruby (>= 2.7.0, < 2.8)
+    telegram-bot-ruby-rbs (0.2.0)
+      telegram-bot-ruby (>= 2.8.1, < 2.9)
 
 GEM
   remote: https://rubygems.org/
@@ -57,7 +57,7 @@ GEM
       logger
       prism (>= 1.6.0)
       tsort
-    telegram-bot-ruby (2.7.0)
+    telegram-bot-ruby (2.8.1)
       dry-struct (~> 1.6)
       faraday (~> 2.0)
       faraday-multipart (~> 1.0)

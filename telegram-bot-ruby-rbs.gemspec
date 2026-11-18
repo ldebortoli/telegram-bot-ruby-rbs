@@ -21,5 +21,5 @@ Gem::Specification.new do |spec|
     "source_code_uri" => spec.homepage
   }
 
-  spec.add_runtime_dependency "telegram-bot-ruby", ">= 2.7.0", "< 2.8"
+  spec.add_runtime_dependency "telegram-bot-ruby", ">= 2.8.1", "< 2.9"
 end

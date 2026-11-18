@@ -1,9 +1,9 @@
-    # Generated for telegram-bot-ruby 2.7.0. Do not edit by hand.
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
     module Telegram
       module Bot
         module Types
           class Message < Base
-        def self.new: (message_id: Integer, ?message_thread_id: Integer, ?direct_messages_topic: DirectMessagesTopic, ?from: User, ?sender_chat: Chat, ?sender_boost_count: Integer, ?sender_business_bot: User, ?sender_tag: String, date: Integer, ?business_connection_id: String, chat: Chat, ?forward_origin: message_origin, ?is_topic_message: true, ?is_automatic_forward: true, ?reply_to_message: Message, ?external_reply: ExternalReplyInfo, ?quote: TextQuote, ?reply_to_story: Story, ?reply_to_checklist_task_id: Integer, ?reply_to_poll_option_id: String, ?via_bot: User, ?edit_date: Integer, ?has_protected_content: true, ?is_from_offline: true, ?is_paid_post: true, ?media_group_id: String, ?author_signature: String, ?paid_star_count: Integer, ?text: String, ?entities: Array[MessageEntity], ?link_preview_options: LinkPreviewOptions, ?suggested_post_info: SuggestedPostInfo, ?effect_id: String, ?animation: Animation, ?audio: Audio, ?document: Document, ?paid_media: PaidMediaInfo, ?photo: Array[PhotoSize], ?sticker: Sticker, ?story: Story, ?video: Video, ?video_note: VideoNote, ?voice: Voice, ?caption: String, ?caption_entities: Array[MessageEntity], ?show_caption_above_media: true, ?has_media_spoiler: true, ?checklist: Checklist, ?contact: Contact, ?dice: Dice, ?game: Game, ?poll: Poll, ?venue: Venue, ?location: Location, ?new_chat_members: Array[User], ?left_chat_member: User, ?chat_owner_left: ChatOwnerLeft, ?chat_owner_changed: ChatOwnerChanged, ?new_chat_title: String, ?new_chat_photo: Array[PhotoSize], ?delete_chat_photo: true, ?group_chat_created: true, ?supergroup_chat_created: true, ?channel_chat_created: true, ?message_auto_delete_timer_changed: MessageAutoDeleteTimerChanged, ?migrate_to_chat_id: Integer, ?migrate_from_chat_id: Integer, ?pinned_message: maybe_inaccessible_message, ?invoice: Invoice, ?successful_payment: SuccessfulPayment, ?refunded_payment: RefundedPayment, ?users_shared: UsersShared, ?chat_shared: ChatShared, ?gift: GiftInfo, ?unique_gift: UniqueGiftInfo, ?gift_upgrade_sent: GiftInfo, ?connected_website: String, ?write_access_allowed: WriteAccessAllowed, ?passport_data: PassportData, ?proximity_alert_triggered: ProximityAlertTriggered, ?boost_added: ChatBoostAdded, ?chat_background_set: ChatBackground, ?checklist_tasks_done: ChecklistTasksDone, ?checklist_tasks_added: ChecklistTasksAdded, ?direct_message_price_changed: DirectMessagePriceChanged, ?forum_topic_created: ForumTopicCreated, ?forum_topic_edited: ForumTopicEdited, ?forum_topic_closed: ForumTopicClosed, ?forum_topic_reopened: ForumTopicReopened, ?general_forum_topic_hidden: GeneralForumTopicHidden, ?general_forum_topic_unhidden: GeneralForumTopicUnhidden, ?giveaway_created: GiveawayCreated, ?giveaway: Giveaway, ?giveaway_winners: GiveawayWinners, ?giveaway_completed: GiveawayCompleted, ?managed_bot_created: ManagedBotCreated, ?paid_message_price_changed: PaidMessagePriceChanged, ?poll_option_added: PollOptionAdded, ?poll_option_deleted: PollOptionDeleted, ?suggested_post_approved: SuggestedPostApproved, ?suggested_post_approval_failed: SuggestedPostApprovalFailed, ?suggested_post_declined: SuggestedPostDeclined, ?suggested_post_paid: SuggestedPostPaid, ?suggested_post_refunded: SuggestedPostRefunded, ?video_chat_scheduled: VideoChatScheduled, ?video_chat_started: VideoChatStarted, ?video_chat_ended: VideoChatEnded, ?video_chat_participants_invited: VideoChatParticipantsInvited, ?web_app_data: WebAppData, ?reply_markup: InlineKeyboardMarkup) -> instance
+        def self.new: (message_id: Integer, ?message_thread_id: Integer, ?direct_messages_topic: DirectMessagesTopic, ?from: User, ?sender_chat: Chat, ?sender_boost_count: Integer, ?sender_business_bot: User, ?sender_tag: String, ?receiver_user: User, ?ephemeral_message_id: Integer, date: Integer, ?guest_query_id: String, ?business_connection_id: String, chat: Chat, ?forward_origin: message_origin, ?is_topic_message: true, ?is_automatic_forward: true, ?reply_to_message: Message, ?external_reply: ExternalReplyInfo, ?quote: TextQuote, ?reply_to_story: Story, ?reply_to_checklist_task_id: Integer, ?reply_to_poll_option_id: String, ?via_bot: User, ?guest_bot_caller_user: User, ?guest_bot_caller_chat: Chat, ?edit_date: Integer, ?has_protected_content: true, ?is_from_offline: true, ?is_paid_post: true, ?media_group_id: String, ?author_signature: String, ?paid_star_count: Integer, ?text: String, ?entities: Array[MessageEntity], ?link_preview_options: LinkPreviewOptions, ?suggested_post_info: SuggestedPostInfo, ?effect_id: String, ?rich_message: RichMessage, ?animation: Animation, ?audio: Audio, ?document: Document, ?live_photo: LivePhoto, ?paid_media: PaidMediaInfo, ?photo: Array[PhotoSize], ?sticker: Sticker, ?story: Story, ?video: Video, ?video_note: VideoNote, ?voice: Voice, ?caption: String, ?caption_entities: Array[MessageEntity], ?show_caption_above_media: true, ?has_media_spoiler: true, ?checklist: Checklist, ?contact: Contact, ?dice: Dice, ?game: Game, ?poll: Poll, ?venue: Venue, ?location: Location, ?new_chat_members: Array[User], ?left_chat_member: User, ?chat_owner_left: ChatOwnerLeft, ?chat_owner_changed: ChatOwnerChanged, ?new_chat_title: String, ?new_chat_photo: Array[PhotoSize], ?delete_chat_photo: true, ?group_chat_created: true, ?supergroup_chat_created: true, ?channel_chat_created: true, ?message_auto_delete_timer_changed: MessageAutoDeleteTimerChanged, ?migrate_to_chat_id: Integer, ?migrate_from_chat_id: Integer, ?pinned_message: maybe_inaccessible_message, ?invoice: Invoice, ?successful_payment: SuccessfulPayment, ?refunded_payment: RefundedPayment, ?users_shared: UsersShared, ?chat_shared: ChatShared, ?gift: GiftInfo, ?unique_gift: UniqueGiftInfo, ?gift_upgrade_sent: GiftInfo, ?connected_website: String, ?write_access_allowed: WriteAccessAllowed, ?passport_data: PassportData, ?proximity_alert_triggered: ProximityAlertTriggered, ?boost_added: ChatBoostAdded, ?chat_background_set: ChatBackground, ?checklist_tasks_done: ChecklistTasksDone, ?checklist_tasks_added: ChecklistTasksAdded, ?community_chat_added: CommunityChatAdded, ?community_chat_removed: CommunityChatRemoved, ?direct_message_price_changed: DirectMessagePriceChanged, ?forum_topic_created: ForumTopicCreated, ?forum_topic_edited: ForumTopicEdited, ?forum_topic_closed: ForumTopicClosed, ?forum_topic_reopened: ForumTopicReopened, ?general_forum_topic_hidden: GeneralForumTopicHidden, ?general_forum_topic_unhidden: GeneralForumTopicUnhidden, ?giveaway_created: GiveawayCreated, ?giveaway: Giveaway, ?giveaway_winners: GiveawayWinners, ?giveaway_completed: GiveawayCompleted, ?managed_bot_created: ManagedBotCreated, ?paid_message_price_changed: PaidMessagePriceChanged, ?poll_option_added: PollOptionAdded, ?poll_option_deleted: PollOptionDeleted, ?suggested_post_approved: SuggestedPostApproved, ?suggested_post_approval_failed: SuggestedPostApprovalFailed, ?suggested_post_declined: SuggestedPostDeclined, ?suggested_post_paid: SuggestedPostPaid, ?suggested_post_refunded: SuggestedPostRefunded, ?video_chat_scheduled: VideoChatScheduled, ?video_chat_started: VideoChatStarted, ?video_chat_ended: VideoChatEnded, ?video_chat_participants_invited: VideoChatParticipantsInvited, ?web_app_data: WebAppData, ?reply_markup: InlineKeyboardMarkup) -> instance
                     | (?Hash[Symbol | String, untyped] attributes) -> instance
         attr_reader message_id: Integer
         attr_reader message_thread_id: Integer?
@@ -13,7 +13,10 @@
         attr_reader sender_boost_count: Integer?
         attr_reader sender_business_bot: User?
         attr_reader sender_tag: String?
+        attr_reader receiver_user: User?
+        attr_reader ephemeral_message_id: Integer?
         attr_reader date: Integer
+        attr_reader guest_query_id: String?
         attr_reader business_connection_id: String?
         attr_reader chat: Chat
         attr_reader forward_origin: message_origin?
@@ -26,6 +29,8 @@
         attr_reader reply_to_checklist_task_id: Integer?
         attr_reader reply_to_poll_option_id: String?
         attr_reader via_bot: User?
+        attr_reader guest_bot_caller_user: User?
+        attr_reader guest_bot_caller_chat: Chat?
         attr_reader edit_date: Integer?
         attr_reader has_protected_content: true?
         attr_reader is_from_offline: true?
@@ -38,9 +43,11 @@
         attr_reader link_preview_options: LinkPreviewOptions?
         attr_reader suggested_post_info: SuggestedPostInfo?
         attr_reader effect_id: String?
+        attr_reader rich_message: RichMessage?
         attr_reader animation: Animation?
         attr_reader audio: Audio?
         attr_reader document: Document?
+        attr_reader live_photo: LivePhoto?
         attr_reader paid_media: PaidMediaInfo?
         attr_reader photo: Array[PhotoSize]?
         attr_reader sticker: Sticker?
@@ -89,6 +96,8 @@
         attr_reader chat_background_set: ChatBackground?
         attr_reader checklist_tasks_done: ChecklistTasksDone?
         attr_reader checklist_tasks_added: ChecklistTasksAdded?
+        attr_reader community_chat_added: CommunityChatAdded?
+        attr_reader community_chat_removed: CommunityChatRemoved?
         attr_reader direct_message_price_changed: DirectMessagePriceChanged?
         attr_reader forum_topic_created: ForumTopicCreated?
         attr_reader forum_topic_edited: ForumTopicEdited?

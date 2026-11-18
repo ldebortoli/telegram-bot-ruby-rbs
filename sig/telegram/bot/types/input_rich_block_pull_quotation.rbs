@@ -1,0 +1,14 @@
+    # Generated for telegram-bot-ruby 2.8.1. Do not edit by hand.
+    module Telegram
+      module Bot
+        module Types
+          class InputRichBlockPullQuotation < Base
+        def self.new: (?type: String, text: rich_text, ?credit: rich_text) -> instance
+                    | (?Hash[Symbol | String, untyped] attributes) -> instance
+        attr_reader type: String
+        attr_reader text: rich_text
+        attr_reader credit: rich_text?
+          end
+        end
+      end
+    end

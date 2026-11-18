@@ -23,4 +23,10 @@ task :validate do
   sh "bundle exec rbs -r logger -I sig validate"
 end
 
-task default: %i[test validate]
+desc "Require complete line, branch and method coverage for the generator"
+task :coverage do
+  ENV["RBS_GENERATOR_COVERAGE"] = "1"
+  Rake::Task[:test].invoke
+end
+
+task default: %i[coverage validate]

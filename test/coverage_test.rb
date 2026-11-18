@@ -5,7 +5,7 @@ require "yaml"
 
 describe "generated signature coverage" do
   before do
-    @wrapper_root = Gem::Specification.find_by_name("telegram-bot-ruby", ">= 2.7.0", "< 2.8").full_gem_path
+    @wrapper_root = Gem::Specification.find_by_name("telegram-bot-ruby", ">= 2.8.1", "< 2.9").full_gem_path
     @type_root = File.join(@wrapper_root, "lib/telegram/bot/types")
     @signature_root = File.join(ROOT, "sig/telegram/bot/types")
   end
@@ -47,7 +47,7 @@ describe "generated signature coverage" do
   it "records the official source and unsupported API surface" do
     compatibility = YAML.safe_load_file(File.join(ROOT, "data/compatibility.yml"))
     _(compatibility.fetch("telegram_bot_api")).must_match(/\A\d+\.\d+\z/)
-    _(compatibility.fetch("telegram_bot_ruby")).must_equal("2.7.0")
+    _(compatibility.fetch("telegram_bot_ruby")).must_equal("2.8.1")
     _(compatibility.dig("not_yet_in_wrapper", "methods")).must_be_kind_of(Array)
   end
 end
